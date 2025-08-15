@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Official website of Teemo Daking. Discover music, watch videos, and connect with the artist.">
+  <meta name="keywords" content="Teemo Daking, music, afrobeat, hip-hop, artist, Johannesburg">
   <title>Teemo Daking | Official Website</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -111,6 +112,37 @@
       font-size: 1.1rem;
       color: #cccccc;
     }
+
+    /* Connect Buttons */
+    .connect-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .spotify { background: #1DB954; }
+    .youtube { background: #FF0000; }
+    .whatsapp { background: #25D366; }
+    .paypal { background: #0070BA; }
+    .x { background: #1a1a1a; }
+    .facebook { background: #1877F2; }
 
     /* News Section */
     .news-container {
@@ -222,36 +254,6 @@
       border-radius: 8px;
     }
 
-    /* Connect Buttons */
-    .connect-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.5rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .spotify { background: #1DB954; }
-    .youtube { background: #FF0000; }
-    .whatsapp { background: #25D366; }
-    .paypal { background: #0070BA; }
-    .x { background: #1a1a1a; }
-
     /* AdSense Section */
     .adsense {
       text-align: center;
@@ -353,13 +355,13 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#connect">Connect</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#newsletter">Newsletter</a></li>
       <li><a href="#social">Social</a></li>
       <li><a href="#merch">Merch</a></li>
       <li><a href="#poll">Poll</a></li>
-      <li><a href="#connect">Connect</a></li>
       <li><a href="#donate">Donate</a></li>
     </ul>
   </nav>
@@ -369,7 +371,22 @@
     <div class="about-container">
       <!-- Replace with your actual artist photo -->
       <img src="https://via.placeholder.com/300x300?text=Teemo+Daking" alt="Teemo Daking">
-      <p>Teemo Daking is a rising star from [Your City], blending [genres, e.g., hip-hop, afrobeat] with raw passion. From humble beginnings to electrifying performances, Teemo's music speaks to the soul. Join the journey!</p>
+      <p>Teemo Daking, hailing from Johannesburg, blends afrobeat and hip-hop with soulful vibes. From local gigs to global streams, my music is about connection and inspiration.</p>
+    </div>
+  </section>
+
+  <section id="connect">
+    <h2>Follow & Connect</h2>
+    <div class="connect-buttons">
+      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">
+        <i class="fab fa-spotify"></i> Listen on Spotify
+      </a>
+      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">
+        <i class="fab fa-youtube"></i> Watch on YouTube
+      </a>
+      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
     </div>
   </section>
 
@@ -377,14 +394,14 @@
     <h2>Latest Updates</h2>
     <div class="news-container">
       <div class="news-card">
-        <h3>New Single Dropping Soon!</h3>
-        <p>Posted: August 2025</p>
-        <p>Get ready for my latest track, releasing next month on Spotify!</p>
+        <h3>New Single Out Now!</h3>
+        <p>Posted: September 2025</p>
+        <p>My latest single "Vibe Check" is live on Spotify. Stream now!</p>
       </div>
       <div class="news-card">
-        <h3>Live Show in [City]</h3>
-        <p>Posted: July 2025</p>
-        <p>Join me for a live performance on [date]! Tickets available soon.</p>
+        <h3>Live Show in Johannesburg</h3>
+        <p>Posted: August 2025</p>
+        <p>Join me for a live performance on October 15, 2025! Tickets available soon.</p>
       </div>
     </div>
   </section>
@@ -409,11 +426,17 @@
 
   <section id="social">
     <h2>Join the Conversation</h2>
-    <p>Follow my latest updates on X and join the Teemo Daking community!</p>
-    <!-- Replace YOUR_X_HANDLE with your actual X handle -->
-    <a class="btn x" href="https://x.com/YOUR_X_HANDLE" target="_blank">
-      <i class="fab fa-x"></i> Follow on X
-    </a>
+    <p>Follow my latest updates and check out exclusive photos on X and Facebook!</p>
+    <div class="connect-buttons">
+      <!-- Replace YOUR_X_HANDLE with your actual X handle -->
+      <a class="btn x" href="https://x.com/YOUR_X_HANDLE" target="_blank">
+        <i class="fab fa-x"></i> Follow on X
+      </a>
+      <!-- Replace YOUR_FACEBOOK_PAGE with your Facebook page or album URL -->
+      <a class="btn facebook" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank">
+        <i class="fab fa-facebook"></i> See Photos on Facebook
+      </a>
+    </div>
   </section>
 
   <section id="merch">
@@ -458,21 +481,6 @@
         document.querySelector('.adsense-fallback').style.display = 'block';
       }
     </script>
-  </section>
-
-  <section id="connect">
-    <h2>Follow & Connect</h2>
-    <div class="connect-buttons">
-      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">
-        <i class="fab fa-spotify"></i> Listen on Spotify
-      </a>
-      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">
-        <i class="fab fa-youtube"></i> Watch on YouTube
-      </a>
-      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-      </a>
-    </div>
   </section>
 
   <section id="donate" class="donation">
