@@ -89,4 +89,229 @@
     section h2 {
       font-size: 2.5rem;
       font-weight: 600;
-      color:
+      color: #1DB954;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Tracks */
+    .tracks-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .track {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .track:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .track img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .track p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Connect Buttons */
+    .connect-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .spotify { background: #1DB954; }
+    .youtube { background: #FF0000; }
+    .whatsapp { background: #25D366; }
+    .paypal { background: #0070BA; }
+
+    /* AdSense Section */
+    .adsense {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 728px;
+      min-height: 90px; /* Fallback height for ad */
+    }
+
+    .adsense-fallback {
+      display: none;
+      color: #cccccc;
+      font-size: 1rem;
+    }
+
+    /* Donation Section */
+    .donation {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .donation p {
+      font-size: 1.1rem;
+      color: #cccccc;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #1DB954;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .track {
+        padding: 1rem;
+      }
+
+      .track img {
+        height: 150px;
+      }
+
+      .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Teemo Daking</h1>
+    <p>Official Website & Updates</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tracks">Tracks</a></li>
+      <li><a href="#connect">Connect</a></li>
+      <li><a href="#donate">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section id="tracks">
+    <h2>Featured Tracks</h2>
+    <div class="tracks-container">
+      <div class="track">
+        <!-- Replace with your actual image path -->
+        <img src="https://via.placeholder.com/300x200?text=Track+1+Cover" alt="Track 1 - My Hit Song Cover">
+        <p>Track 1 - My Hit Song</p>
+      </div>
+      <div class="track">
+        <!-- Replace with your actual image path -->
+        <img src="https://via.placeholder.com/300x200?text=Track+2+Cover" alt="Track 2 - Another Jam Cover">
+        <p>Track 2 - Another Jam</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Ad -->
+  <section class="adsense">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8036746752481844"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <div class="adsense-fallback">
+      <p>Advertisement placeholder (AdSense ad not loaded).</p>
+    </div>
+    <script>
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {
+        console.error('AdSense failed to load:', e);
+        document.querySelector('.adsense-fallback').style.display = 'block';
+      }
+    </script>
+  </section>
+
+  <section id="connect">
+    <h2>Follow & Connect</h2>
+    <div class="connect-buttons">
+      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">
+        <i class="fab fa-spotify"></i> Listen on Spotify
+      </a>
+      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">
+        <i class="fab fa-youtube"></i> Watch on YouTube
+      </a>
+      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section id="donate" class="donation">
+    <h2>Support Teemo Daking</h2>
+    <p>Your donations help me create more music! Support my journey below.</p>
+    <a class="btn paypal" href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank">
+      <i class="fab fa-paypal"></i> Donate via PayPal
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Teemo Daking. All rights reserved. | <a href="https://x.ai/grok">Powered by xAI</a></p>
+  </footer>
+</body>
+</html>
