@@ -3,76 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teemo Daking Music</title>
+  <title>Teemo Daking | Official Music</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
     header {
-      background: #222;
-      padding: 20px;
+      background: linear-gradient(135deg, #1a1a1a, #111);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
+
     header h1 {
-      margin: 0;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #1DB954;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin-top: 0.5rem;
+    }
+
+    /* Navigation */
+    nav {
+      background: #1a1a1a;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
       color: #1DB954;
     }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #1DB954;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Tracks */
+    .tracks-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
     .track {
-      margin: 20px;
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: left;
     }
+
+    .track:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .track p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
     audio {
-      margin-top: 10px;
+      width: 100%;
+      border-radius: 5px;
     }
+
+    /* Connect Buttons */
+    .connect-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
     .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      color: #ffffff;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.3s;
     }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
     .spotify { background: #1DB954; }
     .youtube { background: #FF0000; }
     .whatsapp { background: #25D366; }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #1DB954;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .track {
+        padding: 1rem;
+      }
+
+      .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🎶 Teemo Daking Music 🎶</h1>
-    <p>Stream, Download & Connect</p>
+    <h1>🎶 Teemo Daking 🎶</h1>
+    <p>Official Music & Updates</p>
   </header>
 
-  <section>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tracks">Tracks</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
+
+  <section id="tracks">
     <h2>My Tracks</h2>
-
-    <!-- Example Songs (Replace with your MP3s) -->
-    <div class="track">
-      <p>Track 1 - My Hit Song</p>
-      <audio controls>
-        <source src="mysong.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-    </div>
-
-    <div class="track">
-      <p>Track 2 - Another Jam</p>
-      <audio controls>
-        <source src="anotherjam.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <div class="tracks-container">
+      <div class="track">
+        <p>Track 1 - My Hit Song</p>
+        <audio controls>
+          <source src="mysong.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="track">
+        <p>Track 2 - Another Jam</p>
+        <audio controls>
+          <source src="anotherjam.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section id="connect">
     <h2>Follow & Connect</h2>
-    <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">🎧 Listen on Spotify</a>
-    <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">▶️ Watch on YouTube</a>
-    <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">💬 Chat on WhatsApp</a>
+    <div class="connect-buttons">
+      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">
+        <i class="fab fa-spotify"></i> Listen on Spotify
+      </a>
+      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">
+        <i class="fab fa-youtube"></i> Watch on YouTube
+      </a>
+      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
   </section>
-</body>
-</html>
+
+  <footer>
+    <p>&copy; 2025 Teemo Daking. All rights reserved. |
