@@ -12,336 +12,64 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8036746752481844"
      crossorigin="anonymous"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #ffffff;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #1a1a1a, #111);
-      padding: 3rem 2rem;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    header h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #1DB954;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #1DB954, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cccccc;
-      margin-top: 0.5rem;
-    }
-
-    /* Navigation */
-    nav {
-      background: #1a1a1a;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    nav ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #1DB954;
-    }
-
-    /* Sections */
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #1DB954;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    /* About Section */
-    .about-container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-container img {
-      max-width: 300px;
-      border-radius: 10px;
-      margin: 0 auto 1rem;
-    }
-
-    .about-container p {
-      font-size: 1.1rem;
-      color: #cccccc;
-    }
-
-    /* Connect Buttons */
-    .connect-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.5rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 50px;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
+    header { background: linear-gradient(135deg, #1a1a1a, #111); padding: 3rem 2rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    header h1 { font-size: 3.5rem; font-weight: 700; color: #1DB954; letter-spacing: 1px; text-transform: uppercase; background: linear-gradient(90deg, #1DB954, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    header p { font-size: 1.2rem; color: #cccccc; margin-top: 0.5rem; }
+    nav { background: #1a1a1a; padding: 1rem; position: sticky; top: 0; z-index: 1000; }
+    nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; }
+    nav ul li a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.3s; }
+    nav ul li a:hover { color: #1DB954; }
+    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    section h2 { font-size: 2.5rem; font-weight: 600; color: #1DB954; margin-bottom: 2rem; text-align: center; }
+    .content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .content img { max-width: 300px; border-radius: 10px; margin: 0 auto 1rem; }
+    .content p { font-size: 1.1rem; color: #cccccc; }
+    .connect-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 50px; transition: transform 0.3s; }
+    .btn:hover { transform: scale(1.05); }
     .spotify { background: #1DB954; }
     .youtube { background: #FF0000; }
     .whatsapp { background: #25D366; }
     .paypal { background: #0070BA; }
     .x { background: #1a1a1a; }
     .facebook { background: #1877F2; }
-
-    /* News Section */
-    .news-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .news-card {
-      background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: left;
-    }
-
-    .news-card h3 {
-      font-size: 1.3rem;
-      color: #1DB954;
-      margin-bottom: 0.5rem;
-    }
-
-    .news-card p {
-      font-size: 1rem;
-      color: #cccccc;
-    }
-
-    /* Videos Section */
-    .video-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      height: 315px;
-      border-radius: 8px;
-    }
-
-    /* Newsletter Section */
-    .newsletter-form {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      max-width: 600px;
-      margin: 1rem auto;
-    }
-
-    .newsletter-form input {
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      width: 100%;
-      max-width: 300px;
-    }
-
-    .newsletter-form button {
-      padding: 0.8rem 1.5rem;
-    }
-
-    /* Social Section */
-    .social-container {
-      text-align: center;
-    }
-
-    .social-container p {
-      font-size: 1.1rem;
-      color: #cccccc;
-      margin-bottom: 1rem;
-    }
-
-    /* Merch Section */
-    .merch-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .merch-item {
-      background: #1a1a1a;
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    .merch-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .merch-item p {
-      font-size: 1.1rem;
-      color: #cccccc;
-    }
-
-    /* Poll Section */
-    .poll-container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .poll-container iframe {
-      width: 100%;
-      height: 400px;
-      border-radius: 8px;
-    }
-
-    /* AdSense Section */
-    .adsense {
-      text-align: center;
-      margin: 2rem auto;
-      max-width: 728px;
-      min-height: 90px;
-    }
-
-    .adsense-fallback {
-      display: none;
-      color: #cccccc;
-      font-size: 1rem;
-    }
-
-    /* Donation Section */
-    .donation {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .donation p {
-      font-size: 1.1rem;
-      color: #cccccc;
-      margin-bottom: 1rem;
-    }
-
-    /* Footer */
-    footer {
-      background: #1a1a1a;
-      padding: 2rem;
-      text-align: center;
-      color: #cccccc;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #1DB954;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Design */
+    .news-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .news-card { background: #1a1a1a; padding: 1.5rem; border-radius: 10px; text-align: left; }
+    .news-card h3 { font-size: 1.3rem; color: #1DB954; margin-bottom: 0.5rem; }
+    .news-card p { font-size: 1rem; color: #cccccc; }
+    .video-container { max-width: 800px; margin: 0 auto; }
+    .video-container iframe { width: 100%; height: 315px; border-radius: 8px; }
+    .newsletter-form { display: flex; justify-content: center; gap: 1rem; max-width: 600px; margin: 1rem auto; }
+    .newsletter-form input { padding: 0.8rem; border: none; border-radius: 5px; font-size: 1rem; width: 100%; max-width: 300px; }
+    .newsletter-form button { padding: 0.8rem 1.5rem; }
+    .social-container { text-align: center; }
+    .social-container p { font-size: 1.1rem; color: #cccccc; margin-bottom: 1rem; }
+    .merch-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .merch-item { background: #1a1a1a; padding: 1.5rem; border-radius: 10px; text-align: center; }
+    .merch-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
+    .merch-item p { font-size: 1.1rem; color: #cccccc; }
+    .poll-container { max-width: 800px; margin: 0 auto; text-align: center; }
+    .poll-container iframe { width: 100%; height: 400px; border-radius: 8px; }
+    .adsense { text-align: center; margin: 2rem auto; max-width: 728px; min-height: 90px; }
+    .adsense-fallback { display: none; color: #cccccc; font-size: 1rem; }
+    .donation { text-align: center; margin-top: 2rem; }
+    .donation p { font-size: 1.1rem; color: #cccccc; margin-bottom: 1rem; }
+    footer { background: #1a1a1a; padding: 2rem; text-align: center; color: #cccccc; font-size: 0.9rem; }
+    footer a { color: #1DB954; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      section h2 {
-        font-size: 2rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .about-container img {
-        max-width: 200px;
-      }
-
-      .video-container iframe {
-        height: 200px;
-      }
-
-      .newsletter-form {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .merch-item img {
-        height: 150px;
-      }
-
-      .poll-container iframe {
-        height: 300px;
-      }
-
-      .btn {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-      }
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1rem; }
+      section h2 { font-size: 2rem; }
+      nav ul { flex-direction: column; gap: 1rem; }
+      .content img { max-width: 200px; }
+      .video-container iframe { height: 200px; }
+      .newsletter-form { flex-direction: column; align-items: center; }
+      .merch-item img { height: 150px; }
+      .poll-container iframe { height: 300px; }
+      .btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -368,16 +96,18 @@
 
   <section id="about">
     <h2>About Teemo Daking</h2>
-    <div class="about-container">
+    <div class="content">
       <!-- Replace with your actual artist photo -->
       <img src="https://via.placeholder.com/300x300?text=Teemo+Daking" alt="Teemo Daking">
-      <p>Teemo Daking, hailing from Johannesburg, blends afrobeat and hip-hop with soulful vibes. From local gigs to global streams, my music is about connection and inspiration.</p>
+      <!-- Edit this text via control panel -->
+      <p>[Your bio here, e.g., Teemo Daking, born in Johannesburg, fuses afrobeat and hip-hop with soulful vibes.]</p>
     </div>
   </section>
 
   <section id="connect">
     <h2>Follow & Connect</h2>
     <div class="connect-buttons">
+      <!-- Update these links via control panel -->
       <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">
         <i class="fab fa-spotify"></i> Listen on Spotify
       </a>
@@ -393,31 +123,28 @@
   <section id="news">
     <h2>Latest Updates</h2>
     <div class="news-container">
+      <!-- Add or edit news items via control panel -->
       <div class="news-card">
-        <h3>New Single Out Now!</h3>
-        <p>Posted: September 2025</p>
-        <p>My latest single "Vibe Check" is live on Spotify. Stream now!</p>
+        <h3>[News Title]</h3>
+        <p>Posted: [Date]</p>
+        <p>[News content]</p>
       </div>
-      <div class="news-card">
-        <h3>Live Show in Johannesburg</h3>
-        <p>Posted: August 2025</p>
-        <p>Join me for a live performance on October 15, 2025! Tickets available soon.</p>
-      </div>
+      <!-- Add more news cards as needed -->
     </div>
   </section>
 
   <section id="videos">
     <h2>Watch Teemo Daking</h2>
     <div class="video-container">
-      <!-- Replace YOUR_VIDEO_ID with your YouTube video ID -->
+      <!-- Add or edit video via control panel -->
       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
   <section id="newsletter">
     <h2>Stay in the Loop</h2>
-    <p>Join my newsletter for exclusive updates, new releases, and more!</p>
-    <!-- Replace YOUR_MAILCHIMP_FORM_ACTION with your Mailchimp form action URL -->
+    <p>Join my newsletter for exclusive updates!</p>
+    <!-- Update form action via control panel -->
     <form action="YOUR_MAILCHIMP_FORM_ACTION" method="post" class="newsletter-form">
       <input type="email" name="EMAIL" placeholder="Enter your email" required>
       <button type="submit" class="btn spotify">Subscribe</button>
@@ -426,13 +153,12 @@
 
   <section id="social">
     <h2>Join the Conversation</h2>
-    <p>Follow my latest updates and check out exclusive photos on X and Facebook!</p>
+    <p>Follow my updates and photos!</p>
     <div class="connect-buttons">
-      <!-- Replace YOUR_X_HANDLE with your actual X handle -->
+      <!-- Update these links via control panel -->
       <a class="btn x" href="https://x.com/YOUR_X_HANDLE" target="_blank">
         <i class="fab fa-x"></i> Follow on X
       </a>
-      <!-- Replace YOUR_FACEBOOK_PAGE with your Facebook page or album URL -->
       <a class="btn facebook" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank">
         <i class="fab fa-facebook"></i> See Photos on Facebook
       </a>
@@ -443,11 +169,10 @@
     <h2>Grab Some Merch</h2>
     <p>Support Teemo Daking with exclusive gear!</p>
     <div class="merch-container">
+      <!-- Add or edit merch items via control panel -->
       <div class="merch-item">
-        <!-- Replace with your actual merch image -->
         <img src="https://via.placeholder.com/250x200?text=T-Shirt" alt="Teemo Daking T-Shirt">
-        <p>Teemo Daking T-Shirt - $25</p>
-        <!-- Replace YOUR_MERCH_LINK with your store link -->
+        <p>[Merch name] - [Price]</p>
         <a class="btn paypal" href="YOUR_MERCH_LINK" target="_blank">Buy Now</a>
       </div>
     </div>
@@ -455,9 +180,9 @@
 
   <section id="poll">
     <h2>Your Voice Matters</h2>
-    <p>Vote for the next city I should perform in!</p>
+    <p>Vote for the next city!</p>
     <div class="poll-container">
-      <!-- Replace YOUR_POLL_URL with your StrawPoll or Google Form embed URL -->
+      <!-- Add or edit poll via control panel -->
       <iframe src="YOUR_POLL_URL" frameborder="0"></iframe>
     </div>
   </section>
@@ -485,8 +210,8 @@
 
   <section id="donate" class="donation">
     <h2>Support Teemo Daking</h2>
-    <p>Your donations help me create more music! Support my journey below.</p>
-    <!-- Replace YOUR_BUTTON_ID with your PayPal button ID -->
+    <p>Your donations help me create more music!</p>
+    <!-- Update via control panel -->
     <a class="btn paypal" href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank">
       <i class="fab fa-paypal"></i> Donate via PayPal
     </a>
