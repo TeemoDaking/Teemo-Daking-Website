@@ -1,224 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Official website of Teemo Daking. Discover music, watch videos, and connect with the artist.">
-  <meta name="keywords" content="Teemo Daking, music, afrobeat, hip-hop, artist, Johannesburg">
   <title>Teemo Daking | Official Website</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <!-- AdSense Script -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8036746752481844"
-     crossorigin="anonymous"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
-    header { background: linear-gradient(135deg, #1a1a1a, #111); padding: 3rem 2rem; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-    header h1 { font-size: 3.5rem; font-weight: 700; color: #1DB954; letter-spacing: 1px; text-transform: uppercase; background: linear-gradient(90deg, #1DB954, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    header p { font-size: 1.2rem; color: #cccccc; margin-top: 0.5rem; }
-    nav { background: #1a1a1a; padding: 1rem; position: sticky; top: 0; z-index: 1000; }
-    nav ul { list-style: none; display: flex; justify-content: center; gap: 2rem; }
-    nav ul li a { color: #ffffff; text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.3s; }
-    nav ul li a:hover { color: #1DB954; }
-    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-    section h2 { font-size: 2.5rem; font-weight: 600; color: #1DB954; margin-bottom: 2rem; text-align: center; }
-    .content { max-width: 800px; margin: 0 auto; text-align: center; }
-    .content img { max-width: 300px; border-radius: 10px; margin: 0 auto 1rem; }
-    .content p { font-size: 1.1rem; color: #cccccc; }
-    .connect-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; color: #ffffff; text-decoration: none; font-weight: 600; border-radius: 50px; transition: transform 0.3s; }
-    .btn:hover { transform: scale(1.05); }
+    body { font-family: 'Poppins', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; }
+    header { background: #111; padding: 3rem 2rem; text-align: center; }
+    header h1 { font-size: 3rem; font-weight: 700; color: #1DB954; }
+    header p { font-size: 1.2rem; color: #ccc; margin-top: .5rem; }
+    nav { background: #1a1a1a; padding: 1rem; text-align: center; }
+    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: 500; }
+    nav a:hover { color: #1DB954; }
+    section { padding: 3rem 2rem; max-width: 900px; margin: auto; }
+    section h2 { font-size: 2rem; font-weight: 600; color: #1DB954; margin-bottom: 1rem; text-align: center; }
+    .content { text-align: center; }
+    .content img { max-width: 250px; border-radius: 10px; margin-bottom: 1rem; }
+    .connect-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .btn { padding: 0.8rem 1.5rem; border-radius: 30px; color: #fff; text-decoration: none; font-weight: 600; }
     .spotify { background: #1DB954; }
     .youtube { background: #FF0000; }
     .whatsapp { background: #25D366; }
-    .paypal { background: #0070BA; }
-    .x { background: #1a1a1a; }
-    .facebook { background: #1877F2; }
-    .news-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .news-card { background: #1a1a1a; padding: 1.5rem; border-radius: 10px; text-align: left; }
-    .news-card h3 { font-size: 1.3rem; color: #1DB954; margin-bottom: 0.5rem; }
-    .news-card p { font-size: 1rem; color: #cccccc; }
-    .video-container { max-width: 800px; margin: 0 auto; }
     .video-container iframe { width: 100%; height: 315px; border-radius: 8px; }
-    .newsletter-form { display: flex; justify-content: center; gap: 1rem; max-width: 600px; margin: 1rem auto; }
-    .newsletter-form input { padding: 0.8rem; border: none; border-radius: 5px; font-size: 1rem; width: 100%; max-width: 300px; }
-    .newsletter-form button { padding: 0.8rem 1.5rem; }
-    .social-container { text-align: center; }
-    .social-container p { font-size: 1.1rem; color: #cccccc; margin-bottom: 1rem; }
-    .merch-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .merch-item { background: #1a1a1a; padding: 1.5rem; border-radius: 10px; text-align: center; }
-    .merch-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
-    .merch-item p { font-size: 1.1rem; color: #cccccc; }
-    .poll-container { max-width: 800px; margin: 0 auto; text-align: center; }
-    .poll-container iframe { width: 100%; height: 400px; border-radius: 8px; }
-    .adsense { text-align: center; margin: 2rem auto; max-width: 728px; min-height: 90px; }
-    .adsense-fallback { display: none; color: #cccccc; font-size: 1rem; }
-    .donation { text-align: center; margin-top: 2rem; }
-    .donation p { font-size: 1.1rem; color: #cccccc; margin-bottom: 1rem; }
-    footer { background: #1a1a1a; padding: 2rem; text-align: center; color: #cccccc; font-size: 0.9rem; }
-    footer a { color: #1DB954; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.5rem; }
-      header p { font-size: 1rem; }
-      section h2 { font-size: 2rem; }
-      nav ul { flex-direction: column; gap: 1rem; }
-      .content img { max-width: 200px; }
-      .video-container iframe { height: 200px; }
-      .newsletter-form { flex-direction: column; align-items: center; }
-      .merch-item img { height: 150px; }
-      .poll-container iframe { height: 300px; }
-      .btn { padding: 0.7rem 1.2rem; font-size: 0.9rem; }
-    }
+    .newsletter-form { text-align: center; margin-top: 1rem; }
+    .newsletter-form input { padding: 0.8rem; border-radius: 5px; border: none; width: 70%; max-width: 300px; }
+    .newsletter-form button { padding: 0.8rem 1.2rem; margin-top: 1rem; border: none; border-radius: 30px; background: #1DB954; color: #fff; font-weight: 600; cursor: pointer; }
+    footer { background: #1a1a1a; padding: 1.5rem; text-align: center; color: #ccc; font-size: 0.9rem; }
   </style>
 </head>
 <body>
   <header>
     <h1>Teemo Daking</h1>
     <p>Official Website & Updates</p>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#connect">Connect</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#videos">Videos</a></li>
-      <li><a href="#newsletter">Newsletter</a></li>
-      <li><a href="#social">Social</a></li>
-      <li><a href="#merch">Merch</a></li>
-      <li><a href="#poll">Poll</a></li>
-      <li><a href="#donate">Donate</a></li>
-    </ul>
-  </nav>
-
-  <section id="about">
-    <h2>About Teemo Daking</h2>
+  </header>  <nav>
+    <a href="#about">About</a>
+    <a href="#connect">Connect</a>
+    <a href="#news">News</a>
+    <a href="#videos">Videos</a>
+    <a href="#newsletter">Newsletter</a>
+  </nav>  <section id="about">
+    <h2>About</h2>
     <div class="content">
-      <!-- Replace with your actual artist photo -->
-      <img src="https://via.placeholder.com/300x300?text=Teemo+Daking" alt="Teemo Daking">
-      <!-- Edit this text via control panel -->
-      <p>[Your bio here, e.g., Teemo Daking, born in Johannesburg, fuses afrobeat and hip-hop with soulful vibes.]</p>
+      <img src="https://via.placeholder.com/250x250?text=Teemo+Daking" alt="Teemo Daking">
+      <p>Teemo Daking, born in Johannesburg, fuses Afrobeat and Hip-Hop with soulful vibes.</p>
     </div>
-  </section>
-
-  <section id="connect">
+  </section>  <section id="connect">
     <h2>Follow & Connect</h2>
     <div class="connect-buttons">
-      <!-- Update these links via control panel -->
-      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">
-        <i class="fab fa-spotify"></i> Listen on Spotify
-      </a>
-      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">
-        <i class="fab fa-youtube"></i> Watch on YouTube
-      </a>
-      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-      </a>
+      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">Spotify</a>
+      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">YouTube</a>
+      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">WhatsApp</a>
     </div>
-  </section>
-
-  <section id="news">
-    <h2>Latest Updates</h2>
-    <div class="news-container">
-      <!-- Add or edit news items via control panel -->
-      <div class="news-card">
-        <h3>[News Title]</h3>
-        <p>Posted: [Date]</p>
-        <p>[News content]</p>
-      </div>
-      <!-- Add more news cards as needed -->
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>Watch Teemo Daking</h2>
+  </section>  <section id="news">
+    <h2>Latest News</h2>
+    <p style="text-align:center; color:#ccc;">No updates yet. Stay tuned!</p>
+  </section>  <section id="videos">
+    <h2>Watch</h2>
     <div class="video-container">
-      <!-- Add or edit video via control panel -->
       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </div>
-  </section>
-
-  <section id="newsletter">
-    <h2>Stay in the Loop</h2>
-    <p>Join my newsletter for exclusive updates!</p>
-    <!-- Update form action via control panel -->
-    <form action="YOUR_MAILCHIMP_FORM_ACTION" method="post" class="newsletter-form">
+  </section>  <section id="newsletter">
+    <h2>Newsletter</h2>
+    <p style="text-align:center;">Subscribe for updates!</p>
+    <form action="#" method="post" class="newsletter-form">
       <input type="email" name="EMAIL" placeholder="Enter your email" required>
-      <button type="submit" class="btn spotify">Subscribe</button>
+      <br>
+      <button type="submit">Subscribe</button>
     </form>
-  </section>
-
-  <section id="social">
-    <h2>Join the Conversation</h2>
-    <p>Follow my updates and photos!</p>
-    <div class="connect-buttons">
-      <!-- Update these links via control panel -->
-      <a class="btn x" href="https://x.com/YOUR_X_HANDLE" target="_blank">
-        <i class="fab fa-x"></i> Follow on X
-      </a>
-      <a class="btn facebook" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank">
-        <i class="fab fa-facebook"></i> See Photos on Facebook
-      </a>
-    </div>
-  </section>
-
-  <section id="merch">
-    <h2>Grab Some Merch</h2>
-    <p>Support Teemo Daking with exclusive gear!</p>
-    <div class="merch-container">
-      <!-- Add or edit merch items via control panel -->
-      <div class="merch-item">
-        <img src="https://via.placeholder.com/250x200?text=T-Shirt" alt="Teemo Daking T-Shirt">
-        <p>[Merch name] - [Price]</p>
-        <a class="btn paypal" href="YOUR_MERCH_LINK" target="_blank">Buy Now</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="poll">
-    <h2>Your Voice Matters</h2>
-    <p>Vote for the next city!</p>
-    <div class="poll-container">
-      <!-- Add or edit poll via control panel -->
-      <iframe src="YOUR_POLL_URL" frameborder="0"></iframe>
-    </div>
-  </section>
-
-  <section class="adsense">
-    <h2>Sponsored</h2>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8036746752481844"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <div class="adsense-fallback">
-      <p>Advertisement placeholder (AdSense ad not loaded).</p>
-    </div>
-    <script>
-      try {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) {
-        console.error('AdSense failed to load:', e);
-        document.querySelector('.adsense-fallback').style.display = 'block';
-      }
-    </script>
-  </section>
-
-  <section id="donate" class="donation">
-    <h2>Support Teemo Daking</h2>
-    <p>Your donations help me create more music!</p>
-    <!-- Update via control panel -->
-    <a class="btn paypal" href="https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID" target="_blank">
-      <i class="fab fa-paypal"></i> Donate via PayPal
-    </a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Teemo Daking. All rights reserved. | <a href="https://x.ai/grok">Powered by xAI</a></p>
+  </section>  <footer>
+    <p>&copy; 2025 Teemo Daking. All rights reserved.</p>
   </footer>
 </body>
 </html>
