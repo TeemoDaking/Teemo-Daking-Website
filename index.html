@@ -6,14 +6,83 @@
   <meta name="description" content="Official website of Teemo Daking. Discover music, watch videos, and connect with the artist.">
   <title>Teemo Daking | Official Website</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #0a0a0a; color: #ffffff; line-height: 1.6; }
-    header { background: #111; padding: 3rem 2rem; text-align: center; }
-    header h1 { font-size: 3rem; font-weight: 700; color: #1DB954; }
-    header p { font-size: 1.2rem; color: #ccc; margin-top: .5rem; }
-    nav { background: #1a1a1a; padding: 1rem; text-align: center; }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; font-weight: 500; }
-    nav a:hover { color: #1DB954; }
-    section { padding: 3rem
+    body { font-family: 'Poppins', sans-serif; background:#0a0a0a; color:#fff; margin:0; padding:0; line-height:1.6; }
+    header { text-align:center; padding:3rem 2rem; background:#111; }
+    header h1 { font-size:3rem; color:#1DB954; margin:0; }
+    header p { font-size:1.2rem; color:#ccc; margin-top:.5rem; }
+    nav { background:#1a1a1a; padding:1rem; text-align:center; }
+    nav a { color:#fff; margin:0 1rem; text-decoration:none; font-weight:500; }
+    nav a:hover { color:#1DB954; }
+    section { max-width:900px; margin:3rem auto; padding:2rem; }
+    h2 { color:#1DB954; text-align:center; margin-bottom:1rem; }
+    .content { text-align:center; }
+    .connect-buttons { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1rem; }
+    .btn { padding:0.8rem 1.5rem; border-radius:30px; font-weight:600; text-decoration:none; color:#fff; }
+    .spotify { background:#1DB954; }
+    .youtube { background:#FF0000; }
+    .whatsapp { background:#25D366; }
+    .linktree { background:#39E09B; }
+    footer { background:#1a1a1a; text-align:center; padding:1.5rem; font-size:0.9rem; color:#ccc; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Teemo Daking</h1>
+    <p>Official Website & Updates</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#connect">Connect</a>
+    <a href="#news">News</a>
+    <a href="#videos">Videos</a>
+    <a href="#newsletter">Newsletter</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="content">
+      <p><strong>Teemo Daking</strong>, born in Saaiplaas, fuses Afrobeat and Hip-Hop with soulful vibes.</p>
+    </div>
+  </section>
+
+  <section id="connect">
+    <h2>Follow & Connect</h2>
+    <div class="connect-buttons">
+      <a class="btn spotify" href="https://open.spotify.com/album/73fe3DhL0dN0VGQt7vuGnU?si=Lbz7u7_KReGh_Ajcw5qd2A" target="_blank">Spotify</a>
+      <a class="btn youtube" href="https://www.youtube.com/@TeemoDaking" target="_blank">YouTube</a>
+      <a class="btn whatsapp" href="https://wa.me/27710315772" target="_blank">WhatsApp</a>
+      <a class="btn linktree" href="https://linktr.ee/TeemoDaking" target="_blank">Linktree</a>
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>Latest News</h2>
+    <p style="text-align:center; color:#ccc;">No updates yet. Stay tuned!</p>
+  </section>
+
+  <section id="videos">
+    <h2>Watch</h2>
+    <div class="content">
+      <p style="color:#777;">(No video embedded yet)</p>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <h2>Newsletter</h2>
+    <p style="text-align:center;">Subscribe for updates!</p>
+    <div class="content">
+      <form action="#" method="post">
+        <input type="email" name="EMAIL" placeholder="Enter your email" required style="padding:0.8rem; border:none; border-radius:5px; width:70%; max-width:300px;">
+        <br><br>
+        <button type="submit" style="padding:0.8rem 1.5rem; border:none; border-radius:30px; background:#1DB954; color:#fff; font-weight:600; cursor:pointer;">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Teemo Daking. All rights reserved.</p>
+  </footer>
+</body>
+</html>
