@@ -14,12 +14,14 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
+      background: linear-gradient(135deg, #1f1f1f, #0b0b0b);
       color: #fff;
       line-height: 1.6;
     }
+
+    /* HEADER */
     header {
-      background: #000;
+      background: linear-gradient(90deg, #ff0080, #7928ca);
       padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
@@ -27,11 +29,18 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
     }
     header h1 {
       font-size: 2rem;
-      color: #facc15;
+      text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff0080;
+      transition: text-shadow 0.3s;
     }
+    header h1:hover {
+      text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+    }
+
+    /* NAVIGATION */
     nav {
       display: flex;
       gap: 1rem;
@@ -41,11 +50,15 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 1.1rem;
-      transition: 0.3s;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
     }
     nav a:hover {
-      color: #facc15;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
     }
+
+    /* BUTTONS */
     .auth-buttons {
       display: flex;
       gap: 0.5rem;
@@ -56,24 +69,31 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      transition: 0.3s;
+      transition: all 0.3s ease;
     }
     .listen {
-      background: #facc15;
-      color: #000;
+      background: linear-gradient(45deg, #ffdd00, #ff0066);
+      box-shadow: 0 4px 12px rgba(255, 0, 102, 0.6);
     }
     .listen:hover {
-      background: #fff;
+      background: linear-gradient(45deg, #ff0066, #ffdd00);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0066;
+      transform: scale(1.05);
     }
     .subscribe-btn {
-      background: #ef4444;
-      color: #fff;
+      background: linear-gradient(45deg, #00ffff, #0055ff);
+      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.6);
     }
     .subscribe-btn:hover {
-      background: #dc2626;
+      background: linear-gradient(45deg, #0055ff, #00ffff);
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #0055ff;
+      transform: scale(1.05);
     }
+
+    /* HERO SECTION */
     .hero {
-      background: url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      background: linear-gradient(135deg, rgba(255, 0, 128, 0.7), rgba(0, 85, 255, 0.7)), 
+                  url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
       padding: 6rem 5%;
       text-align: center;
       position: relative;
@@ -85,7 +105,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.4);
     }
     .hero h2,
     .hero p,
@@ -96,17 +116,24 @@
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #facc15;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+      transition: text-shadow 0.3s;
+    }
+    .hero h2:hover {
+      text-shadow: 0 0 30px #00ffff, 0 0 60px #ff00ff;
     }
     .hero p {
       margin-bottom: 1.5rem;
       font-size: 1.4rem;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
+
+    /* SEARCH BOX */
     .search-box {
       background: rgba(0, 0, 0, 0.7);
       padding: 1.5rem;
       border-radius: 10px;
-      width: 100%;
       max-width: 500px;
       margin: 0 auto;
     }
@@ -128,15 +155,21 @@
       padding: 0.8rem 1.5rem;
       border: none;
       border-radius: 5px;
-      background: #ef4444;
+      background: linear-gradient(45deg, #ff0080, #ffdd00);
       color: #fff;
       font-weight: 600;
       font-size: 1.1rem;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 221, 0, 0.5);
+      transition: all 0.3s ease;
     }
     .search-box button:hover {
-      background: #dc2626;
+      background: linear-gradient(45deg, #ffdd00, #ff0080);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0080;
+      transform: scale(1.05);
     }
+
+    /* SECTIONS */
     section {
       padding: 5rem 5%;
       text-align: center;
@@ -144,36 +177,48 @@
     section h3 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #facc15;
+      color: #ff00ff;
+      text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff0080;
+      transition: text-shadow 0.3s;
+    }
+    section h3:hover {
+      text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0080;
     }
     section p {
       font-size: 1.2rem;
     }
+
+    /* SUBSCRIBE BUTTON */
     .subscribe .join-link {
       display: inline-block;
       padding: 0.8rem 1.5rem;
-      border: none;
       border-radius: 5px;
-      background: #ef4444;
+      background: linear-gradient(45deg, #ff0080, #ffdd00);
       color: #fff;
       font-weight: 600;
       font-size: 1.1rem;
       text-decoration: none;
       cursor: pointer;
-      pointer-events: auto;
-      z-index: 10;
-      transition: background 0.3s;
+      box-shadow: 0 4px 12px rgba(255, 221, 0, 0.5);
+      transition: all 0.3s ease;
     }
     .subscribe .join-link:hover {
-      background: #dc2626;
+      background: linear-gradient(45deg, #ffdd00, #ff0080);
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0080;
+      transform: scale(1.05);
     }
+
+    /* FOOTER */
     footer {
-      background: #000;
-      color: #999;
+      background: linear-gradient(90deg, #000000, #1f1f1f);
+      color: #ccc;
       text-align: center;
       padding: 1.5rem 5%;
       font-size: 1rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
+
+    /* SOCIAL ICONS */
     .social-icons {
       margin-top: 1rem;
     }
@@ -181,20 +226,29 @@
       margin: 0 0.5rem;
       color: #fff;
       font-size: 1.5rem;
-      transition: 0.3s;
+      transition: all 0.3s ease;
     }
     .social-icons a:hover {
-      color: #facc15;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff0080;
+      transform: scale(1.2);
     }
+
+    /* IFRAME */
     iframe {
       border-radius: 12px;
       margin-top: 20px;
       width: 100%;
       max-width: 600px;
       height: 400px;
+      transition: all 0.3s ease;
+    }
+    iframe:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
     }
 
-    /* Hamburger Menu */
+    /* HAMBURGER MENU */
     .menu-toggle {
       display: none;
       font-size: 1.5rem;
@@ -207,7 +261,7 @@
       display: flex;
     }
 
-    /* Media Queries for Mobile */
+    /* MEDIA QUERIES */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -226,7 +280,6 @@
       }
       nav a {
         font-size: 1.2rem;
-        padding: 0.5rem;
       }
       .auth-buttons {
         width: 100%;
@@ -273,8 +326,6 @@
         font-size: 1.4rem;
       }
     }
-
-    /* Media Queries for Smaller Mobile Devices */
     @media (max-width: 480px) {
       header h1 {
         font-size: 1.8rem;
@@ -324,7 +375,6 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
     <h1>Teemo Daking</h1>
@@ -383,7 +433,7 @@
     <h3>Contact & Follow</h3>
     <p>For bookings & collaborations: <br> thabisomakua010706@gmail.com | 071 031 5772</p>
     <div class="social-icons">
-      <a href="https://open.spotify.com/artist/YOUR_ARTIST_ID" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://open.spotify.com/artist/5cEjvE3h1ULOFVlcF3YToD" target="_blank"><i class="fab fa-spotify"></i></a>
       <a href="https://youtube.com/channel/UC2ntiYtCQRsUcYLqCUliLEg" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://wa.me/27710315772" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="https://linktr.ee/TeemoDaking" target="_blank"><i class="fas fa-link"></i></a>
