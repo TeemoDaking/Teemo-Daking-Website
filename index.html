@@ -318,4 +318,129 @@
         max-width: 90%;
       }
       section {
-        padding
+        padding: 2rem 5%;
+      }
+      section h3 {
+        font-size: 1.6rem;
+      }
+      section p {
+        font-size: 1rem;
+      }
+      footer {
+        font-size: 0.9rem;
+      }
+      iframe {
+        height: 280px;
+      }
+      .social-icons a {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Teemo Daking</h1>
+    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+    <nav>
+      <a href="#music">Music</a>
+      <a href="#videos">Videos</a>
+      <a href="#albums">EPs & Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="https://linktr.ee/TeemoDaking" class="listen" target="_blank">Listen</a>
+      <a href="#subscribe" class="subscribe-btn">Subscribe</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>Experience the Sound of Teemo Daking</h2>
+    <p>Stream my latest EP,Splash of hope <strong>Sedi Laka</strong>, and explore my music world.</p>
+    <div class="search-box">
+      <form>
+        <input type="text" placeholder="Search Songs, EPs, Videos">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- MUSIC WITH SPOTIFY EMBED -->
+  <section id="music">
+    <h3>Listen Now: Sedi Laka (EP)</h3>
+    <iframe src="https://open.spotify.com/embed/album/73fe3DhL0dN0VGQt7vuGnU?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section id="videos">
+    <h3>Latest Video</h3>
+    <p>Check out my latest videos on <a href="https://youtube.com/channel/UC2ntiYtCQRsUcYLqCUliLEg" target="_blank">YouTube</a>.</p>
+  </section>
+
+  <!-- EP & PROJECTS SECTION -->
+  <section id="albums">
+    <h3>EPs & Projects</h3>
+    <p>Explore the EP <strong>Sedi Laka</strong> and more of my creative work.</p>
+  </section>
+
+  <!-- SUBSCRIBE SECTION -->
+  <section id="subscribe" class="subscribe">
+    <h3>Stay Updated</h3>
+    <p>Receive news when I release new music and videos.</p>
+    <form id="subscribe-form">
+      <input type="email" name="EMAIL" placeholder="Enter your email" required>
+      <button type="submit" id="join-button">Join</button>
+    </form>
+    <p id="form-message" style="display: none; margin-top: 1rem; color: #facc15;"></p>
+  </section>
+
+  <!-- CONTACT & SOCIAL LINKS -->
+  <section id="contact">
+    <h3>Contact & Follow</h3>
+    <p>For bookings & collaborations: <br> thabisomakua010706@gmail.com | 071 031 5772</p>
+    <div class="social-icons">
+      <a href="https://open.spotify.com/artist/YOUR_ARTIST_ID" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://youtube.com/channel/UC2ntiYtCQRsUcYLqCUliLEg" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://wa.me/27710315772" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://linktr.ee/TeemoDaking" target="_blank"><i class="fas fa-link"></i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Teemo Daking. All Rights Reserved. | Inspired by Originals Entertainment</p>
+  </footer>
+
+  <script>
+    // Hamburger Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Basic Form Submission Handling
+    const subscribeForm = document.getElementById('subscribe-form');
+    const joinButton = document.getElementById('join-button');
+    const formMessage = document.getElementById('form-message');
+
+    subscribeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      joinButton.disabled = true;
+      formMessage.style.display = 'block';
+      formMessage.textContent = 'Processing...';
+
+      // Simulate form submission (replace with actual backend integration)
+      setTimeout(() => {
+        formMessage.textContent = 'Thank you for subscribing! Check your email for confirmation.';
+        joinButton.disabled = false;
+        subscribeForm.reset();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
