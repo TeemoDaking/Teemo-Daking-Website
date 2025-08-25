@@ -149,21 +149,8 @@
     section p {
       font-size: 1.2rem;
     }
-    .subscribe form {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .subscribe input {
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-      width: 100%;
-      max-width: 320px;
-      font-size: 1.1rem;
-    }
-    .subscribe button {
+    .subscribe .join-link {
+      display: inline-block;
       padding: 0.8rem 1.5rem;
       border: none;
       border-radius: 5px;
@@ -171,15 +158,14 @@
       color: #fff;
       font-weight: 600;
       font-size: 1.1rem;
+      text-decoration: none;
       cursor: pointer;
       pointer-events: auto;
+      z-index: 10;
+      transition: background 0.3s;
     }
-    .subscribe button:hover {
+    .subscribe .join-link:hover {
       background: #dc2626;
-    }
-    .subscribe button:disabled {
-      background: #999;
-      cursor: not-allowed;
     }
     footer {
       background: #000;
@@ -276,11 +262,7 @@
       section p {
         font-size: 1.1rem;
       }
-      .subscribe form {
-        flex-direction: column;
-      }
-      .subscribe input,
-      .subscribe button {
+      .subscribe .join-link {
         font-size: 1rem;
         max-width: 100%;
       }
@@ -311,9 +293,11 @@
         font-size: 1.1rem;
       }
       .search-box input,
-      .search-box button,
-      .subscribe input,
-      .subscribe button {
+      .search-box button {
+        font-size: 0.9rem;
+        max-width: 90%;
+      }
+      .subscribe .join-link {
         font-size: 0.9rem;
         max-width: 90%;
       }
@@ -360,7 +344,7 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <h2>Experience the Sound of Teemo Daking</h2>
-    <p>Stream my latest EP,Splash of hope <strong>Sedi Laka</strong>, and explore my music world.</p>
+    <p>Stream my latest EP, <strong>Sedi Laka</strong>, and explore my music world.</p>
     <div class="search-box">
       <form>
         <input type="text" placeholder="Search Songs, EPs, Videos">
@@ -391,11 +375,7 @@
   <section id="subscribe" class="subscribe">
     <h3>Stay Updated</h3>
     <p>Receive news when I release new music and videos.</p>
-    <form id="subscribe-form">
-      <input type="email" name="EMAIL" placeholder="Enter your email" required>
-      <button type="submit" id="join-button">Join</button>
-    </form>
-    <p id="form-message" style="display: none; margin-top: 1rem; color: #facc15;"></p>
+    <a href="mailto:inspiredbyoriginals@gmail.com?subject=Join%20Teemo%20Daking%20Newsletter&body=Please%20add%20me%20to%20your%20newsletter." class="join-link">Join</a>
   </section>
 
   <!-- CONTACT & SOCIAL LINKS -->
@@ -423,23 +403,10 @@
       nav.classList.toggle('active');
     });
 
-    // Basic Form Submission Handling
-    const subscribeForm = document.getElementById('subscribe-form');
-    const joinButton = document.getElementById('join-button');
-    const formMessage = document.getElementById('form-message');
-
-    subscribeForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      joinButton.disabled = true;
-      formMessage.style.display = 'block';
-      formMessage.textContent = 'Processing...';
-
-      // Simulate form submission (replace with actual backend integration)
-      setTimeout(() => {
-        formMessage.textContent = 'Thank you for subscribing! Check your email for confirmation.';
-        joinButton.disabled = false;
-        subscribeForm.reset();
-      }, 1000);
+    // Debug Join Button Click
+    const joinLink = document.querySelector('.join-link');
+    joinLink.addEventListener('click', () => {
+      console.log('Join link clicked');
     });
   </script>
 </body>
