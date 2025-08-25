@@ -172,9 +172,14 @@
       font-weight: 600;
       font-size: 1.1rem;
       cursor: pointer;
+      pointer-events: auto;
     }
     .subscribe button:hover {
       background: #dc2626;
+    }
+    .subscribe button:disabled {
+      background: #999;
+      cursor: not-allowed;
     }
     footer {
       background: #000;
@@ -386,10 +391,11 @@
   <section id="subscribe" class="subscribe">
     <h3>Stay Updated</h3>
     <p>Receive news when I release new music and videos.</p>
-    <form>
+    <form id="subscribe-form">
       <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Join</button>
+      <button type="submit" id="join-button">Join</button>
     </form>
+    <p id="form-message" style="display: none; margin-top: 1rem; color: #facc15;"></p>
   </section>
 
   <!-- CONTACT & SOCIAL LINKS -->
@@ -415,6 +421,25 @@
     const nav = document.querySelector('nav');
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
+    });
+
+    // Basic Form Submission Handling
+    const subscribeForm = document.getElementById('subscribe-form');
+    const joinButton = document.getElementById('join-button');
+    const formMessage = document.getElementById('form-message');
+
+    subscribeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      joinButton.disabled = true;
+      formMessage.style.display = 'block';
+      formMessage.textContent = 'Processing...';
+
+      // Simulate form submission (replace with actual backend integration)
+      setTimeout(() => {
+        formMessage.textContent = 'Thank you for subscribing! Check your email for confirmation.';
+        joinButton.disabled = false;
+        subscribeForm.reset();
+      }, 1000);
     });
   </script>
 </body>
