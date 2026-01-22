@@ -1,548 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="FindMeJobs - Your platform for Jobs, Learnerships, Internships & Bursaries" />
-  <title>FindMeJobs | Home</title>
-  <style>
-    /* Reset and base styles */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EasyJobFinder - Find Jobs, Learnerships, Internships & Bursaries in South Africa">
+<title>EasyJobFinder | Home</title>
 
-    body {
-      background-color: #fff;
-      color: #000;
-      max-width: 960px;
-      margin: 50px auto;
-      padding: 0 20px 60px;
-      line-height: 1.6;
-      user-select: none;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s ease;
-      cursor: pointer;
-      user-select: text;
-    }
-    a:hover,
-    a:focus {
-      color: #555;
-      outline: none;
-      text-shadow: none;
-    }
+body {
+  background: #fff;
+  color: #000;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
 
-    header {
-      background: #000;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow:
-        0 4px 6px rgba(0,0,0,0.9),
-        inset 0 4px 6px rgba(80,80,80,0.8);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      user-select: none;
-    }
+/* HEADER */
+header {
+  background: #000;
+  color: #fff;
+  padding: 18px 25px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    header h1 {
-      color: #fff;
-      font-size: 30px;
-      font-weight: 900;
-      letter-spacing: 2.2px;
-      text-shadow: 1px 1px 3px #222;
-      user-select: none;
-    }
+header h1 {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
 
-    nav {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      position: relative;
-      font-weight: 700;
-      user-select: none;
-    }
+/* NAV */
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-    /* Dropdown container */
-    .dropdown {
-      position: relative;
-    }
-    .dropdown > button {
-      background:
-        linear-gradient(145deg, #222, #000);
-      border: none;
-      font-size: 16px;
-      font-weight: 900;
-      color: white;
-      cursor: pointer;
-      padding: 12px 16px;
-      border-radius: 10px;
-      box-shadow:
-        2px 2px 7px #000,
-        inset -3px -3px 7px #444;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      user-select: none;
-    }
-    .dropdown > button:hover,
-    .dropdown > button:focus {
-      background:
-        linear-gradient(145deg, #555, #333);
-      box-shadow:
-        0 0 20px #666,
-        inset 0 0 14px #888;
-      outline: none;
-      color: #eee;
-      text-shadow: 0 0 7px #eee;
-    }
+nav a, nav button {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
 
-    /* Dropdown menu */
-    .dropdown-menu {
-      position: absolute;
-      top: 48px;
-      left: 0;
-      background: #fff;
-      box-shadow:
-        0 10px 16px rgba(0, 0, 0, 0.25);
-      border-radius: 12px;
-      min-width: 220px;
-      display: none;
-      flex-direction: column;
-      z-index: 1000;
-      user-select: none;
-      border: 1.5px solid #ccc;
-      font-weight: 700;
-    }
-    .dropdown-menu a {
-      padding: 14px 20px;
-      font-size: 15px;
-      color: #000;
-      text-align: left;
-      border-bottom: 1.5px solid #eee;
-      transition: background-color 0.25s ease, color 0.25s ease;
-      user-select: none;
-    }
-    .dropdown-menu a:last-child {
-      border-bottom: none;
-    }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-      background-color: #eee;
-      color: #111;
-      outline: none;
-      box-shadow: inset 0 0 10px #bbb;
-      user-select: none;
-    }
+nav a:hover, nav button:hover {
+  text-decoration: underline;
+}
 
-    /* Show dropdown */
-    .dropdown.open .dropdown-menu {
-      display: flex;
-    }
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
 
-    /* Responsive dropdown adjustments */
-    @media (max-width: 720px) {
-      nav {
-        flex-direction: column;
-        background: #000;
-        width: 100%;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        padding: 18px 0;
-        border-radius: 0 0 14px 14px;
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        z-index: 999;
-        font-weight: 900;
-      }
-      nav.open {
-        max-height: 520px;
-      }
-      nav a,
-      .dropdown > button {
-        width: 100%;
-        padding: 16px 0;
-        text-align: center;
-        border-radius: 0;
-        font-size: 17px;
-        color: #fff;
-        background: transparent;
-        box-shadow: none;
-      }
-      nav a:hover,
-      nav a:focus,
-      .dropdown > button:hover,
-      .dropdown > button:focus {
-        color: #aaa;
-        text-shadow: none;
-        background: transparent;
-        box-shadow: none;
-      }
-      .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background: transparent;
-        flex-direction: column;
-        border: none;
-      }
-      .dropdown-menu a {
-        color: #fff;
-        padding-left: 32px;
-        border-bottom: none;
-        text-align: left;
-        box-shadow: none;
-      }
-      .dropdown-menu a:hover,
-      .dropdown-menu a:focus {
-        background-color: transparent;
-        color: #ccc;
-        text-shadow: none;
-        box-shadow: none;
-      }
-    }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #fff;
+  color: #000;
+  top: 35px;
+  left: 0;
+  min-width: 230px;
+  border: 2px solid #000;
+  z-index: 1000;
+}
 
-    /* Hamburger menu */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 28px;
-      height: 22px;
-      cursor: pointer;
-      user-select: none;
-    }
-    .menu-toggle span {
-      display: block;
-      height: 4px;
-      background: #fff;
-      border-radius: 2.5px;
-      box-shadow: 0 1.5px 2px rgba(0,0,0,0.35);
-      transition: all 0.3s ease;
-    }
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 7px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -7px);
-    }
+.dropdown-menu a {
+  display: block;
+  padding: 12px;
+  font-weight: 700;
+  color: #000;
+}
 
-    /* Show hamburger on smaller screens */
-    @media (max-width: 720px) {
-      .menu-toggle {
-        display: flex;
-      }
-    }
+.dropdown-menu a:hover {
+  background: #eee;
+}
 
-    main h2 {
-      color: #000;
-      font-size: 40px;
-      font-weight: 900;
-      margin-bottom: 25px;
-      user-select: none;
-    }
-    main p.intro {
-      font-size: 1.2rem;
-      color: #222;
-      margin-bottom: 50px;
-      max-width: 720px;
-      font-weight: 800;
-      user-select: text;
-    }
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
-    section.featured {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 36px;
-    }
+/* MAIN */
+main {
+  margin-top: 40px;
+}
 
-    .job-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 35px 32px;
-      box-shadow:
-        6px 6px 18px rgba(0,0,0,0.15);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      user-select: none;
-    }
-    .job-card:hover,
-    .job-card:focus-within {
-      box-shadow:
-        8px 8px 25px rgba(0,0,0,0.3);
-      transform: translateY(-7px);
-    }
-    .job-title {
-      color: #000;
-      font-size: 26px;
-      font-weight: 900;
-      margin-bottom: 12px;
-      line-height: 1.3;
-      user-select: text;
-    }
-    .job-company {
-      font-size: 16px;
-      color: #222;
-      margin-bottom: 20px;
-      font-style: italic;
-      user-select: text;
-    }
-    .job-desc {
-      font-size: 17px;
-      color: #222;
-      margin-bottom: 26px;
-      flex-grow: 1;
-      font-weight: 700;
-      user-select: text;
-    }
-    .apply {
-      align-self: flex-start;
-      padding: 14px 30px;
-      background:
-        linear-gradient(145deg, #000, #222);
-      color: white;
-      font-weight: 900;
-      border-radius: 14px;
-      cursor: pointer;
-      box-shadow:
-        4px 4px 14px #000,
-        inset -3px -3px 9px #444;
-      border: none;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      font-size: 17px;
-    }
-    .apply:hover,
-    .apply:focus {
-      background:
-        linear-gradient(145deg, #555, #777);
-      box-shadow:
-        0 0 28px #888,
-        inset 0 0 20px #bbb;
-      outline: none;
-      color: #eee;
-      text-shadow: 0 0 8px #eee;
-    }
+main h2 {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
 
-    footer {
-      text-align: center;
-      margin: 80px 0 35px;
-      color: #000;
-      font-size: 1.05rem;
-      font-weight: 900;
-      user-select: none;
-    }
+.intro {
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 750px;
+  margin-bottom: 40px;
+}
 
-    /* Sign-Up Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-      user-select: none;
-      padding: 20px;
-    }
-    .modal-overlay.active {
-      display: flex;
-    }
-    .modal {
-      background: #fff;
-      padding: 40px 45px;
-      border-radius: 18px;
-      width: 100%;
-      max-width: 460px;
-      box-shadow:
-        0 14px 40px rgba(0, 0, 0, 0.85);
-      text-align: center;
-      user-select: text;
-      position: relative;
-    }
-    .modal h3 {
-      font-size: 30px;
-      font-weight: 900;
-      margin-bottom: 25px;
-      color: #000;
-    }
-    .modal p {
-      font-size: 17px;
-      color: #222;
-      margin-bottom: 35px;
-      font-weight: 700;
-    }
-    .modal input[type="email"] {
-      width: 100%;
-      padding: 16px 20px;
-      font-size: 17px;
-      border-radius: 12px;
-      border: 2.5px solid #444;
-      outline: none;
-      margin-bottom: 30px;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      font-weight: 900;
-      color: #000;
-    }
-    .modal input[type="email"]:focus {
-      border-color: #000;
-      box-shadow: 0 0 16px #555;
-    }
-    .modal button.submit {
-      background:
-        linear-gradient(145deg, #000, #222);
-      border: none;
-      padding: 16px 36px;
-      font-size: 20px;
-      font-weight: 900;
-      border-radius: 14px;
-      cursor: pointer;
-      color: white;
-      transition: background 0.4s ease, box-shadow 0.4s ease;
-      box-shadow:
-        5px 5px 18px #000,
-        inset -3px -3px 10px #444;
-      user-select: none;
-    }
-    .modal button.submit:hover,
-    .modal button.submit:focus {
-      background:
-        linear-gradient(145deg, #555, #777);
-      box-shadow:
-        0 0 36px #888,
-        inset 0 0 25px #bbb;
-      outline: none;
-      color: #eee;
-      text-shadow: 0 0 12px #eee;
-    }
-    .modal button.close-btn {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      background: transparent;
-      border: none;
-      font-size: 36px;
-      color: #222;
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.3s ease;
-    }
-    .modal button.close-btn:hover,
-    .modal button.close-btn:focus {
-      color: #000;
-      outline: none;
-    }
-    .modal .success-message {
-      font-size: 17px;
-      color: #222;
-      margin-top: 24px;
-      font-weight: 900;
-      user-select: text;
-    }
+/* JOB CARDS */
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
 
-    /* Responsive adjustments */
-    @media (max-width: 480px) {
-      main h2 {
-        font-size: 32px;
-      }
-      nav a,
-      .dropdown > button {
-        font-size: 16px;
-      }
-      .job-title {
-        font-size: 22px;
-      }
-      .apply {
-        font-size: 16px;
-        padding: 12px 26px;
-      }
-      .modal h3 {
-        font-size: 26px;
-      }
-      .modal p {
-        font-size: 15px;
-      }
-      .modal button.submit {
-        font-size: 18px;
-        padding: 14px 30px;
-      }
-    }
-  </style>
+.job-card {
+  border: 2px solid #000;
+  border-radius: 12px;
+  padding: 25px;
+  background: #fff;
+}
+
+.job-card h3 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.apply {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.apply:hover {
+  background: #333;
+}
+
+/* SIGNUP BUTTON */
+.signup-btn {
+  margin-top: 40px;
+  background: #000;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal h3 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.modal p {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+}
+
+.modal button {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 14px;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-weight: 800;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>FindMeJobs</h1>
-  <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <h1>EasyJobFinder</h1>
   <nav>
     <div class="dropdown">
-      <button id="jobsDropdownBtn" aria-haspopup="true" aria-expanded="false" aria-controls="jobsDropdownMenu" aria-label="Jobs menu">
-        Jobs &#x25BE;
-      </button>
-      <div class="dropdown-menu" id="jobsDropdownMenu" role="menu" aria-label="Jobs Submenu">
-        <a href="jobs-gauteng/administration.html" role="menuitem" tabindex="-1">Administration Jobs Gauteng</a>
-        <a href="jobs-gauteng/construction.html" role="menuitem" tabindex="-1">Construction Jobs Gauteng</a>
-        <a href="jobs-gauteng/finance.html" role="menuitem" tabindex="-1">Finance Jobs Gauteng</a>
-        <a href="jobs-gauteng/healthcare.html" role="menuitem" tabindex="-1">Healthcare Jobs Gauteng</a>
-        <a href="jobs-gauteng/it.html" role="menuitem" tabindex="-1">IT Jobs Gauteng</a>
-        <a href="jobs-gauteng/code14-learnership.html" role="menuitem" tabindex="-1">Code 14 Learnership Gauteng</a>
+      <button>Jobs ▼</button>
+      <div class="dropdown-menu">
+        <a href="#">General Jobs – Gauteng</a>
+        <a href="#">Admin Jobs – Gauteng</a>
+        <a href="#">Security Jobs – Gauteng</a>
+        <a href="#">Driver Jobs – Gauteng</a>
+        <a href="#">Code 14 Learnership – Gauteng</a>
       </div>
     </div>
-    <a href="learnerships.html" tabindex="0">Learnerships</a>
-    <a href="internships.html" tabindex="0">Internships</a>
-    <a href="bursaries.html" tabindex="0">Bursaries</a>
-    <a href="contact.html" tabindex="0">Contact</a>
+    <a href="#">Learnerships</a>
+    <a href="#">Internships</a>
+    <a href="#">Bursaries</a>
+    <a href="#">Donation</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
 <main>
-  <h2>Welcome to FindMeJobs</h2>
+  <h2>Find Jobs That Change Your Life</h2>
   <p class="intro">
-    Your platform for the latest Jobs, Learnerships, Internships, and Bursaries opportunities. Explore and apply today!
+    EasyJobFinder helps South Africans discover verified jobs, learnerships,
+    internships, bursaries and Code 14 opportunities — all in one place.
   </p>
 
-  <section class="featured" aria-label="Featured jobs">
-    <article class="job-card" tabindex="0">
-      <h3 class="job-title">Administration Assistant</h3>
-      <p class="job-company">Company ABC - Gauteng</p>
-      <p class="job-desc">Support office operations and manage documentation. Strong communication skills required.</p>
-      <button class="apply" aria-label="Apply for Administration Assistant job">Apply Now</button>
-    </article>
+  <section class="jobs">
+    <div class="job-card">
+      <h3>Code 14 Driver Learnership</h3>
+      <p>Location: Gauteng<br>Company: Logistics SA</p>
+      <button class="apply">Apply Now</button>
+    </div>
 
-    <article class="job-card" tabindex="0">
-      <h3 class="job-title">Construction Supervisor</h3>
-      <p class="job-company">BuildIt Group - Gauteng</p>
-      <p class="job-desc">Oversee site activities, ensure safety compliance, and manage teams on construction projects.</p>
-      <button class="apply" aria-label="Apply for Construction Supervisor job">Apply Now</button>
-    </article>
+    <div class="job-card">
+      <h3>Office Administrator</h3>
+      <p>Location: Johannesburg<br>Company: AdminCorp</p>
+      <button class="apply">Apply Now</button>
+    </div>
 
-    <article class="job-card" tabindex="0">
-      <h3 class="job-title">Code 14 Learnership</h3>
-      <p class="job-company">Transport Solutions - Gauteng</p>
-      <p class="job-desc">An opportunity to learn and grow in the transport industry with hands-on experience for Code 14 license.</p>
-      <button class="apply" aria-label="Apply for Code 14 Learnership">Apply Now</button>
-    </article>
+    <div class="job-card">
+      <h3>General Worker</h3>
+      <p>Location: Pretoria<br>Company: BuildPro</p>
+      <button class="apply">Apply Now</button>
+    </div>
   </section>
+
+  <button class="signup-btn" onclick="openModal()">
+    Sign Up for Job Alerts via Email
+  </button>
 </main>
 
 <footer>
-  &copy; 2026 Find
+  © 2026 EasyJobFinder | Built to help South Africans find work
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <h3>Email Job Alerts</h3>
+    <p>Get the latest jobs sent straight to your inbox.</p>
+    <input type="email" placeholder="Enter your email">
+    <button onclick="closeModal()">Subscribe</button>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
