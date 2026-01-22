@@ -1,2 +1,1 @@
-# Teemo-Daking-Website
-Official Teemo Daking Music Website – Stream and download songs, view albums/EPs, watch the YouTube playlist, and leave fan comments. Built with HTML, CSS, and Firebase for real-time comments. Fully responsive for mobile and desktop.
+#EasyJobFinder Website – A platform designed to help users find job opportunities easily and efficiently. Browse available jobs, explore categories, apply directly, and stay updated with new listings. Built with HTML, CSS, and Firebase for real-time updates and user interaction. Fully responsive and optimized for both mobile and desktop users.
