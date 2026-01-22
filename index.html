@@ -12,199 +12,40 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background-color: #f8f9fa;
-      color: #333;
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
+      background: linear-gradient(145deg, #1a202c, #2d3748);
+      color: #e2e8f0;
+      max-width: 980px;
+      margin: 50px auto;
+      padding: 0 25px;
       line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: #c79c33; /* Gold */
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #a67c1f;
-    }
-    header {
-      background: #2c3e50; /* Navy Blue */
-      padding: 20px 30px;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
-    }
-    header h1 {
-      color: #f1c40f; /* Bright Gold */
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-    }
-    nav a {
-      margin-left: 25px;
-      font-weight: 600;
-      font-size: 16px;
-    }
-    nav a:first-child {
-      margin-left: 0;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    main h2 {
-      color: #2c3e50;
-      font-size: 26px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    main p.intro {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 35px;
-      max-width: 700px;
-    }
-    section.featured {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 24px;
-    }
-    .job-card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 25px 30px;
-      box-shadow: 0 6px 18px rgba(44, 62, 80, 0.1);
-      transition: box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .job-card:hover {
-      box-shadow: 0 10px 25px rgba(44, 62, 80, 0.18);
-    }
-    .job-title {
-      color: #34495e;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      line-height: 1.2;
-    }
-    .job-company {
-      font-size: 14px;
-      color: #999;
-      margin-bottom: 14px;
-      font-style: italic;
-    }
-    .job-desc {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-    .apply {
-      align-self: flex-start;
-      padding: 10px 18px;
-      background-color: #f1c40f;
-      color: #2c3e50;
-      font-weight: 600;
-      border-radius: 5px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(241, 196, 15, 0.5);
-      transition: background-color 0.3s ease;
-      border: none;
-    }
-    .apply:hover {
-      background-color: #d4ac0d;
-    }
-    .ad-placeholder {
-      background: #f1c40f;
-      color: #2c3e50;
-      text-align: center;
-      padding: 20px;
-      margin: 45px 0;
-      font-weight: 700;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
-    }
-    footer {
-      text-align: center;
-      margin: 50px 0 25px;
-      color: #888;
-      font-size: 0.95rem;
       user-select: none;
     }
 
-    @media (max-width: 640px) {
-      header {
-        justify-content: center;
-        gap: 15px;
-      }
-      nav a {
-        margin-left: 15px;
-        font-size: 14px;
-      }
-      .job-card {
-        padding: 18px 20px;
-      }
+    a {
+      text-decoration: none;
+      color: #f6c90e; /* Bright Gold */
+      font-weight: 700;
+      transition: color 0.3s ease;
+      text-shadow: 0 0 6px #f6c90e88;
     }
-  </style>
-</head>
-<body>
+    a:hover {
+      color: #d4af1a;
+      text-shadow: 0 0 12px #d4af1acc;
+    }
 
-<header>
-  <h1>Jobvanta</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="learnerships.html">Learnerships</a>
-    <a href="internships.html">Internships</a>
-    <a href="bursaries.html">Bursaries</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <h2>Welcome to Jobvanta</h2>
-  <p class="intro">
-    Your go-to platform for the latest <strong>Jobs</strong>, <strong>Learnerships</strong>, <strong>Internships</strong>, and <strong>Bursaries</strong>. Discover your next opportunity and grow your career with us.
-  </p>
-
-  <section class="featured">
-    <article class="job-card">
-      <h3 class="job-title">Junior Web Developer - Cape Town</h3>
-      <div class="job-company">CodeCrafters</div>
-      <p class="job-desc">
-        Looking for an enthusiastic junior developer familiar with HTML, CSS, and JavaScript. Great learning environment.
-      </p>
-      <button class="apply" onclick="window.location.href='mailto:hr@codecrafters.co.za'">Apply Now</button>
-    </article>
-
-    <article class="job-card">
-      <h3 class="job-title">Marketing Learnership</h3>
-      <div class="job-company">Bright Minds</div>
-      <p class="job-desc">
-        12-month learnership program for recent matriculants interested in marketing and communication.
-      </p>
-      <button class="apply" onclick="window.location.href='https://www.brightminds.co.za/learnerships'">Apply Now</button>
-    </article>
-  </section>
-
-  <div class="ad-placeholder">
-    <!-- Google AdSense code will go here -->
-    Your Google AdSense Ad Here
-  </div>
-</main>
-
-<footer>
-  &copy; 2026 Jobvanta — All rights reserved.
-</footer>
-
-</body>
-</html>
+    header {
+      background: linear-gradient(145deg, #0f172a, #1e293b);
+      padding: 25px 40px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow:
+        6px 6px 16px #0a101a,
+        -6px -6px 16px #25324a;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      color: #f6c90e;
+      font-size
