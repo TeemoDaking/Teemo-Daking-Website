@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EasyJobFinder - Find Jobs, Learnerships, Internships & Bursaries in South Africa">
+<meta name="description" content="EasyJobFinder - Jobs, Learnerships, Internships & Bursaries">
 <title>EasyJobFinder | Home</title>
 
 <style>
@@ -15,8 +15,8 @@
 }
 
 body {
-  background: #fff;
-  color: #000;
+  background: #ffffff;
+  color: #000000;
   max-width: 1100px;
   margin: auto;
   padding: 20px;
@@ -24,8 +24,8 @@ body {
 
 /* HEADER */
 header {
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   padding: 18px 25px;
   border-radius: 10px;
   display: flex;
@@ -40,15 +40,17 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav {
   display: flex;
   gap: 18px;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-nav a, nav button {
-  color: #fff;
+nav a,
+nav button {
+  color: #ffffff;
   background: none;
   border: none;
   font-size: 16px;
@@ -56,7 +58,8 @@ nav a, nav button {
   cursor: pointer;
 }
 
-nav a:hover, nav button:hover {
+nav a:hover,
+nav button:hover {
   text-decoration: underline;
 }
 
@@ -68,28 +71,23 @@ nav a:hover, nav button:hover {
 .dropdown-menu {
   display: none;
   position: absolute;
-  background: #fff;
-  color: #000;
-  top: 35px;
+  top: 38px;
   left: 0;
-  min-width: 230px;
-  border: 2px solid #000;
+  background: #ffffff;
+  border: 2px solid #000000;
+  min-width: 240px;
   z-index: 1000;
 }
 
 .dropdown-menu a {
   display: block;
   padding: 12px;
-  font-weight: 700;
-  color: #000;
+  font-weight: 800;
+  color: #000000;
 }
 
 .dropdown-menu a:hover {
-  background: #eee;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
+  background: #eeeeee;
 }
 
 /* MAIN */
@@ -110,18 +108,19 @@ main h2 {
   margin-bottom: 40px;
 }
 
-/* JOB CARDS */
+/* JOBS GRID */
 .jobs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
 }
 
+/* JOB CARD */
 .job-card {
-  border: 2px solid #000;
+  border: 2px solid #000000;
   border-radius: 12px;
   padding: 25px;
-  background: #fff;
+  background: #ffffff;
 }
 
 .job-card h3 {
@@ -136,9 +135,10 @@ main h2 {
   margin-bottom: 15px;
 }
 
+/* APPLY BUTTON */
 .apply {
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   border: none;
   padding: 12px 25px;
   font-weight: 900;
@@ -147,14 +147,14 @@ main h2 {
 }
 
 .apply:hover {
-  background: #333;
+  background: #333333;
 }
 
 /* SIGNUP BUTTON */
 .signup-btn {
   margin-top: 40px;
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   padding: 15px 30px;
   font-size: 18px;
   font-weight: 900;
@@ -174,7 +174,7 @@ main h2 {
 }
 
 .modal {
-  background: #fff;
+  background: #ffffff;
   padding: 30px;
   border-radius: 15px;
   max-width: 420px;
@@ -199,13 +199,13 @@ main h2 {
   font-size: 16px;
   font-weight: 800;
   margin-bottom: 20px;
-  border: 2px solid #000;
+  border: 2px solid #000000;
 }
 
 .modal button {
   width: 100%;
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   padding: 14px;
   font-weight: 900;
   border: none;
@@ -225,17 +225,21 @@ footer {
 
 <header>
   <h1>EasyJobFinder</h1>
+
   <nav>
+    <a href="#">Home</a>
+
     <div class="dropdown">
-      <button>Jobs ▼</button>
-      <div class="dropdown-menu">
-        <a href="#">General Jobs – Gauteng</a>
+      <button onclick="toggleDropdown()">Jobs ▼</button>
+      <div class="dropdown-menu" id="jobsMenu">
+        <a href="#">All Jobs – Gauteng</a>
         <a href="#">Admin Jobs – Gauteng</a>
         <a href="#">Security Jobs – Gauteng</a>
         <a href="#">Driver Jobs – Gauteng</a>
         <a href="#">Code 14 Learnership – Gauteng</a>
       </div>
     </div>
+
     <a href="#">Learnerships</a>
     <a href="#">Internships</a>
     <a href="#">Bursaries</a>
@@ -247,8 +251,8 @@ footer {
 <main>
   <h2>Find Jobs That Change Your Life</h2>
   <p class="intro">
-    EasyJobFinder helps South Africans discover verified jobs, learnerships,
-    internships, bursaries and Code 14 opportunities — all in one place.
+    EasyJobFinder helps South Africans find verified jobs, learnerships,
+    internships, bursaries and Code 14 opportunities.
   </p>
 
   <section class="jobs">
@@ -280,7 +284,7 @@ footer {
   © 2026 EasyJobFinder | Built to help South Africans find work
 </footer>
 
-<!-- MODAL -->
+<!-- EMAIL MODAL -->
 <div class="modal-bg" id="modal">
   <div class="modal">
     <h3>Email Job Alerts</h3>
@@ -294,9 +298,22 @@ footer {
 function openModal() {
   document.getElementById("modal").style.display = "flex";
 }
+
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
+
+function toggleDropdown() {
+  const menu = document.getElementById("jobsMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", function(e) {
+  const dropdown = document.querySelector(".dropdown");
+  if (!dropdown.contains(e.target)) {
+    document.getElementById("jobsMenu").style.display = "none";
+  }
+});
 </script>
 
 </body>
