@@ -6,15 +6,15 @@
   <meta name="description" content="FindMeJobs - Your platform for Jobs, Learnerships, Internships & Bursaries" />
   <title>FindMeJobs | Home</title>
   <style>
-    /* Base reset & font */
+    /* Reset and base styles */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: #fff; /* pure white */
-      color: #000; /* black text */
+      background-color: #fff;
+      color: #000;
       max-width: 960px;
       margin: 50px auto;
       padding: 0 20px 60px;
@@ -23,7 +23,7 @@
     }
 
     a {
-      color: #1b5e20; /* dark green */
+      color: #000;
       text-decoration: none;
       font-weight: 700;
       transition: color 0.3s ease;
@@ -32,18 +32,18 @@
     }
     a:hover,
     a:focus {
-      color: #66bb6a; /* lighter green */
+      color: #555;
       outline: none;
-      text-shadow: 0 0 4px #66bb6a;
+      text-shadow: none;
     }
 
     header {
-      background: #000; /* black header */
+      background: #000;
       padding: 20px 30px;
       border-radius: 10px;
       box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.7),
-        inset 0 4px 6px rgba(0, 100, 0, 0.8);
+        0 4px 6px rgba(0,0,0,0.9),
+        inset 0 4px 6px rgba(80,80,80,0.8);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -53,13 +53,11 @@
     }
 
     header h1 {
-      color: #4caf50; /* bright green */
+      color: #fff;
       font-size: 30px;
       font-weight: 900;
       letter-spacing: 2.2px;
-      text-shadow:
-        1px 1px 3px #1b5e20,
-        0 0 7px #4caf50;
+      text-shadow: 1px 1px 3px #222;
       user-select: none;
     }
 
@@ -78,7 +76,7 @@
     }
     .dropdown > button {
       background:
-        linear-gradient(145deg, #1b5e20, #2e7d32);
+        linear-gradient(145deg, #222, #000);
       border: none;
       font-size: 16px;
       font-weight: 900;
@@ -87,8 +85,8 @@
       padding: 12px 16px;
       border-radius: 10px;
       box-shadow:
-        2px 2px 7px #145214,
-        inset -3px -3px 7px #58a05a;
+        2px 2px 7px #000,
+        inset -3px -3px 7px #444;
       transition: background 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       align-items: center;
@@ -98,13 +96,13 @@
     .dropdown > button:hover,
     .dropdown > button:focus {
       background:
-        linear-gradient(145deg, #66bb6a, #81c784);
+        linear-gradient(145deg, #555, #333);
       box-shadow:
-        0 0 20px #81c784,
-        inset 0 0 14px #a5d6a7;
+        0 0 20px #666,
+        inset 0 0 14px #888;
       outline: none;
-      color: #004d40;
-      text-shadow: 0 0 7px #004d40;
+      color: #eee;
+      text-shadow: 0 0 7px #eee;
     }
 
     /* Dropdown menu */
@@ -112,7 +110,7 @@
       position: absolute;
       top: 48px;
       left: 0;
-      background: #e8f5e9; /* very light green */
+      background: #fff;
       box-shadow:
         0 10px 16px rgba(0, 0, 0, 0.25);
       border-radius: 12px;
@@ -121,15 +119,15 @@
       flex-direction: column;
       z-index: 1000;
       user-select: none;
-      border: 1.5px solid #a5d6a7;
+      border: 1.5px solid #ccc;
       font-weight: 700;
     }
     .dropdown-menu a {
       padding: 14px 20px;
       font-size: 15px;
-      color: #1b5e20;
+      color: #000;
       text-align: left;
-      border-bottom: 1.5px solid #c8e6c9;
+      border-bottom: 1.5px solid #eee;
       transition: background-color 0.25s ease, color 0.25s ease;
       user-select: none;
     }
@@ -138,10 +136,10 @@
     }
     .dropdown-menu a:hover,
     .dropdown-menu a:focus {
-      background-color: #a5d6a7;
-      color: #004d40;
+      background-color: #eee;
+      color: #111;
       outline: none;
-      box-shadow: inset 0 0 10px #388e3c;
+      box-shadow: inset 0 0 10px #bbb;
       user-select: none;
     }
 
@@ -169,7 +167,7 @@
         font-weight: 900;
       }
       nav.open {
-        max-height: 520px; /* more space for dropdown */
+        max-height: 520px;
       }
       nav a,
       .dropdown > button {
@@ -178,7 +176,7 @@
         text-align: center;
         border-radius: 0;
         font-size: 17px;
-        color: #4caf50;
+        color: #fff;
         background: transparent;
         box-shadow: none;
       }
@@ -186,8 +184,8 @@
       nav a:focus,
       .dropdown > button:hover,
       .dropdown > button:focus {
-        color: #81c784;
-        text-shadow: 0 0 6px #81c784;
+        color: #aaa;
+        text-shadow: none;
         background: transparent;
         box-shadow: none;
       }
@@ -199,7 +197,7 @@
         border: none;
       }
       .dropdown-menu a {
-        color: #4caf50;
+        color: #fff;
         padding-left: 32px;
         border-bottom: none;
         text-align: left;
@@ -208,8 +206,8 @@
       .dropdown-menu a:hover,
       .dropdown-menu a:focus {
         background-color: transparent;
-        color: #a5d6a7;
-        text-shadow: 0 0 4px #a5d6a7;
+        color: #ccc;
+        text-shadow: none;
         box-shadow: none;
       }
     }
@@ -227,10 +225,9 @@
     .menu-toggle span {
       display: block;
       height: 4px;
-      background: #4caf50;
+      background: #fff;
       border-radius: 2.5px;
-      box-shadow:
-        0 1.5px 2px rgba(0,0,0,0.35);
+      box-shadow: 0 1.5px 2px rgba(0,0,0,0.35);
       transition: all 0.3s ease;
     }
     .menu-toggle.active span:nth-child(1) {
@@ -251,16 +248,15 @@
     }
 
     main h2 {
-      color: #1b5e20;
+      color: #000;
       font-size: 40px;
       font-weight: 900;
       margin-bottom: 25px;
-      text-shadow: 1px 1px 3px #4caf50;
       user-select: none;
     }
     main p.intro {
       font-size: 1.2rem;
-      color: #2e7d32;
+      color: #222;
       margin-bottom: 50px;
       max-width: 720px;
       font-weight: 800;
@@ -274,12 +270,11 @@
     }
 
     .job-card {
-      background: #f1f8f1;
+      background: #fff;
       border-radius: 16px;
       padding: 35px 32px;
       box-shadow:
-        6px 6px 18px rgba(46, 125, 50, 0.3),
-        inset 0 0 20px rgba(102, 187, 106, 0.2);
+        6px 6px 18px rgba(0,0,0,0.15);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -289,30 +284,27 @@
     .job-card:hover,
     .job-card:focus-within {
       box-shadow:
-        8px 8px 25px rgba(46, 125, 50, 0.5),
-        inset 0 0 22px rgba(102, 187, 106, 0.4);
+        8px 8px 25px rgba(0,0,0,0.3);
       transform: translateY(-7px);
     }
     .job-title {
-      color: #1b5e20;
+      color: #000;
       font-size: 26px;
       font-weight: 900;
       margin-bottom: 12px;
       line-height: 1.3;
-      text-shadow: 0 0 4px #2e7d32;
       user-select: text;
     }
     .job-company {
       font-size: 16px;
-      color: #2e7d32;
+      color: #222;
       margin-bottom: 20px;
       font-style: italic;
-      text-shadow: 0 0 2px #1b5e20;
       user-select: text;
     }
     .job-desc {
       font-size: 17px;
-      color: #2e7d32;
+      color: #222;
       margin-bottom: 26px;
       flex-grow: 1;
       font-weight: 700;
@@ -322,14 +314,14 @@
       align-self: flex-start;
       padding: 14px 30px;
       background:
-        linear-gradient(145deg, #1b5e20, #2e7d32);
+        linear-gradient(145deg, #000, #222);
       color: white;
       font-weight: 900;
       border-radius: 14px;
       cursor: pointer;
       box-shadow:
-        4px 4px 14px #145214,
-        inset -3px -3px 9px #58a05a;
+        4px 4px 14px #000,
+        inset -3px -3px 9px #444;
       border: none;
       transition: background 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
@@ -338,22 +330,21 @@
     .apply:hover,
     .apply:focus {
       background:
-        linear-gradient(145deg, #66bb6a, #81c784);
+        linear-gradient(145deg, #555, #777);
       box-shadow:
-        0 0 28px #81c784,
-        inset 0 0 20px #a5d6a7;
+        0 0 28px #888,
+        inset 0 0 20px #bbb;
       outline: none;
-      color: #004d40;
-      text-shadow: 0 0 8px #004d40;
+      color: #eee;
+      text-shadow: 0 0 8px #eee;
     }
 
     footer {
       text-align: center;
       margin: 80px 0 35px;
-      color: #1b5e20;
+      color: #000;
       font-size: 1.05rem;
       font-weight: 900;
-      text-shadow: 0 0 6px #2e7d32;
       user-select: none;
     }
 
@@ -373,14 +364,13 @@
       display: flex;
     }
     .modal {
-      background: #f1f8f1;
+      background: #fff;
       padding: 40px 45px;
       border-radius: 18px;
       width: 100%;
       max-width: 460px;
       box-shadow:
-        0 14px 40px rgba(27, 94, 32, 0.85),
-        inset 0 0 30px rgba(46, 125, 50, 0.45);
+        0 14px 40px rgba(0, 0, 0, 0.85);
       text-align: center;
       user-select: text;
       position: relative;
@@ -389,12 +379,11 @@
       font-size: 30px;
       font-weight: 900;
       margin-bottom: 25px;
-      color: #1b5e20;
-      text-shadow: 0 0 6px #4caf50;
+      color: #000;
     }
     .modal p {
       font-size: 17px;
-      color: #2e7d32;
+      color: #222;
       margin-bottom: 35px;
       font-weight: 700;
     }
@@ -403,19 +392,20 @@
       padding: 16px 20px;
       font-size: 17px;
       border-radius: 12px;
-      border: 2.5px solid #66bb6a;
+      border: 2.5px solid #444;
       outline: none;
       margin-bottom: 30px;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
       font-weight: 900;
+      color: #000;
     }
     .modal input[type="email"]:focus {
-      border-color: #1b5e20;
-      box-shadow: 0 0 16px #4caf50bb;
+      border-color: #000;
+      box-shadow: 0 0 16px #555;
     }
     .modal button.submit {
       background:
-        linear-gradient(145deg, #1b5e20, #2e7d32);
+        linear-gradient(145deg, #000, #222);
       border: none;
       padding: 16px 36px;
       font-size: 20px;
@@ -425,20 +415,20 @@
       color: white;
       transition: background 0.4s ease, box-shadow 0.4s ease;
       box-shadow:
-        5px 5px 18px #145214,
-        inset -3px -3px 10px #58a05a;
+        5px 5px 18px #000,
+        inset -3px -3px 10px #444;
       user-select: none;
     }
     .modal button.submit:hover,
     .modal button.submit:focus {
       background:
-        linear-gradient(145deg, #66bb6a, #81c784);
+        linear-gradient(145deg, #555, #777);
       box-shadow:
-        0 0 36px #81c784,
-        inset 0 0 25px #a5d6a7;
+        0 0 36px #888,
+        inset 0 0 25px #bbb;
       outline: none;
-      color: #004d40;
-      text-shadow: 0 0 12px #004d40;
+      color: #eee;
+      text-shadow: 0 0 12px #eee;
     }
     .modal button.close-btn {
       position: absolute;
@@ -447,22 +437,22 @@
       background: transparent;
       border: none;
       font-size: 36px;
-      color: #2e7d32;
+      color: #222;
       cursor: pointer;
       user-select: none;
       transition: color 0.3s ease;
     }
     .modal button.close-btn:hover,
     .modal button.close-btn:focus {
-      color: #1b5e20;
+      color: #000;
       outline: none;
     }
     .modal .success-message {
       font-size: 17px;
-      color: #2e7d32;
+      color: #222;
       margin-top: 24px;
       font-weight: 900;
-      text-shadow: 0 0 6px #4caf50;
+      user-select: text;
     }
 
     /* Responsive adjustments */
@@ -508,9 +498,51 @@
       <button id="jobsDropdownBtn" aria-haspopup="true" aria-expanded="false" aria-controls="jobsDropdownMenu" aria-label="Jobs menu">
         Jobs &#x25BE;
       </button>
-      <div class="dropdown-menu" id="jobsDropdownMenu" role="menu" aria-label="Gauteng Jobs Submenu">
+      <div class="dropdown-menu" id="jobsDropdownMenu" role="menu" aria-label="Jobs Submenu">
         <a href="jobs-gauteng/administration.html" role="menuitem" tabindex="-1">Administration Jobs Gauteng</a>
         <a href="jobs-gauteng/construction.html" role="menuitem" tabindex="-1">Construction Jobs Gauteng</a>
         <a href="jobs-gauteng/finance.html" role="menuitem" tabindex="-1">Finance Jobs Gauteng</a>
         <a href="jobs-gauteng/healthcare.html" role="menuitem" tabindex="-1">Healthcare Jobs Gauteng</a>
-        <a href="
+        <a href="jobs-gauteng/it.html" role="menuitem" tabindex="-1">IT Jobs Gauteng</a>
+        <a href="jobs-gauteng/code14-learnership.html" role="menuitem" tabindex="-1">Code 14 Learnership Gauteng</a>
+      </div>
+    </div>
+    <a href="learnerships.html" tabindex="0">Learnerships</a>
+    <a href="internships.html" tabindex="0">Internships</a>
+    <a href="bursaries.html" tabindex="0">Bursaries</a>
+    <a href="contact.html" tabindex="0">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Welcome to FindMeJobs</h2>
+  <p class="intro">
+    Your platform for the latest Jobs, Learnerships, Internships, and Bursaries opportunities. Explore and apply today!
+  </p>
+
+  <section class="featured" aria-label="Featured jobs">
+    <article class="job-card" tabindex="0">
+      <h3 class="job-title">Administration Assistant</h3>
+      <p class="job-company">Company ABC - Gauteng</p>
+      <p class="job-desc">Support office operations and manage documentation. Strong communication skills required.</p>
+      <button class="apply" aria-label="Apply for Administration Assistant job">Apply Now</button>
+    </article>
+
+    <article class="job-card" tabindex="0">
+      <h3 class="job-title">Construction Supervisor</h3>
+      <p class="job-company">BuildIt Group - Gauteng</p>
+      <p class="job-desc">Oversee site activities, ensure safety compliance, and manage teams on construction projects.</p>
+      <button class="apply" aria-label="Apply for Construction Supervisor job">Apply Now</button>
+    </article>
+
+    <article class="job-card" tabindex="0">
+      <h3 class="job-title">Code 14 Learnership</h3>
+      <p class="job-company">Transport Solutions - Gauteng</p>
+      <p class="job-desc">An opportunity to learn and grow in the transport industry with hands-on experience for Code 14 license.</p>
+      <button class="apply" aria-label="Apply for Code 14 Learnership">Apply Now</button>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Find
