@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Official website of Teemo Daking. Stream music, watch videos, explore EPs, and connect with the artist." />
-  <meta name="keywords" content="Teemo Daking, Sedi Laka, music, artist, hip-hop, EPs, videos" />
-  <meta name="author" content="Teemo Daking" />
   <title>Teemo Daking | Official Music Hub</title>
-  <!-- Google AdSense Script with Your Client ID -->
+
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8036746752481844"
-          crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
+
   <style>
     * {
       margin: 0;
@@ -17,16 +17,17 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: #000000;
-      color: #FFFFFF;
+      background: #FFFFFF;
+      color: #000000;
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
-      background: #000000;
+      background: #FFFFFF;
+      border-bottom: 1px solid #000000;
       padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
@@ -34,599 +35,217 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #FFFFFF;
-    }
-    header h1 {
-      font-size: 2rem;
-      color: #FFFFFF;
-      transition: opacity 0.3s ease;
-    }
-    header h1:hover {
-      opacity: 0.8;
     }
 
-    /* NAVIGATION */
+    header h1 {
+      font-size: 2rem;
+    }
+
     nav {
       display: flex;
       gap: 1rem;
     }
+
     nav a {
-      color: #FFFFFF;
+      color: #000000;
       text-decoration: none;
-      font-weight: 500;
       font-size: 1.1rem;
-      padding: 0.5rem;
-      transition: opacity 0.3s ease;
-    }
-    nav a:hover {
-      opacity: 0.8;
+      font-weight: 500;
     }
 
-    /* BUTTONS */
-    .auth-buttons {
-      display: flex;
-      gap: 0.5rem;
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
+
     .auth-buttons a {
       padding: 0.5rem 1rem;
-      border-radius: 5px;
+      border: 1px solid #000000;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-    .listen {
-      background: #FFFFFF;
-      color: #000000;
-      border: 1px solid #FFFFFF;
-    }
-    .listen:hover {
-      background: #000000;
-      color: #FFFFFF;
-      border: 1px solid #FFFFFF;
-      transform: scale(1.05);
-    }
-    .subscribe-btn {
-      background: #000000;
-      color: #FFFFFF;
-      border: 1px solid #FFFFFF;
-    }
-    .subscribe-btn:hover {
-      background: #FFFFFF;
-      color: #000000;
-      border: 1px solid #FFFFFF;
-      transform: scale(1.05);
+      margin-left: 0.5rem;
     }
 
-    /* HERO SECTION */
-    .hero {
+    .listen {
       background: #000000;
-      padding: 6rem 5%;
-      text-align: center;
-      border-bottom: 1px solid #FFFFFF;
+      color: #FFFFFF;
     }
+
+    .subscribe-btn {
+      background: #FFFFFF;
+      color: #000000;
+    }
+
+    .hero {
+      padding: 5rem 5%;
+      text-align: center;
+      background: #F9F9F9;
+      border-bottom: 1px solid #000000;
+    }
+
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #FFFFFF;
-      transition: opacity 0.3s ease;
     }
-    .hero h2:hover {
-      opacity: 0.8;
-    }
+
     .hero p {
-      margin-bottom: 1.5rem;
       font-size: 1.4rem;
-      color: #FFFFFF;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
     }
 
-    /* SEARCH BOX */
-    .search-box {
-      background: #000000;
-      padding: 1.5rem;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: 0 auto;
-      border: 1px solid #FFFFFF;
-    }
-    .search-box form {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .search-box input {
-      padding: 0.8rem;
-      border: 1px solid #FFFFFF;
-      border-radius: 5px;
-      width: 100%;
-      max-width: 320px;
-      font-size: 1.1rem;
-      background: #000000;
-      color: #FFFFFF;
-    }
-    .search-box input::placeholder {
-      color: #FFFFFF;
-      opacity: 0.7;
-    }
-    .search-box button {
-      padding: 0.8rem 1.5rem;
-      border: 1px solid #FFFFFF;
-      border-radius: 5px;
-      background: #FFFFFF;
-      color: #000000;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .search-box button:hover {
-      background: #000000;
-      color: #FFFFFF;
-      border: 1px solid #FFFFFF;
-      transform: scale(1.05);
-    }
-
-    /* SECTIONS */
     section {
-      padding: 5rem 5%;
+      padding: 4rem 5%;
       text-align: center;
     }
+
     section h3 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
-      color: #FFFFFF;
-      transition: opacity 0.3s ease;
     }
-    section h3:hover {
-      opacity: 0.8;
-    }
+
     section p {
       font-size: 1.2rem;
-      color: #FFFFFF;
       max-width: 800px;
-      margin: 0 auto 1.5rem;
+      margin: auto;
     }
 
-    /* SUBSCRIBE BUTTON */
-    .subscribe .join-link {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      background: #FFFFFF;
-      color: #000000;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      cursor: pointer;
-      border: 1px solid #FFFFFF;
-      transition: all 0.3s ease;
-    }
-    .subscribe .join-link:hover {
-      background: #000000;
-      color: #FFFFFF;
-      border: 1px solid #FFFFFF;
-      transform: scale(1.05);
-    }
-
-    /* FOOTER */
-    footer {
-      background: #000000;
-      color: #FFFFFF;
-      text-align: center;
-      padding: 1.5rem 5%;
-      font-size: 1rem;
-      border-top: 1px solid #FFFFFF;
-    }
-    footer a {
-      color: #FFFFFF;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-    footer a:hover {
-      opacity: 0.8;
-    }
-
-    /* SOCIAL ICONS */
-    .social-icons {
-      margin-top: 1rem;
-    }
-    .social-icons a {
-      margin: 0 0.5rem;
-      color: #FFFFFF;
-      font-size: 1.5rem;
-      transition: all 0.3s ease;
-    }
-    .social-icons a:hover {
-      opacity: 0.8;
-      transform: scale(1.2);
-    }
-
-    /* IFRAME */
-    iframe {
-      border-radius: 12px;
-      margin-top: 20px;
-      width: 100%;
-      max-width: 600px;
-      height: 400px;
-      border: 1px solid #FFFFFF;
-      transition: all 0.3s ease;
-    }
-    iframe:hover {
-      transform: scale(1.02);
-      border-color: #FFFFFF;
-    }
-
-    /* ADS */
-    .ad-container {
-      margin: 2rem auto;
-      max-width: 728px;
-      text-align: center;
-    }
-    .ad-container ins {
-      display: block;
-      margin: 0 auto;
-      border: 1px solid #FFFFFF;
-      border-radius: 5px;
-    }
-
-    /* CONTENT GRID */
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
     }
+
     .content-item {
-      background: #000000;
-      border: 1px solid #FFFFFF;
-      border-radius: 10px;
+      border: 1px solid #000000;
       padding: 1.5rem;
+      border-radius: 10px;
+      background: #FFFFFF;
       text-align: left;
     }
-    .content-item h4 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #FFFFFF;
+
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 380px;
+      border: 1px solid #000000;
+      border-radius: 12px;
+      margin-top: 20px;
     }
-    .content-item p {
+
+    footer {
+      border-top: 1px solid #000000;
+      padding: 1.5rem;
+      text-align: center;
       font-size: 1rem;
+      background: #FFFFFF;
     }
 
-    /* HAMBURGER MENU */
-    .menu-toggle {
-      display: none;
+    .social-icons a {
       font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: #FFFFFF;
-      cursor: pointer;
-    }
-    nav.active {
-      display: flex;
+      margin: 0 0.5rem;
+      color: #000000;
     }
 
-    /* MEDIA QUERIES */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
       }
-      .menu-toggle {
-        display: block;
-        align-self: flex-end;
-      }
+
       nav {
         display: none;
         flex-direction: column;
         width: 100%;
         text-align: center;
       }
-      nav a {
-        font-size: 1.2rem;
+
+      nav.active {
+        display: flex;
       }
-      .auth-buttons {
-        width: 100%;
-        justify-content: center;
-      }
-      .auth-buttons a {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-      }
-      .hero {
-        padding: 3rem 5%;
-      }
-      .hero h2 {
-        font-size: 2.2rem;
-      }
-      .hero p {
-        font-size: 1.2rem;
-      }
-      .search-box form {
-        flex-direction: column;
-      }
-      .search-box input,
-      .search-box button {
-        font-size: 1rem;
-        max-width: 100%;
-      }
-      section {
-        padding: 3rem 5%;
-      }
-      section h3 {
-        font-size: 1.8rem;
-      }
-      section p {
-        font-size: 1.1rem;
-      }
-      .subscribe .join-link {
-        font-size: 1rem;
-        max-width: 100%;
-      }
-      iframe {
-        height: 300px;
-      }
-      .social-icons a {
-        font-size: 1.4rem;
-      }
-      .ad-container {
-        max-width: 100%;
-      }
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      nav a {
-        font-size: 1.1rem;
-      }
-      .auth-buttons a {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
-      .search-box input,
-      .search-box button {
-        font-size: 0.9rem;
-        max-width: 90%;
-      }
-      .subscribe .join-link {
-        font-size: 0.9rem;
-        max-width: 90%;
-      }
-      section {
-        padding: 2rem 5%;
-      }
-      section h3 {
-        font-size: 1.6rem;
-      }
-      section p {
-        font-size: 1rem;
-      }
-      footer {
-        font-size: 0.9rem;
-      }
-      iframe {
-        height: 280px;
-      }
-      .social-icons a {
-        font-size: 1.3rem;
+
+      .menu-toggle {
+        display: block;
+        align-self: flex-end;
       }
     }
   </style>
+
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <!-- HEADER -->
-  <header>
-    <h1>Teemo Daking</h1>
-    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-    <nav>
-      <a href="#music">Music</a>
-      <a href="#videos">Videos</a>
-      <a href="#albums">EPs & Projects</a>
-      <a href="#about">About</a>
-      <a href="#privacy">Privacy Policy</a>
-      <a href="#terms">Terms of Service</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="auth-buttons">
-      <a href="https://linktr.ee/TeemoDaking" class="listen" target="_blank">Listen</a>
-      <a href="#subscribe" class="subscribe-btn">Subscribe</a>
+
+<header>
+  <h1>Teemo Daking</h1>
+  <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+  <nav>
+    <a href="#music">Music</a>
+    <a href="#videos">Videos</a>
+    <a href="#albums">EPs</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="auth-buttons">
+    <a href="https://linktr.ee/TeemoDaking" class="listen" target="_blank">Listen</a>
+    <a href="#subscribe" class="subscribe-btn">Subscribe</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>Experience the Sound of Teemo Daking</h2>
+  <p>Stream my latest EP <strong>Sedi Laka</strong> and explore my music world.</p>
+</section>
+
+<section id="music">
+  <h3>Sedi Laka (EP)</h3>
+  <iframe src="https://open.spotify.com/embed/album/73fe3DhL0dN0VGQt7vuGnU"></iframe>
+</section>
+
+<section id="videos">
+  <h3>Latest Videos</h3>
+  <div class="content-grid">
+    <div class="content-item">
+      <h4>Music Video</h4>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
     </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h2>Experience the Sound of Teemo Daking</h2>
-    <p>Stream my latest EP, <strong>Sedi Laka</strong>, watch exclusive videos, and dive into my music world.</p>
-    <div class="search-box">
-      <form>
-        <input type="text" placeholder="Search Songs, EPs, Videos">
-        <button type="submit">Search</button>
-      </form>
+    <div class="content-item">
+      <h4>Behind the Scenes</h4>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
     </div>
-    <!-- AdSense Ad Unit (Replace data-ad-slot with your actual ad slot ID) -->
-    <div class="ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8036746752481844"
-           data-ad-slot="YYYYYYYYYY"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MUSIC SECTION -->
-  <section id="music">
-    <h3>Listen Now: Sedi Laka (EP)</h3>
-    <p>Discover my latest EP, <strong>Sedi Laka</strong>, a vibrant blend of [genre, e.g., hip-hop, afrobeat] that captures raw emotion and storytelling. Available on all major platforms.</p>
-    <iframe loading="lazy" src="https://open.spotify.com/embed/album/73fe3DhL0dN0VGQt7vuGnU?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    <!-- AdSense Ad Unit (Replace data-ad-slot with your actual ad slot ID) -->
-    <div class="ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8036746752481844"
-           data-ad-slot="ZZZZZZZZZZ"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </section>
+<section id="about">
+  <h3>About Teemo Daking</h3>
+  <p>Hip-hop artist from Johannesburg blending storytelling and emotion through music.</p>
+</section>
 
-  <!-- VIDEOS SECTION -->
-  <section id="videos">
-    <h3>Latest Videos</h3>
-    <p>Watch my latest music videos and behind-the-scenes content on YouTube. Experience the visuals that bring my music to life.</p>
-    <div class="content-grid">
-      <div class="content-item">
-        <h4>Sedi Laka Music Video</h4>
-        <p>The official video for my lead single from <strong>Sedi Laka</strong>. Shot in [location], this video captures the essence of the track’s message.</p>
-        <iframe loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="content-item">
-        <h4>Behind the Scenes: Studio Sessions</h4>
-        <p>A glimpse into the creative process behind my latest EP. See how I craft my sound in the studio.</p>
-        <iframe loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
+<section id="contact">
+  <h3>Contact & Follow</h3>
+  <p>
+    <a href="mailto:thabisomakua010706@gmail.com">Email</a> |
+    <a href="tel:+27710315772">071 031 5772</a>
+  </p>
+  <div class="social-icons">
+    <a href="https://open.spotify.com"><i class="fab fa-spotify"></i></a>
+    <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/27710315772"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</section>
 
-  <!-- EPs & PROJECTS SECTION -->
-  <section id="albums">
-    <h3>EPs & Projects</h3>
-    <p>Explore my discography, from the groundbreaking <strong>Sedi Laka</strong> to upcoming projects that push creative boundaries.</p>
-    <div class="content-grid">
-      <div class="content-item">
-        <h4>Sedi Laka (EP)</h4>
-        <p>Released in [year], this EP features [number] tracks that blend [genre] with [unique elements]. Highlights include [track names].</p>
-      </div>
-      <div class="content-item">
-        <h4>Upcoming Project: [Project Name]</h4>
-        <p>Stay tuned for my next release, a [type, e.g., album, mixtape] exploring [themes]. Expected release: [date].</p>
-      </div>
-      <div class="content-item">
-        <h4>Collaboration Highlights</h4>
-        <p>Worked with [artist/producer names] on tracks like [track names], showcasing my versatility.</p>
-      </div>
-    </div>
-    <!-- AdSense Ad Unit (Replace data-ad-slot with your actual ad slot ID) -->
-    <div class="ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8036746752481844"
-           data-ad-slot="AAAAAAAAAA"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </section>
+<footer>
+  &copy; 2026 Teemo Daking — Inspired by Originals Entertainment
+</footer>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h3>About Teemo Daking</h3>
-    <p>Teemo Daking is a [genre, e.g., hip-hop, afrobeat] artist from [location], known for blending [unique elements, e.g., soulful melodies with gritty lyricism]. Starting my career in [year], I’ve released projects like <strong>Sedi Laka</strong>, which has resonated with fans worldwide. My music reflects [themes, e.g., personal struggles, cultural pride], and I’m passionate about connecting with listeners through authentic storytelling.</p>
-    <p>With influences like [artist names], I aim to push the boundaries of [genre] while staying true to my roots. Follow my journey as I prepare to release new music and perform live.</p>
-    <!-- AdSense Ad Unit (Replace data-ad-slot with your actual ad slot ID) -->
-    <div class="ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8036746752481844"
-           data-ad-slot="BBBBBBBBBB"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </section>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  menuToggle.addEventListener('click', () => nav.classList.toggle('active'));
+</script>
 
-  <!-- PRIVACY POLICY SECTION -->
-  <section id="privacy">
-    <h3>Privacy Policy</h3>
-    <p>At Teemo Daking’s Official Music Hub, we value your privacy. We collect email addresses for newsletter subscriptions to keep you updated on new releases and events. Google AdSense may use cookies to serve personalized ads based on your browsing behavior. You can opt out of personalized ads via your browser settings or Google’s Ad Settings.</p>
-    <p>We do not share your personal information with third parties except as required by law or for service provision (e.g., email newsletters). For questions, contact us at <a href="mailto:thabisomakua010706@gmail.com">thabisomakua010706@gmail.com</a>.</p>
-    <p>Last updated: August 25, 2025.</p>
-  </section>
-
-  <!-- TERMS OF SERVICE SECTION -->
-  <section id="terms">
-    <h3>Terms of Service</h3>
-    <p>By using this website, you agree to respect its content and purpose. You may not reproduce, distribute, or modify any content without permission. This site is provided “as is,” and we are not liable for any damages from its use. Links to third-party platforms (e.g., Spotify, YouTube) are provided for convenience, and we are not responsible for their content.</p>
-    <p>For inquiries about these terms, contact us at <a href="mailto:thabisomakua010706@gmail.com">thabisomakua010706@gmail.com</a>.</p>
-  </section>
-
-  <!-- SUBSCRIBE SECTION -->
-  <section id="subscribe" class="subscribe">
-    <h3>Stay Updated</h3>
-    <p>Join my newsletter to receive exclusive updates on new music, videos, and live performances.</p>
-    <a href="mailto:inspiredbyoriginals@gmail.com?subject=Join%20Teemo%20Daking%20Newsletter&body=Please%20add%20me%20to%20your%20newsletter." class="join-link">Join</a>
-    <!-- AdSense Ad Unit (Replace data-ad-slot with your actual ad slot ID) -->
-    <div class="ad-container">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8036746752481844"
-           data-ad-slot="CCCCCCCCCC"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-  </section>
-
-  <!-- CONTACT & SOCIAL LINKS -->
-  <section id="contact">
-    <h3>Contact & Follow</h3>
-    <p>For bookings & collaborations: <br> <a href="mailto:thabisomakua010706@gmail.com">thabisomakua010706@gmail.com</a> | <a href="tel:+27710315772">071 031 5772</a></p>
-    <div class="social-icons">
-      <a href="https://open.spotify.com/artist/5cEjvE3h1ULOFVlcF3YToD" target="_blank"><i class="fab fa-spotify"></i></a>
-      <a href="https://youtube.com/channel/UC2ntiYtCQRsUcYLqCUliLEg" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://wa.me/27710315772" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://linktr.ee/TeemoDaking" target="_blank"><i class="fas fa-link"></i></a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Teemo Daking. All Rights Reserved. | Inspired by Originals Entertainment | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
-  </footer>
-
-  <script>
-    // Hamburger Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    menuToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-
-    // Debug Join Button Click
-    const joinLink = document.querySelector('.join-link');
-    joinLink.addEventListener('click', () => {
-      console.log('Join link clicked');
-    });
-  </script>
 </body>
 </html>
