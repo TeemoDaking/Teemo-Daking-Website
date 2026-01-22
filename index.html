@@ -6,111 +6,90 @@
   <meta name="description" content="Jobvanta - Your platform for Jobs, Learnerships, Internships & Bursaries" />
   <title>Jobvanta | Home</title>
   <style>
-    /* Reset & base */
+    /* Base reset & font */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     body {
-      background: linear-gradient(145deg, #1a202c, #2d3748);
-      color: #e2e8f0;
-      max-width: 980px;
+      background-color: #f9fafb;
+      color: #222831;
+      max-width: 960px;
       margin: 50px auto;
-      padding: 0 25px;
-      line-height: 1.6;
+      padding: 0 20px 60px;
+      line-height: 1.5;
       user-select: none;
-      overflow-x: hidden;
     }
 
     a {
+      color: #0066cc;
       text-decoration: none;
-      color: #f6c90e; /* Bright Gold */
-      font-weight: 700;
-      transition: color 0.3s ease;
-      text-shadow: 0 0 6px #f6c90e88;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      cursor: pointer;
     }
-    a:hover {
-      color: #d4af1a;
-      text-shadow: 0 0 12px #d4af1acc;
+    a:hover,
+    a:focus {
+      color: #004a99;
+      outline: none;
     }
 
     header {
-      background: linear-gradient(145deg, #0f172a, #1e293b);
-      padding: 25px 40px;
-      border-radius: 14px;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      box-shadow:
-        6px 6px 16px #0a101a,
-        -6px -6px 16px #25324a;
-      margin-bottom: 50px;
       position: relative;
       user-select: none;
     }
+
     header h1 {
-      color: #f6c90e;
-      font-size: 36px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-shadow:
-        2px 2px 6px #b88f07,
-        0 0 12px #f6c90e;
+      color: #ffb400;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1.3px;
       user-select: none;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 30px;
-      transition: max-height 0.3s ease;
-    }
-    nav a {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      padding: 8px 14px;
-      border-radius: 8px;
-      background: linear-gradient(145deg, #2a3344, #1b2434);
-      box-shadow:
-        inset 2px 2px 6px #3b4561,
-        inset -2px -2px 6px #182131;
-      transition:
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        color 0.3s ease;
-      user-select: none;
-    }
-    nav a:hover {
-      background: linear-gradient(145deg, #f6c90e, #d4af1a);
-      color: #1e293b;
-      box-shadow:
-        0 0 20px #f6c90e,
-        inset 0 0 10px #f6c90e;
     }
 
-    /* Hamburger Menu */
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+    nav a {
+      font-size: 15px;
+      padding: 8px 10px;
+      border-radius: 4px;
+      transition: background-color 0.25s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffb400;
+      color: white;
+      outline: none;
+    }
+
+    /* Hamburger menu */
     .menu-toggle {
       display: none;
       flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 25px;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
       cursor: pointer;
-      user-select: none;
     }
     .menu-toggle span {
       display: block;
-      width: 100%;
       height: 3px;
-      background: #f6c90e;
-      border-radius: 3px;
-      box-shadow: 0 0 6px #f6c90eaa;
+      background: #0066cc;
+      border-radius: 2px;
       transition: all 0.3s ease;
     }
-
-    /* Animate hamburger when active */
     .menu-toggle.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
@@ -121,42 +100,32 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Responsive Navigation */
+    /* Responsive nav */
     @media (max-width: 720px) {
       nav {
         flex-direction: column;
+        background: white;
         width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 15px 0;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
         max-height: 0;
         overflow: hidden;
-        background: linear-gradient(145deg, #0f172a, #1e293b);
-        border-radius: 0 0 14px 14px;
-        box-shadow:
-          0 8px 16px #000a1a88;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        z-index: 10;
+        transition: max-height 0.3s ease;
+        z-index: 999;
       }
       nav.open {
-        max-height: 400px;
+        max-height: 300px;
       }
       nav a {
         width: 100%;
-        padding: 15px 0;
-        margin: 0;
+        padding: 12px 0;
         text-align: center;
         border-radius: 0;
-        box-shadow: none;
-        background: transparent;
-        color: #f6c90e;
-        font-size: 20px;
-        letter-spacing: 0.1em;
-      }
-      nav a:hover {
-        background: #d4af1a22;
-        box-shadow: none;
-        color: #d4af1a;
-        text-shadow: none;
+        font-size: 16px;
       }
       .menu-toggle {
         display: flex;
@@ -164,255 +133,212 @@
     }
 
     main h2 {
-      color: #f6c90e;
-      font-size: 40px;
+      color: #222831;
+      font-size: 36px;
       font-weight: 900;
-      margin-bottom: 25px;
-      text-shadow: 2px 2px 10px #b88f07;
+      margin-bottom: 15px;
       user-select: none;
     }
     main p.intro {
-      font-size: 1.3rem;
-      color: #cbd5e1;
-      margin-bottom: 50px;
-      max-width: 750px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-shadow: 1px 1px 3px #0a0a0a88;
+      font-size: 1.15rem;
+      color: #555;
+      margin-bottom: 40px;
+      max-width: 700px;
+      font-weight: 500;
+      user-select: text;
     }
 
     section.featured {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
       gap: 30px;
     }
 
     .job-card {
-      background: linear-gradient(145deg, #1e293b, #15202b);
-      border-radius: 16px;
-      padding: 30px 35px;
-      box-shadow:
-        8px 8px 20px #111b29,
-        -8px -8px 20px #26354e;
+      background: white;
+      border-radius: 10px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.07);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: box-shadow 0.4s ease;
-      border: 2px solid transparent;
-      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
       user-select: none;
     }
-    .job-card:hover {
-      box-shadow:
-        0 0 30px 4px #f6c90e,
-        inset 4px 4px 15px #f6c90e88;
-      border-color: #f6c90e;
-      transform: translateY(-6px);
+    .job-card:hover,
+    .job-card:focus-within {
+      box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
+      transform: translateY(-5px);
     }
     .job-title {
-      color: #f6c90e;
-      font-size: 24px;
-      font-weight: 900;
-      margin-bottom: 15px;
-      line-height: 1.1;
-      text-shadow: 1px 1px 4px #b88f07;
+      color: #222831;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.2;
     }
     .job-company {
-      font-size: 16px;
-      color: #94a3b8;
-      margin-bottom: 20px;
+      font-size: 14px;
+      color: #999999;
+      margin-bottom: 16px;
       font-style: italic;
-      letter-spacing: 0.04em;
       user-select: text;
     }
     .job-desc {
-      font-size: 16px;
-      color: #cbd5e1;
-      margin-bottom: 25px;
+      font-size: 15px;
+      color: #444444;
+      margin-bottom: 20px;
       flex-grow: 1;
-      line-height: 1.4;
       user-select: text;
     }
     .apply {
       align-self: flex-start;
-      padding: 14px 28px;
-      background: linear-gradient(145deg, #f6c90e, #d4af1a);
-      color: #1e293b;
-      font-weight: 800;
-      font-size: 16px;
-      border-radius: 12px;
+      padding: 10px 22px;
+      background-color: #ffb400;
+      color: #222831;
+      font-weight: 700;
+      border-radius: 5px;
       cursor: pointer;
-      box-shadow:
-        0 6px 15px #f6c90e99,
-        inset 0 -3px 6px #b88f0744;
+      box-shadow: 0 3px 8px rgb(255 180 0 / 0.6);
       border: none;
-      transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.2s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       user-select: none;
+      font-size: 15px;
     }
-    .apply:hover {
-      background: linear-gradient(145deg, #d4af1a, #f6c90e);
-      box-shadow:
-        0 10px 25px #d4af1aaa,
-        inset 0 -5px 8px #b88f0722;
-      transform: translateY(-2px);
+    .apply:hover,
+    .apply:focus {
+      background-color: #e6a600;
+      box-shadow: 0 6px 16px rgb(230 166 0 / 0.8);
+      outline: none;
     }
 
     .ad-placeholder {
-      background: #f6c90e;
-      color: #1e293b;
+      background: #fff3cd;
+      color: #856404;
       text-align: center;
-      padding: 28px;
-      margin: 55px 0;
-      font-weight: 900;
-      border-radius: 16px;
-      font-size: 1.3rem;
-      box-shadow:
-        0 8px 25px #f6c90eaa,
-        inset 0 0 18px #b88f07cc;
+      padding: 25px;
+      margin: 50px 0;
+      font-weight: 700;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgb(255 193 7 / 0.4);
       user-select: none;
     }
 
     footer {
       text-align: center;
-      margin: 70px 0 35px;
-      color: #718096;
-      font-size: 1rem;
+      margin: 60px 0 25px;
+      color: #777777;
+      font-size: 0.95rem;
       user-select: none;
-      letter-spacing: 0.05em;
     }
 
     /* Sign-Up Modal Styles */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(10, 10, 10, 0.8);
+      background: rgba(0,0,0,0.5);
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 10000;
       user-select: none;
+      padding: 20px;
     }
     .modal-overlay.active {
       display: flex;
     }
     .modal {
-      background: linear-gradient(145deg, #1e293b, #15202b);
-      padding: 30px 40px;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 420px;
-      box-shadow:
-        0 0 30px 4px #f6c90e,
-        inset 4px 4px 15px #f6c90e88;
+      background: white;
+      padding: 30px 35px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
       text-align: center;
-      color: #f6c90e;
       user-select: text;
     }
     .modal h3 {
-      font-size: 28px;
-      font-weight: 900;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 6px #b88f07;
-      user-select: text;
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #222831;
     }
     .modal p {
-      font-size: 16px;
-      color: #cbd5e1;
-      margin-bottom: 30px;
-      user-select: text;
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 25px;
     }
     .modal input[type="email"] {
       width: 100%;
-      padding: 14px 18px;
-      font-size: 16px;
-      border-radius: 12px;
-      border: none;
+      padding: 12px 15px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1.5px solid #ccc;
       outline: none;
-      box-shadow:
-        inset 4px 4px 10px #101c2a,
-        inset -4px -4px 10px #22304a;
       margin-bottom: 20px;
-      color: #f6c90e;
-      background: #1e293b;
-      font-weight: 600;
-      user-select: text;
+      transition: border-color 0.25s ease;
+    }
+    .modal input[type="email"]:focus {
+      border-color: #0066cc;
+      box-shadow: 0 0 6px #0066cc55;
     }
     .modal button.submit {
-      padding: 14px 28px;
-      font-size: 16px;
-      font-weight: 900;
-      border-radius: 12px;
+      background-color: #ffb400;
       border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 6px;
       cursor: pointer;
-      background: linear-gradient(145deg, #f6c90e, #d4af1a);
-      color: #1e293b;
-      box-shadow:
-        0 6px 15px #f6c90e99,
-        inset 0 -3px 6px #b88f0744;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      color: #222831;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgb(255 180 0 / 0.7);
       user-select: none;
     }
-    .modal button.submit:hover {
-      background: linear-gradient(145deg, #d4af1a, #f6c90e);
-      box-shadow:
-        0 10px 25px #d4af1aaa,
-        inset 0 -5px 8px #b88f0722;
+    .modal button.submit:hover,
+    .modal button.submit:focus {
+      background-color: #e6a600;
+      box-shadow: 0 6px 20px rgb(230 166 0 / 0.9);
+      outline: none;
     }
     .modal button.close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
       background: transparent;
       border: none;
       font-size: 28px;
-      color: #f6c90e;
-      position: absolute;
-      top: 18px;
-      right: 20px;
+      color: #777;
       cursor: pointer;
       user-select: none;
       transition: color 0.3s ease;
     }
-    .modal button.close-btn:hover {
-      color: #d4af1a;
+    .modal button.close-btn:hover,
+    .modal button.close-btn:focus {
+      color: #222;
+      outline: none;
     }
     .modal .success-message {
-      font-size: 18px;
-      color: #a3f7a3;
+      font-size: 16px;
+      color: green;
       margin-top: 15px;
-      user-select: text;
     }
 
-    /* Responsive */
-    @media (max-width: 720px) {
-      header {
-        justify-content: space-between;
-        padding: 25px 20px;
-      }
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
       main h2 {
-        font-size: 32px;
-        text-align: center;
+        font-size: 28px;
       }
-      main p.intro {
-        font-size: 1.1rem;
-        max-width: 100%;
-        text-align: center;
-      }
-      .job-card {
-        padding: 22px 25px;
+      nav a {
+        font-size: 14px;
       }
       .job-title {
         font-size: 20px;
       }
-      .job-company {
-        font-size: 14px;
-      }
-      .job-desc {
-        font-size: 14px;
-      }
       .apply {
-        padding: 12px 22px;
         font-size: 14px;
+        padding: 8px 20px;
       }
     }
   </style>
@@ -421,7 +347,7 @@
 
 <header>
   <h1>Jobvanta</h1>
-  <div class="menu-toggle" aria-label="Toggle Navigation" role="button" tabindex="0">
+  <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
     <span></span>
     <span></span>
     <span></span>
@@ -443,7 +369,7 @@
     Your go-to platform for the latest <strong>Jobs</strong>, <strong>Learnerships</strong>, <strong>Internships</strong>, and <strong>Bursaries</strong>. Discover your next opportunity and grow your career with us.
   </p>
 
-  <section class="featured">
+  <section class="featured" aria-label="Featured jobs and learnerships">
     <article class="job-card" tabindex="0">
       <h3 class="job-title">Junior Web Developer - Cape Town</h3>
       <div class="job-company">CodeCrafters</div>
@@ -476,7 +402,7 @@
 <!-- Modal -->
 <div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
-    <button class="close-btn" id="closeModalBtn" aria-label="Close Sign Up Form">&times;</button>
+    <button class="close-btn" id="closeModalBtn" aria-label="Close sign up form">&times;</button>
     <h3 id="modalTitle">Get More Jobs Sent to You</h3>
     <p>Sign up with your email and receive the latest job updates directly in your inbox.</p>
     <form id="signupForm" novalidate>
@@ -491,3 +417,107 @@
 
 <footer>
   &copy; 2026 Jobvanta — All rights reserved.
+</footer>
+
+<script>
+  // Hamburger menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('header nav');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+  menuToggle.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menuToggle.click();
+    }
+  });
+
+  // Modal elements
+  const openModalBtn = document.getElementById('openModalBtn');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const signupForm = document.getElementById('signupForm');
+  const emailInput = document.getElementById('emailInput');
+  const successMessage = document.getElementById('successMessage');
+
+  // Open modal
+  openModalBtn.addEventListener('click', () => {
+    modalOverlay.classList.add('active');
+    modalOverlay.setAttribute('aria-hidden', 'false');
+    emailInput.focus();
+  });
+
+  // Close modal function
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    modalOverlay.setAttribute('aria-hidden', 'true');
+    signupForm.reset();
+    successMessage.style.display = 'none';
+    openModalBtn.focus();
+  }
+
+  closeModalBtn.addEventListener('click', closeModal);
+
+  // Close modal on outside click
+  modalOverlay.addEventListener('click', e => {
+    if (e.target === modalOverlay) {
+      closeModal();
+    }
+  });
+
+  // Handle form submission
+  signupForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const emailValue = emailInput.value.trim();
+
+    if (!emailValue || !validateEmail(emailValue)) {
+      emailInput.focus();
+      emailInput.setCustomValidity('Please enter a valid email address.');
+      emailInput.reportValidity();
+      return;
+    }
+
+    // Simulate successful submission (Replace with real submission logic)
+    successMessage.style.display = 'block';
+    emailInput.value = '';
+  });
+
+  // Simple email validation function
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email.toLowerCase());
+  }
+
+  // Accessibility: trap focus inside modal when open
+  modalOverlay.addEventListener('keydown', e => {
+    if (!modalOverlay.classList.contains('active')) return;
+
+    const focusableElements = modalOverlay.querySelectorAll('input, button');
+    const firstElem = focusableElements[0];
+    const lastElem = focusableElements[focusableElements.length -1];
+
+    if (e.key === 'Tab') {
+      if (e.shiftKey) { // Shift + Tab
+        if (document.activeElement === firstElem) {
+          e.preventDefault();
+          lastElem.focus();
+        }
+      } else { // Tab
+        if (document.activeElement === lastElem) {
+          e.preventDefault();
+          firstElem.focus();
+        }
+      }
+    }
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>
