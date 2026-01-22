@@ -193,6 +193,86 @@
       color: #000000;
     }
 
+    /* Sign In Popup styles */
+    #signInModal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #signInModal > div {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    #closeModal {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    #signInModal h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #264653;
+    }
+
+    #signInForm label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #264653;
+    }
+
+    #signInForm input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    #signInForm button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #264653;
+      color: #e9c46a;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+    }
+
+    #signInForm button[type="submit"]:hover {
+      background-color: #1b3a40;
+    }
+
+    #formMessage {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -267,6 +347,9 @@
   </div>
 
   <div id="countdown-message"></div>
+
+  <!-- Sign In Button -->
+  <button id="openSignIn" style="margin-top: 30px; padding: 10px 20px; font-size: 16px; cursor: pointer; border: none; background-color: #264653; color: #e9c46a; border-radius: 6px; font-weight: 700;">Fan Sign In</button>
 </section>
 
 <section id="videos">
@@ -305,14 +388,29 @@
   &copy; 2026 Teemo Daking — Inspired by Originals Entertainment
 </footer>
 
+<!-- Sign In Modal -->
+<div id="signInModal">
+  <div>
+    <span id="closeModal">&times;</span>
+    <h2>Fan Sign In</h2>
+    <form id="signInForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <button type="submit">Sign In</button>
+    </form>
+    <p id="formMessage"></p>
+  </div>
+</div>
+
 <script>
+  // Navigation menu toggle
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
   menuToggle.addEventListener('click', () => nav.classList.toggle('active'));
 
   // Countdown Timer Script
-  const countdownDate = new Date("2026-02-01T18:00:00").getTime(); // <-- Set your album release date/time here
-  const redirectURL = "https://linktr.ee/TeemoDaking"; // <-- Set the redirect URL here after countdown ends
+  const countdownDate = new Date("2026-02-01T18:00:00").getTime(); // Set your album release date/time here
+  const redirectURL = "https://linktr.ee/TeemoDaking"; // Set the redirect URL here after countdown ends
 
   const daysElem = document.getElementById("days");
   const hoursElem = document.getElementById("hours");
@@ -351,6 +449,51 @@
     minutesElem.textContent = minutes.toString().padStart(2, "0");
     secondsElem.textContent = seconds.toString().padStart(2, "0");
   }, 1000);
+
+  // Sign In Popup Script
+  const openBtn = document.getElementById('openSignIn');
+  const modal = document.getElementById('signInModal');
+  const closeBtn = document.getElementById('closeModal');
+  const form = document.getElementById('signInForm');
+  const message = document.getElementById('formMessage');
+
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    message.style.display = 'none';
+    form.email.value = '';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailValue = form.email.value.trim();
+
+    if (emailValue) {
+      message.textContent = `Thanks for signing in, ${emailValue}!`;
+      message.style.color = 'green';
+      message.style.display = 'block';
+      form.reset();
+
+      // Here you can add code to send the email to your server or mailing list
+
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 2500);
+    } else {
+      message.textContent = 'Please enter a valid email.';
+      message.style.color = 'red';
+      message.style.display = 'block';
+    }
+  });
 </script>
 
 </body>
