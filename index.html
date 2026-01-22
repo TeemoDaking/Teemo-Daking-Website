@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- head content remains same -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Jobvanta - Your platform for Jobs, Learnerships, Internships & Bursaries" />
-  <title>Jobvanta | Home</title>
+  <meta name="description" content="FindMeJobs - Your platform for Jobs, Learnerships, Internships & Bursaries" />
+  <title>FindMeJobs | Home</title>
   <style>
-    /* ... your existing CSS above ... */
+    /* Base reset & font */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-    /* Dropdown styles */
+    body {
+      background-color: #f9fafb;
+      color: #222831;
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 0 20px 60px;
+      line-height: 1.5;
+      user-select: none;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+    a:hover,
+    a:focus {
+      color: #004a99;
+      outline: none;
+    }
+
+    header {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      user-select: none;
+    }
+
+    header h1 {
+      color: #ffb400;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      user-select: none;
+    }
+
     nav {
       display: flex;
       gap: 25px;
@@ -122,12 +168,237 @@
         color: #004a99;
       }
     }
+
+    /* Hamburger menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background: #0066cc;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    main h2 {
+      color: #222831;
+      font-size: 36px;
+      font-weight: 900;
+      margin-bottom: 15px;
+      user-select: none;
+    }
+    main p.intro {
+      font-size: 1.15rem;
+      color: #555;
+      margin-bottom: 40px;
+      max-width: 700px;
+      font-weight: 500;
+      user-select: text;
+    }
+
+    section.featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 30px;
+    }
+
+    .job-card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px 30px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+    .job-card:hover,
+    .job-card:focus-within {
+      box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
+      transform: translateY(-5px);
+    }
+    .job-title {
+      color: #222831;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .job-company {
+      font-size: 14px;
+      color: #999999;
+      margin-bottom: 16px;
+      font-style: italic;
+      user-select: text;
+    }
+    .job-desc {
+      font-size: 15px;
+      color: #444444;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      user-select: text;
+    }
+    .apply {
+      align-self: flex-start;
+      padding: 10px 22px;
+      background-color: #ffb400;
+      color: #222831;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgb(255 180 0 / 0.6);
+      border: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      font-size: 15px;
+    }
+    .apply:hover,
+    .apply:focus {
+      background-color: #e6a600;
+      box-shadow: 0 6px 16px rgb(230 166 0 / 0.8);
+      outline: none;
+    }
+
+    footer {
+      text-align: center;
+      margin: 60px 0 25px;
+      color: #777777;
+      font-size: 0.95rem;
+      user-select: none;
+    }
+
+    /* Sign-Up Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      user-select: none;
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal {
+      background: white;
+      padding: 30px 35px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+      text-align: center;
+      user-select: text;
+      position: relative;
+    }
+    .modal h3 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #222831;
+    }
+    .modal p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+    .modal input[type="email"] {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 15px;
+      border-radius: 6px;
+      border: 1.5px solid #ccc;
+      outline: none;
+      margin-bottom: 20px;
+      transition: border-color 0.25s ease;
+    }
+    .modal input[type="email"]:focus {
+      border-color: #0066cc;
+      box-shadow: 0 0 6px #0066cc55;
+    }
+    .modal button.submit {
+      background-color: #ffb400;
+      border: none;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #222831;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgb(255 180 0 / 0.7);
+      user-select: none;
+    }
+    .modal button.submit:hover,
+    .modal button.submit:focus {
+      background-color: #e6a600;
+      box-shadow: 0 6px 20px rgb(230 166 0 / 0.9);
+      outline: none;
+    }
+    .modal button.close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      font-size: 28px;
+      color: #777;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    .modal button.close-btn:hover,
+    .modal button.close-btn:focus {
+      color: #222;
+      outline: none;
+    }
+    .modal .success-message {
+      font-size: 16px;
+      color: green;
+      margin-top: 15px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      main h2 {
+        font-size: 28px;
+      }
+      nav a,
+      .dropdown > button {
+        font-size: 14px;
+      }
+      .job-title {
+        font-size: 20px;
+      }
+      .apply {
+        font-size: 14px;
+        padding: 8px 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Jobvanta</h1>
+  <h1>FindMeJobs</h1>
   <div class="menu-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
     <span></span>
     <span></span>
@@ -156,7 +427,56 @@
   </nav>
 </header>
 
-<!-- rest of your body content remains same -->
+<main>
+  <h2>Welcome to FindMeJobs</h2>
+  <p class="intro">
+    Your go-to platform for the latest <strong>Jobs</strong>, <strong>Learnerships</strong>, <strong>Internships</strong>, and <strong>Bursaries</strong>. Discover your next opportunity and grow your career with us.
+  </p>
+
+  <section class="featured" aria-label="Featured jobs and learnerships">
+    <article class="job-card" tabindex="0">
+      <h3 class="job-title">Junior Web Developer - Cape Town</h3>
+      <div class="job-company">CodeCrafters</div>
+      <p class="job-desc">
+        Looking for an enthusiastic junior developer familiar with HTML, CSS, and JavaScript. Great learning environment.
+      </p>
+      <button class="apply" onclick="window.location.href='mailto:hr@codecrafters.co.za'">Apply Now</button>
+    </article>
+
+    <article class="job-card" tabindex="0">
+      <h3 class="job-title">Marketing Learnership</h3>
+      <div class="job-company">Bright Minds</div>
+      <p class="job-desc">
+        12-month learnership program for recent matriculants interested in marketing and communication.
+      </p>
+      <button class="apply" onclick="window.location.href='https://www.brightminds.co.za/learnerships'">Apply Now</button>
+    </article>
+  </section>
+
+  <button id="openModalBtn" class="apply" style="margin-top: 40px;">
+    Sign Up for More Jobs via Email
+  </button>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <button class="close-btn" id="closeModalBtn" aria-label="Close sign up form">&times;</button>
+    <h3 id="modalTitle">Get More Jobs Sent to You</h3>
+    <p>Sign up with your email and receive the latest job updates directly in your inbox.</p>
+    <form id="signupForm" novalidate>
+      <input type="email" id="emailInput" name="email" placeholder="Enter your email address" required aria-required="true" aria-describedby="emailHelp" />
+      <button type="submit" class="submit">Subscribe</button>
+      <div class="success-message" id="successMessage" role="alert" aria-live="assertive" style="display:none;">
+        Thank you for subscribing! Check your inbox soon.
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 FindMeJobs — All rights reserved.
+</footer>
 
 <script>
   // Hamburger menu toggle
@@ -198,27 +518,3 @@
       jobsDropdownBtn.setAttribute('aria-expanded', 'false');
       jobsDropdownBtn.parentElement.classList.remove('open');
       jobsDropdownBtn.focus();
-    }
-    if(e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      jobsDropdownBtn.click();
-      // Focus first menu item
-      const firstMenuItem = jobsDropdownMenu.querySelector('a');
-      if (firstMenuItem) firstMenuItem.focus();
-    }
-  });
-
-  // Close dropdown with ESC on menu items
-  jobsDropdownMenu.querySelectorAll('a').forEach(item => {
-    item.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        jobsDropdownBtn.setAttribute('aria-expanded', 'false');
-        jobsDropdownBtn.parentElement.classList.remove('open');
-        jobsDropdownBtn.focus();
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
