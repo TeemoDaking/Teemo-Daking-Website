@@ -14,8 +14,8 @@
 }
 
 body {
-  background: #fff;
-  color: #000;
+  background: #000;
+  color: #fff;
 }
 
 /* HEADER */
@@ -24,6 +24,7 @@ header {
   color: #fff;
   padding: 15px;
   text-align: center;
+  border-bottom: 1px solid #333;
 }
 
 header h1 {
@@ -31,7 +32,7 @@ header h1 {
   font-weight: 900;
 }
 
-/* MODEST NAV */
+/* NAV */
 nav {
   display: flex;
   justify-content: space-around;
@@ -65,6 +66,7 @@ nav a:hover {
 .hero p {
   margin-top: 10px;
   font-size: 16px;
+  color: #ccc;
 }
 
 /* SECTIONS */
@@ -87,11 +89,11 @@ nav a:hover {
 
 .list li {
   padding: 14px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #333;
 }
 
 .list a {
-  color: #000;
+  color: #fff;
   font-weight: 700;
   text-decoration: none;
 }
@@ -104,31 +106,38 @@ nav a:hover {
 .btn {
   display: inline-block;
   padding: 12px 25px;
-  border: 2px solid #000;
-  background: #fff;
-  color: #000;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
   font-weight: 800;
   cursor: pointer;
 }
 
 .btn:hover {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 /* SPECIAL SECTIONS */
 .whatsapp, .donation {
-  border: 2px solid #000;
+  border: 2px solid #fff;
   padding: 20px;
   text-align: center;
 }
 
 /* FORM */
-form input, form select {
+form input,
+form select {
   width: 100%;
   padding: 12px;
   margin-bottom: 10px;
-  border: 1px solid #000;
+  background: #111;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+form input::placeholder {
+  color: #aaa;
 }
 
 /* POPUP */
@@ -139,31 +148,29 @@ form input, form select {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
 }
 
 .popup-box {
-  background: #fff;
+  background: #111;
   padding: 25px;
   width: 90%;
   max-width: 400px;
   text-align: center;
-}
-
-.popup-box h3 {
-  font-weight: 900;
+  border: 2px solid #fff;
 }
 
 /* FOOTER */
 footer {
   background: #000;
-  color: #fff;
+  color: #aaa;
   text-align: center;
   padding: 15px;
   margin-top: 40px;
   font-size: 14px;
+  border-top: 1px solid #333;
 }
 </style>
 </head>
@@ -245,7 +252,7 @@ footer {
   <p>© 2026 EasyJobFinder | Built for South Africans</p>
 </footer>
 
-<!-- EMAIL POPUP -->
+<!-- POPUP -->
 <div class="popup" id="popup">
   <div class="popup-box">
     <h3>Email Job Alerts</h3>
