@@ -99,7 +99,7 @@ main {
 
 /* JOB LIST */
 .job {
-  padding: 12px;
+  padding: 14px;
   border-bottom: 1px solid #eee;
 }
 
@@ -114,8 +114,20 @@ main {
 }
 
 .job p {
-  margin: 4px 0 0;
+  margin: 6px 0;
   font-size: 0.95rem;
+}
+
+.job a {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.job a:hover {
+  text-decoration: underline;
 }
 
 /* DONATION */
@@ -130,133 +142,4 @@ main {
 .donate-btn {
   margin-top: 10px;
   background: var(--accent);
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 30px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  nav button {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>EasyJobFinder</h1>
-</header>
-
-<nav>
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('jobs')">Jobs & Opportunities</button>
-  <button onclick="showSection('donate')">Donate</button>
-</nav>
-
-<main>
-
-<!-- HOME -->
-<section id="home" class="section active">
-  <div class="card">
-    <h2>Welcome</h2>
-    <p>
-      EasyJobFinder helps you discover jobs, learnerships, internships and
-      opportunities — all in one place.
-    </p>
-    <p>
-      Browse freely and support the platform if you find it helpful.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Latest Posts</h2>
-    <p>
-      This space is reserved for announcements, tips, updates and featured posts.
-    </p>
-  </div>
-</section>
-
-<!-- JOBS (HIDDEN UNTIL TAPPED) -->
-<section id="jobs" class="section">
-  <div class="card">
-    <h2>Jobs & Opportunities</h2>
-
-    <div class="job">
-      <h3>General Worker</h3>
-      <p>Location: South Africa • Entry Level</p>
-    </div>
-
-    <div class="job">
-      <h3>Security Officer</h3>
-      <p>PSIRA Required • Full-Time</p>
-    </div>
-
-    <div class="job">
-      <h3>Code 10 / Code 14 Learnership</h3>
-      <p>Training + Practical Experience</p>
-    </div>
-
-    <div class="job">
-      <h3>Warehouse Assistant</h3>
-      <p>No Experience Required</p>
-    </div>
-
-    <div class="job">
-      <h3>Internships & Learnerships</h3>
-      <p>Various Fields Available</p>
-    </div>
-  </div>
-</section>
-
-<!-- DONATION -->
-<section id="donate" class="section">
-  <div class="card donate-box">
-    <h2>Support EasyJobFinder</h2>
-    <p>
-      This platform is independently run. Your support helps keep it active
-      and updated with new opportunities.
-    </p>
-
-    <button class="donate-btn">
-      Donate ❤️
-    </button>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  © 2026 EasyJobFinder • Built to help people find opportunities
-</footer>
-
-<script>
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(sec => {
-    sec.classList.remove('active');
-  });
-  document.getElementById(id).classList.add('active');
-}
-</script>
-
-</body>
-      </html>
+  color
