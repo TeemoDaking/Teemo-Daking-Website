@@ -2,293 +2,261 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>EasyJobFinder | Find Jobs in South Africa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>EasyJobFinder</title>
+
 <style>
+:root {
+  --primary: #2ecc71;
+  --secondary: #27ae60;
+  --accent: #3498db;
+  --bg: #f4f7fb;
+  --dark: #1f2933;
+  --card: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-  color: #000;
+  background: var(--bg);
+  color: var(--dark);
 }
 
-/* NAVBAR */
-nav {
-  background: #000;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+/* HEADER */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  padding: 20px;
+  text-align: center;
 }
 
-nav h1 {
-  color: #fff;
-  font-size: clamp(18px, 5vw, 22px);
-  font-weight: 900;
+header h1 {
   margin: 0;
-  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  word-wrap: break-word;
 }
 
-nav ul {
-  list-style: none;
+/* NAVIGATION */
+nav {
   display: flex;
-  padding: 0;
-  margin: 8px 0 0 0;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   flex-wrap: wrap;
 }
 
-nav ul li {
-  margin-left: 20px;
-  margin-top: 5px;
-}
-
-nav ul li a {
+nav button {
+  background: var(--primary);
   color: #fff;
-  text-decoration: none;
-  font-weight: 800;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+nav button:hover {
+  background: var(--secondary);
 }
 
-/* SECTIONS */
-.section {
-  padding: 40px 16px;
-  max-width: 1100px;
+/* MAIN */
+main {
+  padding: 16px;
+  max-width: 1000px;
   margin: auto;
 }
 
-.section h2 {
-  font-size: clamp(22px, 6vw, 28px);
-  font-weight: 900;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #000;
-  display: inline-block;
-}
-
-/* HERO */
-.hero {
-  background: #f5f5f5;
-  padding: 30px;
-  border: 2px solid #000;
-}
-
-.hero p {
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1.6;
-}
-
-/* POSTS */
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
-}
-
-.post {
-  border: 2px solid #000;
-  padding: 18px;
-}
-
-/* JOBS (HIDDEN INITIALLY) */
-#jobs {
+.section {
   display: none;
 }
 
-.search-box input {
-  width: 100%;
-  padding: 14px;
-  border: 2px solid #000;
-  font-weight: bold;
-  margin-bottom: 25px;
+.section.active {
+  display: block;
 }
 
-/* JOB GRID */
-.jobs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 15px;
+/* CARDS */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-.job-card {
-  border: 2px solid #000;
-  padding: 18px;
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: var(--primary);
 }
 
-.job-card a {
-  color: #000;
-  font-weight: 800;
-  text-decoration: none;
+/* JOB LIST */
+.job {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
 }
 
-.job-card a:hover {
-  text-decoration: underline;
+.job:last-child {
+  border-bottom: none;
 }
 
-/* SUPPORT */
-.support-box {
-  border: 2px solid #000;
-  padding: 20px;
-  background: #f7f7f7;
+.job h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.job p {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+}
+
+/* DONATION */
+.donate-box {
+  text-align: center;
+}
+
+.donate-box p {
+  font-size: 1rem;
+}
+
+.donate-btn {
+  margin-top: 10px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* FOOTER */
 footer {
-  background: #000;
-  color: #fff;
   text-align: center;
-  padding: 16px;
-  margin-top: 50px;
-  font-size: 14px;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  background: #000;
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
 }
 </style>
-
-<script>
-function showJobs() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("jobs").style.display = "block";
-}
-
-function showHome() {
-  document.getElementById("jobs").style.display = "none";
-  document.getElementById("home").style.display = "block";
-}
-</script>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
+<header>
   <h1>EasyJobFinder</h1>
-  <ul>
-    <li><a onclick="showHome()">Home</a></li>
-    <li><a onclick="showJobs()">Jobs & Opportunities</a></li>
-    <li><a href="#support">Support</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('jobs')">Jobs & Opportunities</button>
+  <button onclick="showSection('donate')">Donate</button>
 </nav>
 
+<main>
+
 <!-- HOME -->
-<section id="home" class="section">
-  <h2>Welcome to EasyJobFinder</h2>
-
-  <div class="hero">
+<section id="home" class="section active">
+  <div class="card">
+    <h2>Welcome</h2>
     <p>
-      EasyJobFinder helps South Africans discover jobs, learnerships,
-      internships and career opportunities — all in one trusted place.
+      EasyJobFinder helps you discover jobs, learnerships, internships and
+      opportunities — all in one place.
+    </p>
+    <p>
+      Browse freely and support the platform if you find it helpful.
     </p>
   </div>
 
-  <div class="post-grid">
-    <div class="post">
-      <strong>Job Application Tips</strong>
-      <p>How to avoid scams and apply safely online.</p>
-    </div>
-
-    <div class="post">
-      <strong>Learnership Updates</strong>
-      <p>New learnerships opening soon across SA.</p>
-    </div>
-
-    <div class="post">
-      <strong>CV Advice</strong>
-      <p>Common CV mistakes that cost people jobs.</p>
-    </div>
+  <div class="card">
+    <h2>Latest Posts</h2>
+    <p>
+      This space is reserved for announcements, tips, updates and featured posts.
+    </p>
   </div>
 </section>
 
-<!-- JOBS -->
+<!-- JOBS (HIDDEN UNTIL TAPPED) -->
 <section id="jobs" class="section">
-  <h2>Jobs & Opportunities</h2>
+  <div class="card">
+    <h2>Jobs & Opportunities</h2>
 
-  <div class="search-box">
-    <input type="text" placeholder="Search jobs (Gauteng, Code 14, Learnership)">
-  </div>
-
-  <div class="jobs-grid">
-    <div class="job-card">
-      <a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">
-        Gauteng Jobs – Careers24
-      </a>
+    <div class="job">
+      <h3>General Worker</h3>
+      <p>Location: South Africa • Entry Level</p>
     </div>
 
-    <div class="job-card">
-      <a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">
-        Gauteng Jobs – Indeed
-      </a>
+    <div class="job">
+      <h3>Security Officer</h3>
+      <p>PSIRA Required • Full-Time</p>
     </div>
 
-    <div class="job-card">
-      <a href="https://www.pnet.co.za/jobs/gauteng" target="_blank">
-        Gauteng Jobs – PNet
-      </a>
+    <div class="job">
+      <h3>Code 10 / Code 14 Learnership</h3>
+      <p>Training + Practical Experience</p>
     </div>
 
-    <div class="job-card">
-      <a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">
-        Gauteng Jobs – JobMail
-      </a>
+    <div class="job">
+      <h3>Warehouse Assistant</h3>
+      <p>No Experience Required</p>
     </div>
 
-    <div class="job-card">
-      <a href="https://www.jobmail.co.za/jobs/code-14-driver" target="_blank">
-        Code 14 Driver Jobs
-      </a>
-    </div>
-
-    <div class="job-card">
-      <a href="https://www.careers24.com/jobs/keyword-code+14/" target="_blank">
-        Code 14 Learnerships & Vacancies
-      </a>
+    <div class="job">
+      <h3>Internships & Learnerships</h3>
+      <p>Various Fields Available</p>
     </div>
   </div>
 </section>
 
-<!-- SUPPORT -->
-<section id="support" class="section">
-  <h2>Support EasyJobFinder</h2>
-  <div class="support-box">
+<!-- DONATION -->
+<section id="donate" class="section">
+  <div class="card donate-box">
+    <h2>Support EasyJobFinder</h2>
     <p>
-      EasyJobFinder is free and built to help job seekers.
-      Support by sharing this platform with others.
+      This platform is independently run. Your support helps keep it active
+      and updated with new opportunities.
     </p>
+
+    <button class="donate-btn">
+      Donate ❤️
+    </button>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email: <strong>easyjobfinder@gmail.com</strong></p>
-</section>
+</main>
 
 <footer>
-  &copy; 2026 EasyJobFinder | All Jobs in One Place
+  © 2026 EasyJobFinder • Built to help people find opportunities
 </footer>
 
-<a class="whatsapp" href="https://wa.me/27710315772" target="_blank">
-  WhatsApp Us
-</a>
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
-</html>
+      </html>
