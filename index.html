@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>EasyJobFinder | Jobs & Opportunities</title>
+<title>EasyJobFinder | Find Jobs in South Africa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -25,8 +25,8 @@ nav {
 nav h1 {
   color: #fff;
   font-size: 22px;
-  margin: 0;
   font-weight: 900;
+  margin: 0;
 }
 
 nav ul {
@@ -44,41 +44,66 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 800;
+  cursor: pointer;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
-  padding: 40px 20px;
+  padding: 50px 20px;
   max-width: 1100px;
   margin: auto;
 }
 
 .section h2 {
-  font-size: 26px;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 20px;
   border-bottom: 3px solid #000;
   display: inline-block;
-  margin-bottom: 25px;
-  font-weight: 900;
 }
 
-/* SEARCH */
-.search-box {
-  margin-bottom: 30px;
+/* HERO / POSTS */
+.hero {
+  background: #f5f5f5;
+  padding: 40px;
+  border: 2px solid #000;
+}
+
+.hero p {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.post {
+  border: 2px solid #000;
+  padding: 18px;
+}
+
+/* JOBS (HIDDEN INITIALLY) */
+#jobs {
+  display: none;
 }
 
 .search-box input {
   width: 100%;
   padding: 14px;
-  font-size: 16px;
   border: 2px solid #000;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
-/* JOB GRID */
 .jobs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -88,14 +113,12 @@ nav ul li a:hover {
 .job-card {
   border: 2px solid #000;
   padding: 18px;
-  background: #fff;
 }
 
 .job-card a {
   color: #000;
   font-weight: 800;
   text-decoration: none;
-  font-size: 15px;
 }
 
 .job-card a:hover {
@@ -106,7 +129,6 @@ nav ul li a:hover {
 .support-box {
   border: 2px solid #000;
   padding: 20px;
-  max-width: 600px;
   background: #f7f7f7;
 }
 
@@ -116,8 +138,7 @@ footer {
   color: #fff;
   text-align: center;
   padding: 16px;
-  margin-top: 40px;
-  font-size: 14px;
+  margin-top: 50px;
 }
 
 /* WHATSAPP */
@@ -134,21 +155,63 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 </style>
+
+<script>
+function showJobs() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("jobs").style.display = "block";
+}
+
+function showHome() {
+  document.getElementById("jobs").style.display = "none";
+  document.getElementById("home").style.display = "block";
+}
+</script>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
   <h1>EasyJobFinder</h1>
   <ul>
-    <li><a href="#jobs">Jobs & Opportunities</a></li>
+    <li><a onclick="showHome()">Home</a></li>
+    <li><a onclick="showJobs()">Jobs & Opportunities</a></li>
     <li><a href="#support">Support</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- JOBS & OPPORTUNITIES -->
+<!-- HOME / POSTS -->
+<section id="home" class="section">
+  <h2>Welcome to EasyJobFinder</h2>
+
+  <div class="hero">
+    <p>
+      EasyJobFinder helps South Africans discover jobs, learnerships, internships
+      and opportunities — all in one trusted place.
+    </p>
+  </div>
+
+  <div class="post-grid">
+    <div class="post">
+      <strong>Latest Job Tips</strong>
+      <p>How to apply for jobs online safely in South Africa.</p>
+    </div>
+
+    <div class="post">
+      <strong>Learnership Guide</strong>
+      <p>Everything you need to know about learnerships in 2026.</p>
+    </div>
+
+    <div class="post">
+      <strong>CV Advice</strong>
+      <p>Simple CV mistakes that stop people from getting hired.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOBS (HIDDEN UNTIL CLICKED) -->
 <section id="jobs" class="section">
   <h2>Jobs & Opportunities</h2>
 
@@ -183,12 +246,6 @@ footer {
     </div>
 
     <div class="job-card">
-      <a href="https://www.careers24.com/learnerships/" target="_blank">
-        Learnerships & Internships
-      </a>
-    </div>
-
-    <div class="job-card">
       <a href="https://www.jobmail.co.za/jobs/code-14-driver" target="_blank">
         Code 14 Driver Jobs
       </a>
@@ -208,13 +265,9 @@ footer {
   <h2>Support EasyJobFinder</h2>
   <div class="support-box">
     <p>
-      EasyJobFinder helps South Africans access jobs and opportunities in one place — free of charge.
+      This platform is free and built to help job seekers.
+      You can support it by sharing it with others.
     </p>
-    <ul>
-      <li>Share the site with others</li>
-      <li>Send job links or suggestions</li>
-      <li>Help grow the platform</li>
-    </ul>
   </div>
 </section>
 
@@ -225,13 +278,12 @@ footer {
 </section>
 
 <footer>
-  &copy; 2026 EasyJobFinder | All Jobs in One Place
+  &copy; 2026 EasyJobFinder | Jobs Hidden Until You Need Them
 </footer>
 
-<!-- WHATSAPP BUTTON -->
 <a class="whatsapp" href="https://wa.me/27710315772" target="_blank">
   WhatsApp Us
 </a>
 
 </body>
-  </html>
+      </html>
