@@ -2,137 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>EasyJobFinder | Find Jobs in South Africa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EasyJobFinder | Jobs Made Simple</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
 body {
-  background: #f4f6f8;
-  color: #222;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #000;
 }
 
-/* HEADER */
-header {
-  background: #000;
-  color: #fff;
-  padding: 18px;
-}
-
-header h1 {
-  text-align: center;
-  font-size: 26px;
-  font-weight: 800;
-}
-
-/* NAV */
+/* NAVBAR */
 nav {
-  background: #111;
+  background: #000;
+  padding: 12px 20px;
   display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 12px 10px;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-nav a {
+nav h1 {
+  color: #fff;
+  font-size: 22px;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
+  font-weight: bold;
 }
 
-/* HERO */
-.hero {
-  background: #fff;
-  margin: 25px auto;
-  max-width: 1100px;
-  padding: 40px 25px;
-  border-radius: 6px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.hero h2 {
-  font-size: 30px;
-  font-weight: 900;
-}
-
-.hero p {
-  font-size: 17px;
-  color: #555;
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
 /* SECTIONS */
 .section {
+  padding: 40px 20px;
   max-width: 1100px;
-  margin: 30px auto;
-  padding: 25px;
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+  margin: auto;
 }
 
-.section h3 {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 18px;
-}
-
-/* LIST */
-.list ul {
-  list-style: none;
-}
-
-.list li {
-  padding: 16px;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.list a {
-  color: #000;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-/* BUTTONS */
-.btn {
+.section h2 {
+  font-size: 26px;
+  border-bottom: 3px solid #000;
   display: inline-block;
-  padding: 12px 26px;
-  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* SEARCH */
+.search-box {
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
   border: 2px solid #000;
-  background: #000;
-  color: #fff;
-  font-weight: 800;
-  cursor: pointer;
+}
+
+/* JOBS */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+.job-card {
+  border: 2px solid #000;
+  padding: 15px;
+  background: #fff;
+}
+
+.job-card a {
+  color: #000;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.btn.alt {
-  background: #fff;
-  color: #000;
+.job-card a:hover {
+  text-decoration: underline;
 }
 
-.btn:hover {
-  opacity: 0.85;
-}
-
-/* DONATION */
-.donation-box {
-  border: 1px solid #ccc;
+/* SUPPORT */
+.support-box {
+  border: 2px solid #000;
   padding: 20px;
-  margin-top: 15px;
-}
-
-.donation-box p {
-  margin-bottom: 8px;
-  font-weight: 600;
+  max-width: 600px;
+  background: #f9f9f9;
 }
 
 /* FOOTER */
@@ -140,127 +112,125 @@ footer {
   background: #000;
   color: #fff;
   text-align: center;
-  padding: 18px;
+  padding: 15px;
   margin-top: 40px;
-  font-size: 14px;
 }
 
-/* POPUP */
-.popup {
-  display: none;
+/* WHATSAPP BUTTON */
+.whatsapp {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-box {
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 420px;
-  border-radius: 6px;
-  text-align: center;
+  bottom: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>EasyJobFinder</h1>
-</header>
-
+<!-- NAV -->
 <nav>
-  <a href="#jobs">Jobs</a>
-  <a href="#learnerships">Learnerships</a>
-  <a href="#donate">Donate</a>
-  <a href="#" onclick="openPopup()">Sign Up</a>
+  <h1>EasyJobFinder</h1>
+  <ul>
+    <li><a href="#jobs">Jobs</a></li>
+    <li><a href="#support">Support</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<section class="hero">
-  <h2>Find Verified Jobs in South Africa</h2>
-  <p>Free job links, learnerships & opportunities.</p>
-</section>
+<!-- JOBS -->
+<section id="jobs" class="section">
+  <h2>Jobs & Opportunities</h2>
 
-<section id="jobs" class="section list">
-  <h3>Gauteng Job Opportunities</h3>
-  <ul>
-    <li><a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">Careers24 – Gauteng Jobs</a></li>
-    <li><a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">Indeed – Gauteng Jobs</a></li>
-    <li><a href="https://www.pnet.co.za/jobs/gauteng/" target="_blank">PNet – Gauteng Jobs</a></li>
-    <li><a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">JobMail – Gauteng Jobs</a></li>
-  </ul>
-</section>
-
-<section id="learnerships" class="section list">
-  <h3>Learnerships & Code 14</h3>
-  <ul>
-    <li><a href="https://www.transnet.net/Careers/Pages/WorkWithUs.aspx" target="_blank">Transnet Learnerships</a></li>
-    <li><a href="https://www.eskom.co.za/careers/" target="_blank">Eskom Learnerships</a></li>
-    <li><a href="https://www.careers24.com/learnerships/" target="_blank">Careers24 Learnerships</a></li>
-  </ul>
-</section>
-
-<section id="donate" class="section">
-  <h3>Support EasyJobFinder</h3>
-  <p>EFT donations go <strong>directly to our Capitec account</strong>.</p>
-
-  <div class="donation-box" id="eftDetails">
-    <p><strong>EFT Details</strong></p>
-    <p>Bank: Capitec Bank</p>
-    <p>Account Holder: EasyJobFinder (T Makua)</p>
-    <p>Account Type: Savings</p>
-    <p>Account Number: 1860 **** 92</p>
-    <p>Branch Code: 470010</p>
-    <p>Reference: EasyJobFinder Donation</p>
+  <div class="search-box">
+    <input type="text" placeholder="Search jobs (e.g. Gauteng, Code 14, Learnership)">
   </div>
 
-  <br>
-  <button class="btn alt" onclick="copyEFT()">Copy EFT Details</button>
-  <a class="btn" href="https://wa.me/27XXXXXXXXX" target="_blank">Get Full EFT via WhatsApp</a>
+  <div class="jobs-grid">
 
-  <p style="margin-top:12px;font-size:13px;color:#555;">
-    For security reasons, full details are shared privately. EFT payments go straight to our bank.
-  </p>
+    <div class="job-card">
+      <a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">
+        Gauteng Jobs – Careers24
+      </a>
+    </div>
+
+    <div class="job-card">
+      <a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">
+        Gauteng Jobs – Indeed
+      </a>
+    </div>
+
+    <div class="job-card">
+      <a href="https://www.pnet.co.za/jobs/gauteng" target="_blank">
+        Gauteng Jobs – PNet
+      </a>
+    </div>
+
+    <div class="job-card">
+      <a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">
+        Gauteng Jobs – JobMail
+      </a>
+    </div>
+
+    <div class="job-card">
+      <a href="https://www.careers24.com/learnerships/" target="_blank">
+        Learnerships & Internships
+      </a>
+    </div>
+
+    <div class="job-card">
+      <a href="https://www.jobmail.co.za/jobs/code-14-driver" target="_blank">
+        Code 14 Driver Jobs
+      </a>
+    </div>
+
+    <div class="job-card">
+      <a href="https://www.careers24.com/jobs/keyword-code+14/" target="_blank">
+        Code 14 Learnerships & Vacancies
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section id="support" class="section">
+  <h2>Support EasyJobFinder</h2>
+
+  <div class="support-box">
+    <p>
+      EasyJobFinder helps South Africans access jobs, learnerships and opportunities
+      for free.
+    </p>
+
+    <ul>
+      <li>Share this website with others</li>
+      <li>Send job links or suggestions</li>
+      <li>Help grow the community</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: <strong>easyjobfinder@gmail.com</strong></p>
 </section>
 
 <footer>
-  © 2026 EasyJobFinder | Built for South Africans
+  <p>&copy; 2026 EasyJobFinder | Built for South Africans</p>
 </footer>
 
-<!-- EMAIL POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <h3>Email Job Alerts</h3>
-    <p>Get job updates straight to your inbox.</p>
-    <input type="email" placeholder="Enter your email" style="width:100%;padding:12px;margin-top:15px;">
-    <br><br>
-    <button class="btn" onclick="closePopup()">Sign Up</button>
-  </div>
-</div>
-
-<script>
-function openPopup() {
-  document.getElementById("popup").style.display = "flex";
-}
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
-
-function copyEFT() {
-  const text =
-`Bank: Capitec Bank
-Account Holder: EasyJobFinder (T Makua)
-Account Type: Savings
-Account Number: 1860 **** 92
-Branch Code: 470010
-Reference: EasyJobFinder Donation`;
-  navigator.clipboard.writeText(text);
-  alert("EFT details copied");
-}
-</script>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/27710315772" target="_blank">
+  WhatsApp Us
+</a>
 
 </body>
-    </html>
+        </html>
