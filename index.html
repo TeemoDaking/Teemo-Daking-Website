@@ -23,7 +23,6 @@ header {
   background: #000;
   color: #fff;
   padding: 18px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 header h1 {
@@ -49,10 +48,6 @@ nav a {
   font-weight: 700;
 }
 
-nav a:hover {
-  opacity: 0.8;
-}
-
 /* HERO */
 .hero {
   background: #fff;
@@ -67,7 +62,6 @@ nav a:hover {
 .hero h2 {
   font-size: 30px;
   font-weight: 900;
-  margin-bottom: 10px;
 }
 
 .hero p {
@@ -101,40 +95,44 @@ nav a:hover {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.list li:last-child {
-  border-bottom: none;
-}
-
 .list a {
   color: #000;
   text-decoration: none;
   font-weight: 700;
 }
 
-.list a:hover {
-  text-decoration: underline;
-}
-
-/* WHATSAPP & DONATION */
-.center-box {
-  text-align: center;
-}
-
+/* BUTTONS */
 .btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 12px 26px;
   border-radius: 4px;
   border: 2px solid #000;
   background: #000;
   color: #fff;
   font-weight: 800;
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.alt {
+  background: #fff;
+  color: #000;
 }
 
 .btn:hover {
-  background: #333;
-  border-color: #333;
+  opacity: 0.85;
+}
+
+/* DONATION */
+.donation-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.donation-box p {
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 /* FOOTER */
@@ -163,21 +161,7 @@ footer {
   width: 90%;
   max-width: 420px;
   border-radius: 6px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   text-align: center;
-}
-
-.popup-box h3 {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.popup-box input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  margin-top: 15px;
 }
 </style>
 </head>
@@ -191,14 +175,13 @@ footer {
 <nav>
   <a href="#jobs">Jobs</a>
   <a href="#learnerships">Learnerships</a>
-  <a href="#whatsapp">WhatsApp</a>
   <a href="#donate">Donate</a>
   <a href="#" onclick="openPopup()">Sign Up</a>
 </nav>
 
 <section class="hero">
   <h2>Find Verified Jobs in South Africa</h2>
-  <p>Gauteng jobs, learnerships, Code 14 opportunities & alerts.</p>
+  <p>Free job links, learnerships & opportunities.</p>
 </section>
 
 <section id="jobs" class="section list">
@@ -208,7 +191,6 @@ footer {
     <li><a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">Indeed – Gauteng Jobs</a></li>
     <li><a href="https://www.pnet.co.za/jobs/gauteng/" target="_blank">PNet – Gauteng Jobs</a></li>
     <li><a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">JobMail – Gauteng Jobs</a></li>
-    <li><a href="https://www.gumtree.co.za/jobs/gauteng" target="_blank">Gumtree – Gauteng Jobs</a></li>
   </ul>
 </section>
 
@@ -218,22 +200,30 @@ footer {
     <li><a href="https://www.transnet.net/Careers/Pages/WorkWithUs.aspx" target="_blank">Transnet Learnerships</a></li>
     <li><a href="https://www.eskom.co.za/careers/" target="_blank">Eskom Learnerships</a></li>
     <li><a href="https://www.careers24.com/learnerships/" target="_blank">Careers24 Learnerships</a></li>
-    <li><a href="https://www.code14.co.za/" target="_blank">Code 14 Driving Opportunities</a></li>
   </ul>
 </section>
 
-<section id="whatsapp" class="section center-box">
-  <h3>WhatsApp Job Alerts</h3>
-  <p>Receive verified job updates directly on WhatsApp.</p>
-  <br>
-  <a class="btn" href="https://wa.me/27XXXXXXXXX" target="_blank">Join WhatsApp Alerts</a>
-</section>
-
-<section id="donate" class="section center-box">
+<section id="donate" class="section">
   <h3>Support EasyJobFinder</h3>
-  <p>This platform is free. Donations help us keep sharing jobs.</p>
+  <p>EFT donations go <strong>directly to our Capitec account</strong>.</p>
+
+  <div class="donation-box" id="eftDetails">
+    <p><strong>EFT Details</strong></p>
+    <p>Bank: Capitec Bank</p>
+    <p>Account Holder: EasyJobFinder (T Makua)</p>
+    <p>Account Type: Savings</p>
+    <p>Account Number: 1860 **** 92</p>
+    <p>Branch Code: 470010</p>
+    <p>Reference: EasyJobFinder Donation</p>
+  </div>
+
   <br>
-  <button class="btn">Donate</button>
+  <button class="btn alt" onclick="copyEFT()">Copy EFT Details</button>
+  <a class="btn" href="https://wa.me/27XXXXXXXXX" target="_blank">Get Full EFT via WhatsApp</a>
+
+  <p style="margin-top:12px;font-size:13px;color:#555;">
+    For security reasons, full details are shared privately. EFT payments go straight to our bank.
+  </p>
 </section>
 
 <footer>
@@ -244,8 +234,8 @@ footer {
 <div class="popup" id="popup">
   <div class="popup-box">
     <h3>Email Job Alerts</h3>
-    <p>Get new opportunities sent to your email.</p>
-    <input type="email" placeholder="Enter your email">
+    <p>Get job updates straight to your inbox.</p>
+    <input type="email" placeholder="Enter your email" style="width:100%;padding:12px;margin-top:15px;">
     <br><br>
     <button class="btn" onclick="closePopup()">Sign Up</button>
   </div>
@@ -258,7 +248,19 @@ function openPopup() {
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
+
+function copyEFT() {
+  const text =
+`Bank: Capitec Bank
+Account Holder: EasyJobFinder (T Makua)
+Account Type: Savings
+Account Number: 1860 **** 92
+Branch Code: 470010
+Reference: EasyJobFinder Donation`;
+  navigator.clipboard.writeText(text);
+  alert("EFT details copied");
+}
 </script>
 
 </body>
-  </html>
+    </html>
