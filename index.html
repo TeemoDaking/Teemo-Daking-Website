@@ -158,9 +158,10 @@
   function showSection(id) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+
     if (id === 'jobs') {
-      // If URL has hash, show that job detail immediately
-      handleHash();
+      // Always show job list and hide job details when navigating to jobs tab
+      backToJobList();
     }
   }
 
@@ -365,4 +366,4 @@
 </footer>
 
 </body>
-  </html>
+</html>
