@@ -20,24 +20,28 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 nav h1 {
   color: #fff;
-  font-size: 22px;
+  font-size: clamp(18px, 5vw, 22px);
   font-weight: 900;
   margin: 0;
+  white-space: nowrap;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   padding: 0;
-  margin: 0;
+  margin: 8px 0 0 0;
+  flex-wrap: wrap;
 }
 
 nav ul li {
   margin-left: 20px;
+  margin-top: 5px;
 }
 
 nav ul li a {
@@ -53,35 +57,36 @@ nav ul li a:hover {
 
 /* SECTIONS */
 .section {
-  padding: 50px 20px;
+  padding: 40px 16px;
   max-width: 1100px;
   margin: auto;
 }
 
 .section h2 {
-  font-size: 28px;
+  font-size: clamp(22px, 6vw, 28px);
   font-weight: 900;
   margin-bottom: 20px;
   border-bottom: 3px solid #000;
   display: inline-block;
 }
 
-/* HERO / POSTS */
+/* HERO */
 .hero {
   background: #f5f5f5;
-  padding: 40px;
+  padding: 30px;
   border: 2px solid #000;
 }
 
 .hero p {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   line-height: 1.6;
 }
 
+/* POSTS */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 15px;
   margin-top: 30px;
 }
@@ -104,9 +109,10 @@ nav ul li a:hover {
   margin-bottom: 25px;
 }
 
+/* JOB GRID */
 .jobs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 15px;
 }
 
@@ -139,16 +145,17 @@ footer {
   text-align: center;
   padding: 16px;
   margin-top: 50px;
+  font-size: 14px;
 }
 
 /* WHATSAPP */
 .whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   background: #000;
   color: #fff;
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
@@ -171,7 +178,7 @@ function showHome() {
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
   <h1>EasyJobFinder</h1>
   <ul>
@@ -182,36 +189,36 @@ function showHome() {
   </ul>
 </nav>
 
-<!-- HOME / POSTS -->
+<!-- HOME -->
 <section id="home" class="section">
   <h2>Welcome to EasyJobFinder</h2>
 
   <div class="hero">
     <p>
-      EasyJobFinder helps South Africans discover jobs, learnerships, internships
-      and opportunities — all in one trusted place.
+      EasyJobFinder helps South Africans discover jobs, learnerships,
+      internships and career opportunities — all in one trusted place.
     </p>
   </div>
 
   <div class="post-grid">
     <div class="post">
-      <strong>Latest Job Tips</strong>
-      <p>How to apply for jobs online safely in South Africa.</p>
+      <strong>Job Application Tips</strong>
+      <p>How to avoid scams and apply safely online.</p>
     </div>
 
     <div class="post">
-      <strong>Learnership Guide</strong>
-      <p>Everything you need to know about learnerships in 2026.</p>
+      <strong>Learnership Updates</strong>
+      <p>New learnerships opening soon across SA.</p>
     </div>
 
     <div class="post">
       <strong>CV Advice</strong>
-      <p>Simple CV mistakes that stop people from getting hired.</p>
+      <p>Common CV mistakes that cost people jobs.</p>
     </div>
   </div>
 </section>
 
-<!-- JOBS (HIDDEN UNTIL CLICKED) -->
+<!-- JOBS -->
 <section id="jobs" class="section">
   <h2>Jobs & Opportunities</h2>
 
@@ -220,7 +227,6 @@ function showHome() {
   </div>
 
   <div class="jobs-grid">
-
     <div class="job-card">
       <a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">
         Gauteng Jobs – Careers24
@@ -256,7 +262,6 @@ function showHome() {
         Code 14 Learnerships & Vacancies
       </a>
     </div>
-
   </div>
 </section>
 
@@ -265,8 +270,8 @@ function showHome() {
   <h2>Support EasyJobFinder</h2>
   <div class="support-box">
     <p>
-      This platform is free and built to help job seekers.
-      You can support it by sharing it with others.
+      EasyJobFinder is free and built to help job seekers.
+      Support by sharing this platform with others.
     </p>
   </div>
 </section>
@@ -278,7 +283,7 @@ function showHome() {
 </section>
 
 <footer>
-  &copy; 2026 EasyJobFinder | Jobs Hidden Until You Need Them
+  &copy; 2026 EasyJobFinder | All Jobs in One Place
 </footer>
 
 <a class="whatsapp" href="https://wa.me/27710315772" target="_blank">
@@ -286,4 +291,4 @@ function showHome() {
 </a>
 
 </body>
-      </html>
+</html>
