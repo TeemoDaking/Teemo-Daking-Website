@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EasyJobFinder – Find jobs and opportunities in South Africa">
 
 <title>EasyJobFinder</title>
 
@@ -18,7 +19,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -37,9 +38,8 @@ header {
 header h1 {
   margin: 0;
   font-size: clamp(1.6rem, 5vw, 2.2rem);
-  font-weight: 800;
-  color: #fff;
-  word-break: break-word;
+  font-weight: 900;
+  color: #ffffff;
 }
 
 /* NAVIGATION */
@@ -55,11 +55,11 @@ nav {
 
 nav button {
   background: var(--primary);
-  color: #fff;
+  color: #ffffff;
   border: none;
   padding: 10px 18px;
   border-radius: 25px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
 }
 
@@ -94,20 +94,14 @@ main {
 .card h2 {
   margin-top: 0;
   font-size: 1.5rem;
+  font-weight: 900;
   color: var(--primary);
-}
-
-/* POSTS */
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
 }
 
 /* JOB LIST */
 .job {
   padding: 14px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .job:last-child {
@@ -137,7 +131,7 @@ main {
   text-decoration: underline;
 }
 
-/* DONATION */
+/* DONATE */
 .donate-box {
   text-align: center;
 }
@@ -145,12 +139,12 @@ main {
 .donate-btn {
   margin-top: 14px;
   background: var(--accent);
-  color: #fff;
+  color: #ffffff;
   padding: 12px 22px;
   border-radius: 30px;
   border: none;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
 }
 
@@ -191,20 +185,15 @@ footer {
   <div class="card">
     <h2>Welcome to EasyJobFinder</h2>
     <p>
-      EasyJobFinder helps you discover jobs, learnerships, internships and
-      opportunities — all in one place.
-    </p>
-    <p>
-      All job listings are neatly stored under the Jobs & Opportunities tab,
-      keeping the home page clean for updates and announcements.
+      EasyJobFinder helps people find jobs and opportunities across South Africa.
+      All job listings are kept under one tab for easy access.
     </p>
   </div>
 
   <div class="card">
-    <h2>Latest Updates</h2>
+    <h2>Updates & Notices</h2>
     <p>
-      Use this space to post important notices, career tips, or featured
-      opportunities.
+      This space is for announcements, tips, and important updates.
     </p>
   </div>
 </section>
@@ -216,7 +205,7 @@ footer {
 
     <div class="job">
       <h3>General Worker</h3>
-      <p>Location: South Africa • Entry Level</p>
+      <p>South Africa • Entry Level</p>
     </div>
 
     <div class="job">
@@ -235,27 +224,18 @@ footer {
     </div>
 
     <div class="job">
-      <h3>Phakisa Holdings – Vacancy JHB000474</h3>
-      <p>Location: Johannesburg</p>
-      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank">
-        View & Apply →
-      </a>
+      <h3>Phakisa Holdings – JHB000474</h3>
+      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank">View & Apply →</a>
     </div>
 
     <div class="job">
-      <h3>Phakisa Holdings – Vacancy JHB000466</h3>
-      <p>Location: Johannesburg</p>
-      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank">
-        View & Apply →
-      </a>
+      <h3>Phakisa Holdings – JHB000466</h3>
+      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank">View & Apply →</a>
     </div>
 
     <div class="job">
-      <h3>Phakisa Holdings – Vacancy JHB000467</h3>
-      <p>Location: Johannesburg</p>
-      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank">
-        View & Apply →
-      </a>
+      <h3>Phakisa Holdings – JHB000467</h3>
+      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank">View & Apply →</a>
     </div>
 
   </div>
@@ -266,8 +246,8 @@ footer {
   <div class="card donate-box">
     <h2>Support EasyJobFinder</h2>
     <p>
-      This platform is independently run to help people access job opportunities.
-      Your support helps keep it online and updated.
+      This platform is run independently to help people find work.
+      Your support helps keep it active.
     </p>
     <button class="donate-btn">Donate ❤️</button>
   </div>
@@ -276,12 +256,13 @@ footer {
 </main>
 
 <footer>
-  © 2026 EasyJobFinder • Helping people find opportunities
+  © 2026 EasyJobFinder • Built to help people find opportunities
 </footer>
 
 <script>
 function showSection(id) {
-  document.querySelectorAll('.section').forEach(section => {
+  var sections = document.querySelectorAll('.section');
+  sections.forEach(function(section) {
     section.classList.remove('active');
   });
   document.getElementById(id).classList.add('active');
@@ -289,4 +270,4 @@ function showSection(id) {
 </script>
 
 </body>
-  </html>
+      </html>
