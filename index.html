@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EasyJobFinder - Jobs, Learnerships, Internships & Bursaries">
-<title>EasyJobFinder | Home</title>
+<title>EasyJobFinder | Find Jobs Easily</title>
 
 <style>
 * {
@@ -15,208 +14,156 @@
 }
 
 body {
-  background: #ffffff;
-  color: #000000;
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+  background: #fff;
+  color: #000;
 }
 
 /* HEADER */
 header {
-  background: #000000;
-  color: #ffffff;
-  padding: 18px 25px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
 }
 
 header h1 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 900;
-  letter-spacing: 2px;
 }
 
-/* NAVIGATION */
+/* MODEST NAV */
 nav {
   display: flex;
-  gap: 18px;
-  align-items: center;
+  justify-content: space-around;
+  background: #111;
+  padding: 10px 0;
   flex-wrap: wrap;
 }
 
-nav a,
-nav button {
-  color: #ffffff;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: 800;
-  cursor: pointer;
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
 }
 
-nav a:hover,
-nav button:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
-/* DROPDOWN */
-.dropdown {
-  position: relative;
+/* HERO */
+.hero {
+  padding: 30px 20px;
+  text-align: center;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 38px;
-  left: 0;
-  background: #ffffff;
-  border: 2px solid #000000;
-  min-width: 240px;
-  z-index: 1000;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 12px;
-  font-weight: 800;
-  color: #000000;
-}
-
-.dropdown-menu a:hover {
-  background: #eeeeee;
-}
-
-/* MAIN */
-main {
-  margin-top: 40px;
-}
-
-main h2 {
-  font-size: 36px;
+.hero h2 {
+  font-size: 26px;
   font-weight: 900;
-  margin-bottom: 20px;
 }
 
-.intro {
-  font-size: 18px;
-  font-weight: 700;
-  max-width: 750px;
-  margin-bottom: 40px;
-}
-
-/* JOBS GRID */
-.jobs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-/* JOB CARD */
-.job-card {
-  border: 2px solid #000000;
-  border-radius: 12px;
-  padding: 25px;
-  background: #ffffff;
-}
-
-.job-card h3 {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 10px;
-}
-
-.job-card p {
+.hero p {
+  margin-top: 10px;
   font-size: 16px;
-  font-weight: 700;
+}
+
+/* SECTIONS */
+.section {
+  padding: 25px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h3 {
+  font-size: 20px;
+  font-weight: 900;
   margin-bottom: 15px;
 }
 
-/* APPLY BUTTON */
-.apply {
-  background: #000000;
-  color: #ffffff;
-  border: none;
+/* LISTS */
+.list ul {
+  list-style: none;
+}
+
+.list li {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.list a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.list a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
   padding: 12px 25px;
-  font-weight: 900;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.apply:hover {
-  background: #333333;
-}
-
-/* SIGNUP BUTTON */
-.signup-btn {
-  margin-top: 40px;
-  background: #000000;
-  color: #ffffff;
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: 900;
-  border: none;
-  border-radius: 10px;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  font-weight: 800;
   cursor: pointer;
 }
 
-/* MODAL */
-.modal-bg {
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* SPECIAL SECTIONS */
+.whatsapp, .donation {
+  border: 2px solid #000;
+  padding: 20px;
+  text-align: center;
+}
+
+/* FORM */
+form input, form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+}
+
+/* POPUP */
+.popup {
   display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
 }
 
-.modal {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 420px;
-  width: 100%;
+.popup-box {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
   text-align: center;
 }
 
-.modal h3 {
-  font-size: 26px;
+.popup-box h3 {
   font-weight: 900;
-  margin-bottom: 15px;
-}
-
-.modal p {
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.modal input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  border: 2px solid #000000;
-}
-
-.modal button {
-  width: 100%;
-  background: #000000;
-  color: #ffffff;
-  padding: 14px;
-  font-weight: 900;
-  border: none;
-  cursor: pointer;
 }
 
 /* FOOTER */
 footer {
-  margin-top: 60px;
+  background: #000;
+  color: #fff;
   text-align: center;
-  font-weight: 800;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -225,95 +172,97 @@ footer {
 
 <header>
   <h1>EasyJobFinder</h1>
-
-  <nav>
-    <a href="#">Home</a>
-
-    <div class="dropdown">
-      <button onclick="toggleDropdown()">Jobs ▼</button>
-      <div class="dropdown-menu" id="jobsMenu">
-        <a href="#">All Jobs – Gauteng</a>
-        <a href="#">Admin Jobs – Gauteng</a>
-        <a href="#">Security Jobs – Gauteng</a>
-        <a href="#">Driver Jobs – Gauteng</a>
-        <a href="#">Code 14 Learnership – Gauteng</a>
-      </div>
-    </div>
-
-    <a href="#">Learnerships</a>
-    <a href="#">Internships</a>
-    <a href="#">Bursaries</a>
-    <a href="#">Donation</a>
-    <a href="#">Contact</a>
-  </nav>
 </header>
 
-<main>
-  <h2>Find Jobs That Change Your Life</h2>
-  <p class="intro">
-    EasyJobFinder helps South Africans find verified jobs, learnerships,
-    internships, bursaries and Code 14 opportunities.
-  </p>
+<nav>
+  <a href="#jobs">Jobs</a>
+  <a href="#learnerships">Learnerships</a>
+  <a href="#cv">Upload CV</a>
+  <a href="#whatsapp">WhatsApp</a>
+  <a href="#donate">Donate</a>
+  <a href="#" onclick="openPopup()">Sign Up</a>
+</nav>
 
-  <section class="jobs">
-    <div class="job-card">
-      <h3>Code 14 Driver Learnership</h3>
-      <p>Location: Gauteng<br>Company: Logistics SA</p>
-      <button class="apply">Apply Now</button>
-    </div>
+<section class="hero">
+  <h2>Find Jobs Faster</h2>
+  <p>Jobs, Learnerships, Code 14 & Career Opportunities</p>
+</section>
 
-    <div class="job-card">
-      <h3>Office Administrator</h3>
-      <p>Location: Johannesburg<br>Company: AdminCorp</p>
-      <button class="apply">Apply Now</button>
-    </div>
+<section id="jobs" class="section list">
+  <h3>Gauteng Job Links</h3>
+  <ul>
+    <li><a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">Careers24 Gauteng Jobs</a></li>
+    <li><a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">Indeed Gauteng Jobs</a></li>
+    <li><a href="https://www.pnet.co.za/jobs/gauteng/" target="_blank">PNet Gauteng Jobs</a></li>
+    <li><a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">JobMail Gauteng</a></li>
+    <li><a href="https://www.gumtree.co.za/jobs/gauteng" target="_blank">Gumtree Gauteng Jobs</a></li>
+  </ul>
+</section>
 
-    <div class="job-card">
-      <h3>General Worker</h3>
-      <p>Location: Pretoria<br>Company: BuildPro</p>
-      <button class="apply">Apply Now</button>
-    </div>
-  </section>
+<section id="learnerships" class="section list">
+  <h3>Learnerships & Code 14</h3>
+  <ul>
+    <li><a href="https://www.transnet.net/Careers/Pages/WorkWithUs.aspx" target="_blank">Transnet Learnerships</a></li>
+    <li><a href="https://www.eskom.co.za/careers/" target="_blank">Eskom Learnerships</a></li>
+    <li><a href="https://www.careers24.com/learnerships/" target="_blank">Careers24 Learnerships</a></li>
+    <li><a href="https://www.code14.co.za/" target="_blank">Code 14 Learnerships</a></li>
+  </ul>
+</section>
 
-  <button class="signup-btn" onclick="openModal()">
-    Sign Up for Job Alerts via Email
-  </button>
-</main>
+<section id="cv" class="section">
+  <h3>Upload Your CV</h3>
+  <p>Let employers find you faster.</p>
+
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <input type="tel" placeholder="Phone Number">
+    <select>
+      <option>Select Job Type</option>
+      <option>General Jobs</option>
+      <option>Learnerships</option>
+      <option>Internships</option>
+      <option>Code 14 Driving</option>
+    </select>
+    <input type="file" accept=".pdf,.doc,.docx">
+    <button class="btn" type="submit">Submit CV</button>
+  </form>
+</section>
+
+<section id="whatsapp" class="section whatsapp">
+  <h3>WhatsApp Job Alerts</h3>
+  <p>Receive new job updates directly on WhatsApp.</p>
+  <a href="https://wa.me/27XXXXXXXXX" target="_blank" class="btn">Join WhatsApp Alerts</a>
+</section>
+
+<section id="donate" class="section donation">
+  <h3>Support EasyJobFinder</h3>
+  <p>This platform is free. Donations help keep it running.</p>
+  <button class="btn">Donate</button>
+</section>
 
 <footer>
-  © 2026 EasyJobFinder | Built to help South Africans find work
+  <p>© 2026 EasyJobFinder | Built for South Africans</p>
 </footer>
 
-<!-- EMAIL MODAL -->
-<div class="modal-bg" id="modal">
-  <div class="modal">
+<!-- EMAIL POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
     <h3>Email Job Alerts</h3>
-    <p>Get the latest jobs sent straight to your inbox.</p>
+    <p>Get jobs sent to your inbox.</p>
     <input type="email" placeholder="Enter your email">
-    <button onclick="closeModal()">Subscribe</button>
+    <br><br>
+    <button class="btn" onclick="closePopup()">Sign Up</button>
   </div>
 </div>
 
 <script>
-function openModal() {
-  document.getElementById("modal").style.display = "flex";
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
 }
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
 }
-
-function toggleDropdown() {
-  const menu = document.getElementById("jobsMenu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-document.addEventListener("click", function(e) {
-  const dropdown = document.querySelector(".dropdown");
-  if (!dropdown.contains(e.target)) {
-    document.getElementById("jobsMenu").style.display = "none";
-  }
-});
 </script>
 
 </body>
