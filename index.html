@@ -6,7 +6,6 @@
 <title>EasyJobFinder | Find Jobs Easily</title>
 
 <style>
-/* GLOBAL */
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +15,8 @@
 }
 
 body {
-  background: #0f1115;       /* realistic dark */
-  color: #e6e6e6;            /* soft white */
+  background: #0f1115;
+  color: #e6e6e6;
   line-height: 1.6;
 }
 
@@ -32,7 +31,6 @@ header {
 header h1 {
   font-size: 24px;
   font-weight: 800;
-  letter-spacing: 0.5px;
 }
 
 /* NAV */
@@ -53,7 +51,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 /* HERO */
@@ -68,8 +66,6 @@ nav a:hover {
 }
 
 .hero p {
-  margin-top: 10px;
-  font-size: 16px;
   color: #b8bcc9;
 }
 
@@ -86,7 +82,30 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* LISTS */
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #2a2f45;
+  background: #151823;
+  color: #dcdcdc;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  background: #232a4d;
+  color: #fff;
+}
+
+/* LIST */
 .list ul {
   list-style: none;
 }
@@ -98,37 +117,36 @@ nav a:hover {
 
 .list a {
   color: #e6e6e6;
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .list a:hover {
-  color: #ffffff;
+  color: #fff;
+}
+
+/* TAB CONTENT */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
 }
 
 /* BUTTON */
 .btn {
-  display: inline-block;
   padding: 12px 26px;
   border-radius: 6px;
   border: 1px solid #2d3248;
   background: #1a1f36;
-  color: #ffffff;
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
 }
 
 .btn:hover {
   background: #232a4d;
-}
-
-/* SPECIAL SECTIONS */
-.whatsapp,
-.donation {
-  background: #12141a;
-  border: 1px solid #1f2230;
-  border-radius: 8px;
-  text-align: center;
 }
 
 /* FORM */
@@ -138,13 +156,22 @@ form select {
   padding: 12px;
   margin-bottom: 12px;
   background: #0f1115;
-  color: #ffffff;
+  color: #fff;
   border: 1px solid #2a2f45;
   border-radius: 6px;
 }
 
 form input::placeholder {
   color: #8b90a5;
+}
+
+/* SPECIAL */
+.whatsapp,
+.donation {
+  background: #12141a;
+  border: 1px solid #1f2230;
+  border-radius: 8px;
+  text-align: center;
 }
 
 /* POPUP */
@@ -160,11 +187,11 @@ form input::placeholder {
 .popup-box {
   background: #12141a;
   padding: 25px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
   border-radius: 10px;
   border: 1px solid #2a2f45;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
 }
 
 /* FOOTER */
@@ -173,8 +200,6 @@ footer {
   color: #9aa0b5;
   text-align: center;
   padding: 16px;
-  margin-top: 40px;
-  font-size: 14px;
   border-top: 1px solid #1f2230;
 }
 </style>
@@ -188,7 +213,6 @@ footer {
 
 <nav>
   <a href="#jobs">Jobs</a>
-  <a href="#learnerships">Learnerships</a>
   <a href="#cv">Upload CV</a>
   <a href="#whatsapp">WhatsApp</a>
   <a href="#donate">Donate</a>
@@ -200,56 +224,57 @@ footer {
   <p>Jobs, Learnerships, Code 14 & Career Opportunities</p>
 </section>
 
-<section id="jobs" class="section list">
-  <h3>Gauteng Job Links</h3>
-  <ul>
-    <li><a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">Careers24 Gauteng Jobs</a></li>
-    <li><a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">Indeed Gauteng Jobs</a></li>
-    <li><a href="https://www.pnet.co.za/jobs/gauteng/" target="_blank">PNet Gauteng Jobs</a></li>
-    <li><a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">JobMail Gauteng</a></li>
-    <li><a href="https://www.gumtree.co.za/jobs/gauteng" target="_blank">Gumtree Gauteng Jobs</a></li>
-  </ul>
-</section>
+<section id="jobs" class="section">
+  <h3>Job Opportunities</h3>
 
-<section id="learnerships" class="section list">
-  <h3>Learnerships & Code 14</h3>
-  <ul>
-    <li><a href="https://www.transnet.net/Careers/Pages/WorkWithUs.aspx" target="_blank">Transnet Learnerships</a></li>
-    <li><a href="https://www.eskom.co.za/careers/" target="_blank">Eskom Learnerships</a></li>
-    <li><a href="https://www.careers24.com/learnerships/" target="_blank">Careers24 Learnerships</a></li>
-    <li><a href="https://www.code14.co.za/" target="_blank">Code 14 Learnerships</a></li>
-  </ul>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event,'gauteng')">Gauteng Jobs</button>
+    <button class="tab-btn" onclick="openTab(event,'learnerships')">Learnerships</button>
+    <button class="tab-btn" onclick="openTab(event,'code14')">Code 14</button>
+  </div>
+
+  <div id="gauteng" class="tab-content active list">
+    <ul>
+      <li><a href="https://www.careers24.com/jobs/lc-gauteng/" target="_blank">Careers24 Gauteng</a></li>
+      <li><a href="https://www.indeed.com/jobs?q=&l=Gauteng" target="_blank">Indeed Gauteng</a></li>
+      <li><a href="https://www.pnet.co.za/jobs/gauteng/" target="_blank">PNet Gauteng</a></li>
+      <li><a href="https://www.jobmail.co.za/jobs/gauteng" target="_blank">JobMail Gauteng</a></li>
+      <li><a href="https://www.gumtree.co.za/jobs/gauteng" target="_blank">Gumtree Gauteng</a></li>
+    </ul>
+  </div>
+
+  <div id="learnerships" class="tab-content list">
+    <ul>
+      <li><a href="https://www.transnet.net/Careers/Pages/WorkWithUs.aspx" target="_blank">Transnet Learnerships</a></li>
+      <li><a href="https://www.eskom.co.za/careers/" target="_blank">Eskom Learnerships</a></li>
+      <li><a href="https://www.careers24.com/learnerships/" target="_blank">Careers24 Learnerships</a></li>
+    </ul>
+  </div>
+
+  <div id="code14" class="tab-content list">
+    <ul>
+      <li><a href="https://www.code14.co.za/" target="_blank">Code 14 Learnerships</a></li>
+    </ul>
+  </div>
 </section>
 
 <section id="cv" class="section">
   <h3>Upload Your CV</h3>
-  <p>Let employers find you faster.</p>
-
   <form>
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="Email Address" required>
-    <input type="tel" placeholder="Phone Number">
-    <select>
-      <option>Select Job Type</option>
-      <option>General Jobs</option>
-      <option>Learnerships</option>
-      <option>Internships</option>
-      <option>Code 14 Driving</option>
-    </select>
-    <input type="file" accept=".pdf,.doc,.docx">
-    <button class="btn" type="submit">Submit CV</button>
+    <input type="file">
+    <button class="btn">Submit CV</button>
   </form>
 </section>
 
 <section id="whatsapp" class="section whatsapp">
   <h3>WhatsApp Job Alerts</h3>
-  <p>Receive new job updates directly on WhatsApp.</p>
-  <a href="https://wa.me/27XXXXXXXXX" target="_blank" class="btn">Join WhatsApp Alerts</a>
+  <a class="btn" href="#">Join WhatsApp Alerts</a>
 </section>
 
 <section id="donate" class="section donation">
   <h3>Support EasyJobFinder</h3>
-  <p>This platform is free. Donations help keep it running.</p>
   <button class="btn">Donate</button>
 </section>
 
@@ -257,11 +282,9 @@ footer {
   <p>© 2026 EasyJobFinder | Built for South Africans</p>
 </footer>
 
-<!-- POPUP -->
 <div class="popup" id="popup">
   <div class="popup-box">
     <h3>Email Job Alerts</h3>
-    <p>Get jobs sent to your inbox.</p>
     <input type="email" placeholder="Enter your email">
     <br><br>
     <button class="btn" onclick="closePopup()">Sign Up</button>
@@ -269,6 +292,14 @@ footer {
 </div>
 
 <script>
+function openTab(evt, tabName) {
+  document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+
 function openPopup() {
   document.getElementById("popup").style.display = "flex";
 }
@@ -278,4 +309,4 @@ function closePopup() {
 </script>
 
 </body>
-</html
+</html>
