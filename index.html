@@ -10,12 +10,23 @@
     font-family: Arial, sans-serif;
     background: #f4f6f8;
     margin: 0; padding: 0;
+    color: #222;
   }
   header {
     background: #0d6efd;
     color: white;
     padding: 20px;
     text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 1.2px;
+  }
+  header p {
+    margin-top: 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   .container {
     max-width: 900px;
@@ -29,6 +40,7 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     gap: 10px;
     flex-wrap: wrap;
+    padding: 12px 0;
   }
   nav button {
     background: #198754;
@@ -38,9 +50,12 @@
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
   }
-  nav button:hover {
+  nav button:hover,
+  nav button:focus {
     background: #157347;
+    outline: none;
   }
   .section {
     display: none;
@@ -48,56 +63,94 @@
   .section.active {
     display: block;
   }
+  /* Home intro styling */
+  #home p.intro {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 720px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  /* Job list links */
   .job-list .job-link {
     display: block;
-    padding: 12px 15px;
-    margin: 8px 0;
+    padding: 14px 18px;
+    margin: 10px 0;
     background: white;
-    border-radius: 6px;
+    border-radius: 8px;
     color: #0d6efd;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease;
   }
   .job-list .job-link:hover {
     background: #e3f2fd;
   }
+  /* Job detail styling */
   .job-detail {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    line-height: 1.5;
   }
   .job-detail h2 {
     margin-top: 0;
     color: #198754;
+    font-size: 2rem;
   }
   .apply-btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
+    margin-top: 25px;
+    padding: 14px 30px;
     background: #0d6efd;
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+    transition: background-color 0.3s ease;
   }
-  .apply-btn:hover {
+  .apply-btn:hover,
+  .apply-btn:focus {
     background: #084cd5;
+    outline: none;
   }
   .back-link {
-    margin-top: 25px;
+    margin-top: 30px;
     display: inline-block;
     cursor: pointer;
     color: #0d6efd;
     font-weight: bold;
     text-decoration: underline;
+    font-size: 1rem;
+  }
+  /* Donation section */
+  #donate ul {
+    list-style: none;
+    padding-left: 0;
+    max-width: 360px;
+  }
+  #donate ul li {
+    background: white;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    font-weight: 600;
+  }
+  #donate p {
+    max-width: 720px;
+    font-size: 1.1rem;
   }
   footer {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     color: #666;
     font-size: 14px;
+    user-select: none;
   }
 </style>
 <script>
@@ -123,6 +176,8 @@
     const job = document.getElementById(jobId);
     if (job) {
       job.style.display = 'block';
+      // Hide job list
+      document.getElementById('job-list').style.display = 'none';
       // Scroll to top
       window.scrollTo({top:0, behavior: 'smooth'});
       // Update URL hash for sharing
@@ -160,10 +215,23 @@
   // Listen to hash changes (back/forward browser buttons)
   window.addEventListener('hashchange', handleHash);
 
-  // Initialize page
+  // Initialize page, show job if hash exists
   window.onload = function() {
+    if(window.location.hash){
+      // If URL has a hash, try to show the correct job detail
+      const hash = window.location.hash.substring(1);
+      const jobDetail = document.getElementById(hash);
+      if(jobDetail && jobDetail.classList.contains('job-detail')){
+        // Show Jobs section and the job detail
+        showSection('jobs');
+        document.getElementById('job-list').style.display = 'none';
+        jobDetail.style.display = 'block';
+        return; // exit early
+      }
+    }
+    // If no hash or invalid, just show home and job list normally
     showSection('home');
-    handleHash();
+    backToJobList();
   }
 </script>
 </head>
@@ -171,7 +239,7 @@
 
 <header>
   <h1>EasyJobFinder SA</h1>
-  <p>Find Verified Jobs in South Africa 🇿🇦</p>
+  <p>Your trusted platform to find verified jobs and career opportunities across South Africa 🇿🇦</p>
 </header>
 
 <nav>
@@ -185,8 +253,10 @@
   <!-- Home Section -->
   <section id="home" class="section active">
     <h2>Welcome to EasyJobFinder</h2>
-    <p>Your go-to platform for finding verified jobs and opportunities across South Africa.  
-      Click on "Jobs & Opportunities" to explore current openings.</p>
+    <p class="intro">
+      EasyJobFinder is your go-to platform for the latest <strong>Jobs</strong>, <strong>Learnerships</strong>, <strong>Internships</strong>, and <strong>Bursaries</strong> in South Africa.  
+      Discover your next career opportunity and grow your future with us — no sign-up needed.
+    </p>
   </section>
 
   <!-- Jobs Section -->
@@ -199,6 +269,10 @@
       <a href="#job-phakisa466" class="job-link" onclick="event.preventDefault(); showJobDetail('job-phakisa466')">Warehouse Assistant – Phakisa Holdings (Ref: JHB000466)</a>
       <a href="#job-phakisa467" class="job-link" onclick="event.preventDefault(); showJobDetail('job-phakisa467')">Cleaner – Industrial Site (Ref: DBN000467)</a>
       <a href="#job-code14" class="job-link" onclick="event.preventDefault(); showJobDetail('job-code14')">Code 14 Learnership – Truck Driver Training</a>
+      <!-- New jobs added below -->
+      <a href="#job-dataentry" class="job-link" onclick="event.preventDefault(); showJobDetail('job-dataentry')">Data Entry Clerk – Cape Town</a>
+      <a href="#job-cashier" class="job-link" onclick="event.preventDefault(); showJobDetail('job-cashier')">Cashier – Retail Store, Durban</a>
+      <a href="#job-intern" class="job-link" onclick="event.preventDefault(); showJobDetail('job-intern')">Marketing Internship – Johannesburg</a>
     </div>
 
     <!-- Job Details -->
@@ -240,6 +314,34 @@
       <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
     </div>
 
+    <!-- New job details -->
+    <div id="job-dataentry" class="job-detail" style="display:none;">
+      <h2>Data Entry Clerk – Cape Town</h2>
+      <p><strong>Location:</strong> Cape Town</p>
+      <p><strong>Requirements:</strong> Good typing skills, attention to detail</p>
+      <p><strong>Duties:</strong> Entering data into company systems, ensuring accuracy</p>
+      <a class="apply-btn" href="mailto:hr@capetownjobs.co.za" target="_blank" rel="noopener noreferrer">Apply via Email</a>
+      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
+    </div>
+
+    <div id="job-cashier" class="job-detail" style="display:none;">
+      <h2>Cashier – Retail Store, Durban</h2>
+      <p><strong>Location:</strong> Durban</p>
+      <p><strong>Requirements:</strong> Customer service skills, cash handling experience</p>
+      <p><strong>Duties:</strong> Process transactions, manage cash register</p>
+      <a class="apply-btn" href="mailto:jobs@durbanretail.co.za" target="_blank" rel="noopener noreferrer">Apply via Email</a>
+      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
+    </div>
+
+    <div id="job-intern" class="job-detail" style="display:none;">
+      <h2>Marketing Internship – Johannesburg</h2>
+      <p><strong>Location:</strong> Johannesburg</p>
+      <p><strong>Requirements:</strong> Matric + currently studying marketing or communications</p>
+      <p><strong>Duties:</strong> Support marketing campaigns, social media, research</p>
+      <a class="apply-btn" href="mailto:internships@jobfinder.co.za" target="_blank" rel="noopener noreferrer">Apply via Email</a>
+      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
+    </div>
+
   </section>
 
   <!-- Donate Section -->
@@ -263,4 +365,4 @@
 </footer>
 
 </body>
-              </html>
+  </html>
