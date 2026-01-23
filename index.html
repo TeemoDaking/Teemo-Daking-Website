@@ -74,18 +74,21 @@
   /* Job list links */
   .job-list .job-link {
     display: block;
-    padding: 14px 18px;
-    margin: 20px 0; /* Bigger gap between job links */
+    padding: 18px 22px;
+    margin: 30px 0; /* bigger vertical margin for clear spacing */
     background: white;
     border-radius: 8px;
     color: #0d6efd;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    transition: background-color 0.2s ease;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+    border: 2px solid #0d6efd;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
   }
   .job-list .job-link:hover {
     background: #e3f2fd;
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.3);
   }
   /* Job detail styling */
   .job-detail {
@@ -366,4 +369,4 @@
 </footer>
 
 </body>
-      </html>
+</html>
