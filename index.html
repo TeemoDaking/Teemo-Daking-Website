@@ -2,272 +2,155 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>EasyJobFinder SA | Find Jobs in South Africa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EasyJobFinder – Find jobs and opportunities in South Africa">
-
-<title>EasyJobFinder</title>
+<meta name="description" content="EasyJobFinder SA helps you find verified job opportunities across South Africa. No registration required.">
+<meta name="keywords" content="jobs in south africa, easyjobfinder, phakisa jobs, vacancies">
 
 <style>
-:root {
-  --primary: #2ecc71;
-  --secondary: #27ae60;
-  --accent: #3498db;
-  --bg: #f4f7fb;
-  --dark: #1f2933;
-  --card: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--dark);
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
 }
 
-/* HEADER */
 header {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  padding: 20px;
-  text-align: center;
+    background: #0d6efd;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  font-weight: 900;
-  color: #ffffff;
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* NAVIGATION */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px;
-  background: #ffffff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  flex-wrap: wrap;
-}
-
-nav button {
-  background: var(--primary);
-  color: #ffffff;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-nav button:hover {
-  background: var(--secondary);
-}
-
-/* MAIN */
-main {
-  padding: 16px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.section {
-  display: none;
-}
-
-.section.active {
-  display: block;
-}
-
-/* CARDS */
-.card {
-  background: var(--card);
-  border-radius: 14px;
-  padding: 18px;
-  margin-bottom: 18px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-
-.card h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--primary);
-}
-
-/* JOB LIST */
 .job {
-  padding: 14px 0;
-  border-bottom: 1px solid #eaeaea;
-}
-
-.job:last-child {
-  border-bottom: none;
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .job h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 800;
+    margin: 0 0 5px;
 }
 
-.job p {
-  margin: 6px 0;
-  font-size: 0.95rem;
+.job button {
+    background: #198754;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.job a {
-  display: inline-block;
-  margin-top: 6px;
-  color: var(--accent);
-  font-weight: 800;
-  text-decoration: none;
+.job button:hover {
+    background: #157347;
 }
 
-.job a:hover {
-  text-decoration: underline;
+.job-details {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
 }
 
-/* DONATE */
-.donate-box {
-  text-align: center;
+.apply-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: #0d6efd;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
 }
 
-.donate-btn {
-  margin-top: 14px;
-  background: var(--accent);
-  color: #ffffff;
-  padding: 12px 22px;
-  border-radius: 30px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-/* FOOTER */
 footer {
-  text-align: center;
-  padding: 16px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* RESPONSIVE */
-@media (max-width: 480px) {
-  nav button {
-    font-size: 0.9rem;
-    padding: 8px 14px;
-  }
+    text-align: center;
+    padding: 15px;
+    color: #666;
+    font-size: 14px;
 }
 </style>
+
+<script>
+function toggleJob(id) {
+    var job = document.getElementById(id);
+    job.style.display = job.style.display === "block" ? "none" : "block";
+}
+</script>
 </head>
 
 <body>
 
 <header>
-  <h1>EasyJobFinder</h1>
+    <h1>EasyJobFinder SA</h1>
+    <p>Find Verified Jobs in South Africa 🇿🇦</p>
 </header>
 
-<nav>
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('jobs')">Jobs & Opportunities</button>
-  <button onclick="showSection('donate')">Donate</button>
-</nav>
+<div class="container">
 
-<main>
-
-<!-- HOME -->
-<section id="home" class="section active">
-  <div class="card">
-    <h2>Welcome to EasyJobFinder</h2>
-    <p>
-      EasyJobFinder helps people find jobs and opportunities across South Africa.
-      All job listings are kept under one tab for easy access.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Updates & Notices</h2>
-    <p>
-      This space is for announcements, tips, and important updates.
-    </p>
-  </div>
-</section>
-
-<!-- JOBS -->
-<section id="jobs" class="section">
-  <div class="card">
-    <h2>Jobs & Opportunities</h2>
-
+    <!-- JOB 1 -->
     <div class="job">
-      <h3>General Worker</h3>
-      <p>South Africa • Entry Level</p>
+        <h3>General Worker – Phakisa Holdings</h3>
+        <p>📍 Johannesburg | 🕒 Full-time</p>
+        <button onclick="toggleJob('job1')">View Job</button>
+
+        <div id="job1" class="job-details">
+            <p><strong>Reference:</strong> JHB000474</p>
+            <p><strong>Requirements:</strong> Grade 10–12, physically fit</p>
+            <p><strong>Duties:</strong> Cleaning, packing, general duties</p>
+
+            <a class="apply-btn" href="https://webapp.placementpartner.com/wi/vacancy/?id=JHB000474" target="_blank">
+                Apply on Official Website
+            </a>
+        </div>
     </div>
 
+    <!-- JOB 2 -->
     <div class="job">
-      <h3>Security Officer</h3>
-      <p>PSIRA Required • Full-Time</p>
+        <h3>Warehouse Assistant – Phakisa Holdings</h3>
+        <p>📍 Pretoria | 🕒 Contract</p>
+        <button onclick="toggleJob('job2')">View Job</button>
+
+        <div id="job2" class="job-details">
+            <p><strong>Reference:</strong> PTA000466</p>
+            <p><strong>Requirements:</strong> Warehouse experience preferred</p>
+            <p><strong>Duties:</strong> Loading, stock control</p>
+
+            <a class="apply-btn" href="https://webapp.placementpartner.com/" target="_blank">
+                Apply on Official Website
+            </a>
+        </div>
     </div>
 
+    <!-- JOB 3 -->
     <div class="job">
-      <h3>Code 10 / Code 14 Learnership</h3>
-      <p>Training + Practical Experience</p>
+        <h3>Cleaner – Industrial Site</h3>
+        <p>📍 Durban | 🕒 Part-time</p>
+        <button onclick="toggleJob('job3')">View Job</button>
+
+        <div id="job3" class="job-details">
+            <p><strong>Reference:</strong> DBN000467</p>
+            <p><strong>Requirements:</strong> Cleaning experience</p>
+            <p><strong>Duties:</strong> Office & site cleaning</p>
+
+            <a class="apply-btn" href="https://webapp.placementpartner.com/" target="_blank">
+                Apply on Official Website
+            </a>
+        </div>
     </div>
 
-    <div class="job">
-      <h3>Warehouse Assistant</h3>
-      <p>No Experience Required</p>
-    </div>
-
-    <div class="job">
-      <h3>Phakisa Holdings – JHB000474</h3>
-      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank">View & Apply →</a>
-    </div>
-
-    <div class="job">
-      <h3>Phakisa Holdings – JHB000466</h3>
-      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank">View & Apply →</a>
-    </div>
-
-    <div class="job">
-      <h3>Phakisa Holdings – JHB000467</h3>
-      <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank">View & Apply →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- DONATE -->
-<section id="donate" class="section">
-  <div class="card donate-box">
-    <h2>Support EasyJobFinder</h2>
-    <p>
-      This platform is run independently to help people find work.
-      Your support helps keep it active.
-    </p>
-    <button class="donate-btn">Donate ❤️</button>
-  </div>
-</section>
-
-</main>
+</div>
 
 <footer>
-  © 2026 EasyJobFinder • Built to help people find opportunities
+    © 2026 EasyJobFinder SA | Not affiliated with employers
 </footer>
 
-<script>
-function showSection(id) {
-  var sections = document.querySelectorAll('.section');
-  sections.forEach(function(section) {
-    section.classList.remove('active');
-  });
-  document.getElementById(id).classList.add('active');
-}
-</script>
-
 </body>
-      </html>
+          </html>
