@@ -5,20 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EasyJobFinder | Jobs & Opportunities</title>
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0a7cff">
-
 <style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #e8f5e9, #ffffff);
-  color: #111;
+  background: linear-gradient(135deg, #1f2933, #111827);
+  color: #fff;
 }
 
+/* HEADER */
 header {
-  background: #0a7cff;
-  color: #fff;
+  background: #000;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -28,20 +25,43 @@ header {
 header h1 {
   margin: 0;
   font-size: 22px;
-  font-weight: 900;
 }
 
-nav {
-  display: flex;
-  gap: 15px;
+/* 3 DOT MENU */
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
 }
 
-nav a {
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #111;
+  border-radius: 8px;
+  width: 200px;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.dropdown a {
+  display: block;
+  padding: 14px;
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  border-bottom: 1px solid #222;
 }
 
+.dropdown a:last-child {
+  border-bottom: none;
+}
+
+.dropdown a:hover {
+  background: #1f2933;
+}
+
+/* MAIN */
 main {
   padding: 20px;
   max-width: 1000px;
@@ -56,32 +76,44 @@ section.active {
   display: block;
 }
 
+/* JOB CARDS */
 .job-card {
   background: #fff;
+  color: #000;
   padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.job-card.featured {
+  border: 3px solid #22c55e;
 }
 
 .job-card h3 {
   margin-top: 0;
 }
 
-.apply {
+.job-card a.apply {
   display: inline-block;
+  margin-top: 12px;
   padding: 10px 15px;
-  background: #0a7cff;
+  background: #000;
   color: #fff;
   text-decoration: none;
   border-radius: 6px;
-  font-weight: bold;
 }
 
+.job-card a.apply:hover {
+  background: #333;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
-  color: #555;
+  color: #aaa;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -90,49 +122,69 @@ footer {
 
 <header>
   <h1>EasyJobFinder</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#jobs">Jobs & Opportunities</a>
-    <a href="#donate">Donate</a>
-  </nav>
+  <div class="menu-btn" onclick="toggleMenu()">⋮</div>
 </header>
+
+<div class="dropdown" id="menu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#jobs" onclick="closeMenu()">Jobs & Opportunities</a>
+  <a href="#donate" onclick="closeMenu()">Donations</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
 <main>
 
-<section id="home" class="active">
+<!-- HOME -->
+<section id="home">
   <h2>Welcome to EasyJobFinder</h2>
   <p>
-    We help South Africans find real jobs, learnerships and opportunities.
+    EasyJobFinder helps South Africans find real jobs and opportunities.
+  </p>
+  <p>
+    Open the menu (⋮) and tap <strong>Jobs & Opportunities</strong>.
   </p>
 </section>
 
+<!-- JOBS -->
 <section id="jobs">
-  <h2>Latest Jobs</h2>
 
-  <div class="job-card">
+  <div class="job-card featured" id="job-1">
     <h3>General Worker – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">Apply</a>
+    <p><strong>Location:</strong> Johannesburg</p>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">
+      Apply on Employer Site
+    </a>
   </div>
 
-  <div class="job-card">
+  <div class="job-card" id="job-2">
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">Apply</a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
+      Apply on Employer Site
+    </a>
   </div>
 
-  <div class="job-card">
+  <div class="job-card" id="job-3">
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">Apply</a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
+      Apply on Employer Site
+    </a>
   </div>
+
 </section>
 
+<!-- DONATE -->
 <section id="donate">
   <h2>Support EasyJobFinder</h2>
-  <p>
-    Donations help us keep the platform running and free.
-  </p>
+  <p>Help us keep job listings free for everyone.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: easyjobfinder@gmail.com  </p>
 </section>
 
 </main>
@@ -142,20 +194,25 @@ footer {
 </footer>
 
 <script>
-function showPage() {
-  const hash = location.hash || "#home";
-  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-  const page = document.querySelector(hash);
-  if (page) page.classList.add("active");
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
-window.addEventListener("hashchange", showPage);
-</script>
 
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
+function closeMenu() {
+  document.getElementById("menu").style.display = "none";
 }
+
+function showFromHash() {
+  const hash = window.location.hash || "#home";
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  const target = document.querySelector(hash);
+  if (target) target.classList.add("active");
+}
+
+window.addEventListener("hashchange", showFromHash);
+window.addEventListener("load", showFromHash);
 </script>
 
 </body>
-</html>
+      </html>
