@@ -59,7 +59,7 @@ section.active {
   color: #000;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 35px; /* GAPS between jobs */
+  margin-bottom: 40px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
@@ -71,7 +71,7 @@ section.active {
   margin-top: 0;
 }
 
-.job-card a {
+.job-card a.apply {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 15px;
@@ -81,7 +81,7 @@ section.active {
   border-radius: 5px;
 }
 
-.job-card a:hover {
+.job-card a.apply:hover {
   background: #333;
 }
 
@@ -99,97 +99,87 @@ footer {
 <header>
   <h1>EasyJobFinder</h1>
   <nav>
-    <a href="#" onclick="showSection('home')">Home</a>
-    <a href="#jobs" onclick="showJobs()">Jobs & Opportunities</a>
-    <a href="#" onclick="showSection('donate')">Donations</a>
-    <a href="#" onclick="showSection('contact')">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#jobs">Jobs & Opportunities</a>
+    <a href="#donate">Donations</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <main>
 
 <!-- HOME -->
-<section id="home" class="active">
+<section id="home">
   <h2>Welcome to EasyJobFinder</h2>
   <p>
-    EasyJobFinder helps South Africans find **real jobs, learnerships,
-    internships and opportunities** in one place.
+    EasyJobFinder helps South Africans find real jobs and opportunities.
   </p>
   <p>
-    Click <strong>Jobs & Opportunities</strong> to view available positions.
+    Click <strong>Jobs & Opportunities</strong> to see available jobs.
   </p>
 </section>
 
 <!-- JOBS -->
 <section id="jobs">
 
-  <!-- FEATURED JOB -->
-  <div class="job-card featured job-detail" id="job-phakisa474">
+  <div class="job-card featured" id="job-phakisa474">
     <h3>Featured Job: General Worker – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <p><strong>Location:</strong> Johannesburg</p>
-    <p>This is a featured opportunity with Phakisa Holdings.</p>
-    <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank">Apply on Employer Site</a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank">Apply on Employer Site</a>
   </div>
 
-  <!-- JOB 2 -->
-  <div class="job-card job-detail" id="job-phakisa466">
+  <div class="job-card" id="job-phakisa466">
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <p><strong>Location:</strong> Johannesburg</p>
-    <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank">Apply on Employer Site</a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank">Apply on Employer Site</a>
   </div>
 
-  <!-- JOB 3 -->
-  <div class="job-card job-detail" id="job-phakisa467">
+  <div class="job-card" id="job-phakisa467">
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <p><strong>Location:</strong> Johannesburg</p>
-    <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank">Apply on Employer Site</a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank">Apply on Employer Site</a>
   </div>
 
 </section>
 
-<!-- DONATION -->
+<!-- DONATE -->
 <section id="donate">
   <h2>Support EasyJobFinder</h2>
-  <p>
-    Help us keep job listings free and accessible to everyone.
-  </p>
+  <p>Help us keep job listings free for everyone.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact Us</h2>
+  <h2>Contact</h2>
   <p>Email: easyjobfinder@gmail.com</p>
 </section>
 
 </main>
 
 <footer>
-  © 2026 EasyJobFinder. All rights reserved.
+  © 2026 EasyJobFinder
 </footer>
 
 <script>
-function showSection(id) {
+function showFromHash() {
+  const hash = window.location.hash || "#home";
+
   document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
 
-function showJobs() {
-  showSection('jobs');
-  window.location.hash = "jobs";
-}
-
-/* HANDLE SHARED JOB LINKS */
-window.onload = function() {
-  if (window.location.hash.startsWith("#job-")) {
-    showSection('jobs');
-    const job = document.querySelector(window.location.hash);
-    if (job) job.scrollIntoView({ behavior: "smooth" });
+  if (hash.startsWith("#job-")) {
+    document.getElementById("jobs").classList.add("active");
+    const job = document.querySelector(hash);
+    if (job) job.scrollIntoView();
+  } else {
+    const section = document.querySelector(hash);
+    if (section) section.classList.add("active");
   }
-};
+}
+
+window.addEventListener("hashchange", showFromHash);
+window.addEventListener("load", showFromHash);
 </script>
 
 </body>
-  </html>
+    </html>
