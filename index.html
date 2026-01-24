@@ -53,10 +53,6 @@ header h1 {
   border-bottom: 1px solid #222;
 }
 
-.dropdown a:last-child {
-  border-bottom: none;
-}
-
 .dropdown a:hover {
   background: #1f2933;
 }
@@ -96,10 +92,6 @@ section.active {
   font-size: 16px;
 }
 
-.job-card p {
-  margin: 4px 0;
-}
-
 .job-card a.apply {
   display: inline-block;
   margin-top: 8px;
@@ -111,24 +103,32 @@ section.active {
   font-size: 13px;
 }
 
-.job-card a.apply:hover {
-  background: #333;
+/* SHARE BUTTONS */
+.share {
+  margin-top: 8px;
 }
 
-/* SUBSCRIBE BUTTON */
+.share a {
+  font-size: 13px;
+  margin-right: 8px;
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SUBSCRIBE */
 .subscribe-btn {
-  display: inline-block;
   margin-top: 15px;
   padding: 12px 20px;
   background: #22c55e;
   color: #000;
   font-weight: bold;
-  border: none;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
 }
 
-/* WHATSAPP POPUP */
+/* WHATSAPP FLOAT */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -141,21 +141,7 @@ section.active {
   text-align: center;
   font-size: 28px;
   line-height: 55px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   text-decoration: none;
-  z-index: 1000;
-}
-
-.whatsapp-float:hover {
-  background: #1ebe5d;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
-  font-size: 14px;
 }
 </style>
 </head>
@@ -178,29 +164,12 @@ footer {
 
 <section id="home" class="active">
   <h2>Welcome to EasyJobFinder</h2>
-
-  <p>
-    EasyJobFinder is a free platform created to help South Africans
-    access real and verified employment opportunities.
-  </p>
-
-  <p>
-    ✔ Jobs<br>
-    ✔ Learnerships<br>
-    ✔ Internships<br>
-    ✔ Bursaries
-  </p>
-
-  <p>
-    All opportunities link directly to official employer websites.
-  </p>
-
+  <p>Free platform helping South Africans access verified jobs.</p>
   <button class="subscribe-btn" onclick="openSubscribe()">Subscribe for Updates</button>
 
-  <div id="subscribeBox" style="display:none; margin-top:15px;">
-    <p>Enter your email to receive job updates:</p>
+  <div id="subscribeBox" style="display:none;">
     <input type="email" placeholder="Your email address"
-           style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
+      style="padding:10px; width:100%; max-width:300px;">
     <br><br>
     <button class="subscribe-btn" onclick="submitSubscribe()">Subscribe</button>
   </div>
@@ -208,93 +177,85 @@ footer {
 
 <section id="jobs">
 
-  <div class="job-card featured" id="job-general-worker">
-    <h3>General Worker – Gauteng</h3>
-    <p><strong>Company:</strong> Phakisa Holdings</p>
-    <p><strong>Location:</strong> Johannesburg</p>
-    <a class="apply" href="#apply-general-worker">Apply</a>
+<!-- JOB 1 -->
+<div class="job-card featured" id="job-general-worker">
+  <h3>General Worker – Gauteng</h3>
+  <p><strong>Company:</strong> Phakisa Holdings</p>
+  <a class="apply" href="#apply-general-worker">Apply</a>
+
+  <div class="share">
+    Share:
+    <a href="https://wa.me/?text=Apply%20here:%20https://yourwebsite.com/#job-general-worker" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/#job-general-worker" target="_blank">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/#job-general-worker" target="_blank">X</a>
   </div>
+</div>
 
-  <div class="job-card" id="job-warehouse-assistant">
-    <h3>Warehouse Assistant – Gauteng</h3>
-    <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="#apply-warehouse-assistant">Apply</a>
+<!-- JOB 2 -->
+<div class="job-card" id="job-warehouse-assistant">
+  <h3>Warehouse Assistant – Gauteng</h3>
+  <p><strong>Company:</strong> Phakisa Holdings</p>
+  <a class="apply" href="#apply-warehouse-assistant">Apply</a>
+
+  <div class="share">
+    Share:
+    <a href="https://wa.me/?text=Apply%20here:%20https://yourwebsite.com/#job-warehouse-assistant" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/#job-warehouse-assistant" target="_blank">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/#job-warehouse-assistant" target="_blank">X</a>
   </div>
+</div>
 
-  <div class="job-card" id="job-forklift-operator">
-    <h3>Forklift Operator – Gauteng</h3>
-    <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="#apply-forklift-operator">Apply</a>
+<!-- JOB 3 -->
+<div class="job-card" id="job-forklift-operator">
+  <h3>Forklift Operator – Gauteng</h3>
+  <p><strong>Company:</strong> Phakisa Holdings</p>
+  <a class="apply" href="#apply-forklift-operator">Apply</a>
+
+  <div class="share">
+    Share:
+    <a href="https://wa.me/?text=Apply%20here:%20https://yourwebsite.com/#job-forklift-operator" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/#job-forklift-operator" target="_blank">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com/#job-forklift-operator" target="_blank">X</a>
   </div>
+</div>
 
-</section>
-
-<section id="donate">
-  <h2>Support EasyJobFinder</h2>
-  <p>Help us keep job listings free for everyone.</p>
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <strong>easyjobfinder@gmail.com</strong></p>
-  <p>
-    WhatsApp:
-    <a href="https://wa.me/270710315772" target="_blank" style="color:#22c55e; text-decoration:none;">
-      +27 71 031 5772
-    </a>
-  </p>
+  <p>Email: easyjobfinder@gmail.com</p>
+  <a href="https://wa.me/270710315772">+27 71 031 5772</a>
 </section>
 
 </main>
 
-<footer>© 2026 EasyJobFinder</footer>
-
-<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/270710315772" class="whatsapp-float">💬</a>
 
 <script>
 const redirects = {
-  "apply-general-worker":
-    "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474",
-  "apply-warehouse-assistant":
-    "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466",
-  "apply-forklift-operator":
-    "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467"
+  "apply-general-worker": "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474",
+  "apply-warehouse-assistant": "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466",
+  "apply-forklift-operator": "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467"
 };
 
 function toggleMenu() {
-  const menu = document.getElementById("menu");
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
-
-function closeMenu() {
-  document.getElementById("menu").style.display = "none";
-}
+function closeMenu() { menu.style.display = "none"; }
 
 function showFromHash() {
-  const hash = location.hash.replace("#", "");
+  const hash = location.hash.replace("#","");
   document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-
-  if (redirects[hash]) {
-    document.getElementById("jobs").classList.add("active");
-    setTimeout(() => {
-      window.location.href = redirects[hash];
-    }, 800);
-  } else {
-    const section = document.getElementById(hash || "home");
-    if (section) section.classList.add("active");
-  }
+  if (redirects[hash]) setTimeout(()=>location.href=redirects[hash],600);
+  else document.getElementById(hash || "home").classList.add("active");
 }
 
 function openSubscribe() {
-  subscribeBox.style.display = subscribeBox.style.display === "block" ? "none" : "block";
+  subscribeBox.style.display = subscribeBox.style.display==="block"?"none":"block";
 }
+function submitSubscribe(){ alert("Subscribed!"); }
 
-function submitSubscribe() {
-  alert("Thank you for subscribing! You will receive updates soon.");
-}
-
-window.addEventListener("load", showFromHash);
-window.addEventListener("hashchange", showFromHash);
+window.onload = showFromHash;
+window.onhashchange = showFromHash;
 </script>
 
 </body>
