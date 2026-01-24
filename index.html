@@ -118,15 +118,20 @@ section.active {
 /* SHARE LINKS */
 .share-links {
   margin-top: 10px;
-  font-size: 13px;
 }
 .share-links a {
-  color: #22c55e;
+  display: inline-block;
+  padding: 6px 10px;
+  margin-right: 6px;
+  background: #22c55e;
+  color: #000;
+  font-size: 12px;
+  border-radius: 4px;
   text-decoration: none;
-  margin-right: 8px;
 }
 .share-links a:hover {
-  text-decoration: underline;
+  background: #1ebe5d;
+  color: #fff;
 }
 
 /* SUBSCRIBE BUTTON */
@@ -191,37 +196,17 @@ footer {
 <main>
 
 <!-- HOME -->
-<section id="home">
+<section id="home" class="active">
   <h2>Welcome to EasyJobFinder</h2>
-
-  <p>
-    EasyJobFinder is a free platform created to help South Africans
-    access real and verified employment opportunities.
-  </p>
-
-  <p>
-    ✔ Jobs<br>
-    ✔ Learnerships<br>
-    ✔ Internships<br>
-    ✔ Bursaries
-  </p>
-
-  <p>
-    All opportunities link directly to official employer websites.
-  </p>
-
-  <button class="subscribe-btn" onclick="openSubscribe()">
-    Subscribe for Updates
-  </button>
-
+  <p>EasyJobFinder is a free platform created to help South Africans access real and verified employment opportunities.</p>
+  <p>✔ Jobs<br>✔ Learnerships<br>✔ Internships<br>✔ Bursaries</p>
+  <p>All opportunities link directly to official employer websites.</p>
+  <button class="subscribe-btn" onclick="openSubscribe()">Subscribe for Updates</button>
   <div id="subscribeBox" style="display:none; margin-top:15px;">
     <p>Enter your email to receive job updates:</p>
-    <input type="email" placeholder="Your email address"
-           style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
+    <input type="email" placeholder="Your email address" style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
     <br><br>
-    <button class="subscribe-btn" onclick="submitSubscribe()">
-      Subscribe
-    </button>
+    <button class="subscribe-btn" onclick="submitSubscribe()">Subscribe</button>
   </div>
 </section>
 
@@ -232,9 +217,7 @@ footer {
     <h3>General Worker – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <p><strong>Location:</strong> Johannesburg</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">
-      Apply
-    </a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">Apply</a>
     <div class="share-links">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://easyjobfinder.com#job-general-worker" target="_blank">Facebook</a>
       <a href="https://twitter.com/intent/tweet?url=https://easyjobfinder.com#job-general-worker&text=Check out this job opportunity!" target="_blank">Twitter</a>
@@ -245,9 +228,7 @@ footer {
   <div class="job-card" id="job-warehouse-assistant">
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
-      Apply
-    </a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">Apply</a>
     <div class="share-links">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://easyjobfinder.com#job-warehouse-assistant" target="_blank">Facebook</a>
       <a href="https://twitter.com/intent/tweet?url=https://easyjobfinder.com#job-warehouse-assistant&text=Check out this job opportunity!" target="_blank">Twitter</a>
@@ -258,14 +239,7 @@ footer {
   <div class="job-card" id="job-forklift-operator">
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
-      Apply
-    </a>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">Apply</a>
     <div class="share-links">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://easyjobfinder.com#job-forklift-operator" target="_blank">Facebook</a>
-      <a href="https://twitter.com/intent/tweet?url=https://easyjobfinder.com#job-forklift-operator&text=Check out this job opportunity!" target="_blank">Twitter</a>
-      <a href="https://wa.me/?text=Check out this job: https://easyjobfinder.com#job-forklift-operator" target="_blank">WhatsApp</a>
-    </div>
-  </div>
-
-</section
+      <a href="https://twitter.com/intent/tweet?url=https://easyjobfinder.com#job-forklift-operator&text=Check out this job opportunity!" target="_blank">Twitter</a
