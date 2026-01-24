@@ -76,7 +76,7 @@ section.active {
   display: block;
 }
 
-/* JOB CARDS (SHRUNK) */
+/* JOB CARDS (SMALLER) */
 .job-card {
   background: #fff;
   color: #000;
@@ -123,8 +123,9 @@ section.active {
   background: #22c55e;
   color: #000;
   font-weight: bold;
-  text-decoration: none;
+  border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 /* WHATSAPP POPUP */
@@ -195,10 +196,20 @@ footer {
     All opportunities link directly to official employer websites.
   </p>
 
-  <!-- SUBSCRIPTION BUTTON -->
-  <a href="#contact" class="subscribe-btn">
+  <!-- SUBSCRIPTION (FIXED) -->
+  <button class="subscribe-btn" onclick="openSubscribe()">
     Subscribe for Updates
-  </a>
+  </button>
+
+  <div id="subscribeBox" style="display:none; margin-top:15px;">
+    <p>Enter your email to receive job updates:</p>
+    <input type="email" placeholder="Your email address"
+           style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
+    <br><br>
+    <button class="subscribe-btn" onclick="submitSubscribe()">
+      Subscribe
+    </button>
+  </div>
 </section>
 
 <!-- JOBS -->
@@ -275,9 +286,18 @@ function showFromHash() {
   if (target) target.classList.add("active");
 }
 
+function openSubscribe() {
+  const box = document.getElementById("subscribeBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function submitSubscribe() {
+  alert("Thank you for subscribing! You will receive updates soon.");
+}
+
 window.addEventListener("hashchange", showFromHash);
 window.addEventListener("load", showFromHash);
 </script>
 
 </body>
-         </html>
+  </html>
