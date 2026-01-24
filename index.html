@@ -96,6 +96,10 @@ section.active {
   font-size: 16px;
 }
 
+.job-card p {
+  margin: 4px 0;
+}
+
 .job-card a.apply {
   display: inline-block;
   margin-top: 8px;
@@ -107,8 +111,13 @@ section.active {
   font-size: 13px;
 }
 
+.job-card a.apply:hover {
+  background: #333;
+}
+
 /* SUBSCRIBE BUTTON */
 .subscribe-btn {
+  display: inline-block;
   margin-top: 15px;
   padding: 12px 20px;
   background: #22c55e;
@@ -137,11 +146,16 @@ section.active {
   z-index: 1000;
 }
 
+.whatsapp-float:hover {
+  background: #1ebe5d;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   color: #aaa;
+  font-size: 14px;
 }
 </style>
 </head>
@@ -162,55 +176,84 @@ footer {
 
 <main>
 
+<!-- HOME -->
 <section id="home">
   <h2>Welcome to EasyJobFinder</h2>
-  <p>We help South Africans access verified job opportunities.</p>
 
-  <button class="subscribe-btn" onclick="openSubscribe()">Subscribe for Updates</button>
+  <p>
+    EasyJobFinder is a free platform created to help South Africans
+    access real and verified employment opportunities.
+  </p>
+
+  <p>
+    ✔ Jobs<br>
+    ✔ Learnerships<br>
+    ✔ Internships<br>
+    ✔ Bursaries
+  </p>
+
+  <p>
+    All opportunities link directly to official employer websites.
+  </p>
+
+  <button class="subscribe-btn" onclick="openSubscribe()">
+    Subscribe for Updates
+  </button>
 
   <div id="subscribeBox" style="display:none; margin-top:15px;">
+    <p>Enter your email to receive job updates:</p>
     <input type="email" placeholder="Your email address"
-      style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
+           style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
     <br><br>
-    <button class="subscribe-btn" onclick="submitSubscribe()">Subscribe</button>
+    <button class="subscribe-btn" onclick="submitSubscribe()">
+      Subscribe
+    </button>
   </div>
 </section>
 
+<!-- JOBS -->
 <section id="jobs">
 
-  <div class="job-card featured">
+  <div class="job-card featured" id="job-general-worker">
     <h3>General Worker – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <p><strong>Location:</strong> Johannesburg</p>
-    <a class="apply" href="#" onclick="applyJob('https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474')">
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">
       Apply
     </a>
   </div>
 
-  <div class="job-card">
+  <div class="job-card" id="job-warehouse-assistant">
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="#" onclick="applyJob('https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466')">
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
       Apply
     </a>
   </div>
 
-  <div class="job-card">
+  <div class="job-card" id="job-forklift-operator">
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="#" onclick="applyJob('https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467')">
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
       Apply
     </a>
   </div>
 
 </section>
 
+<!-- DONATE -->
+<section id="donate">
+  <h2>Support EasyJobFinder</h2>
+  <p>Help us keep job listings free for everyone.</p>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: <strong>easyjobfinder@gmail.com</strong></p>
   <p>
     WhatsApp:
-    <a href="https://wa.me/270710315772" target="_blank" style="color:#22c55e;">
+    <a href="https://wa.me/270710315772" target="_blank" style="color:#22c55e; text-decoration:none;">
       +27 71 031 5772
     </a>
   </p>
@@ -218,7 +261,9 @@ footer {
 
 </main>
 
-<footer>© 2026 EasyJobFinder</footer>
+<footer>
+  © 2026 EasyJobFinder
+</footer>
 
 <a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank">💬</a>
 
@@ -235,21 +280,26 @@ function closeMenu() {
 function showFromHash() {
   const hash = window.location.hash || "#home";
   document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-  const target = document.querySelector(hash);
-  if (target) target.classList.add("active");
-}
 
-function applyJob(url) {
-  alert("You are being redirected to apply for this job.");
-  window.open(url, "_blank");
+  if (hash.startsWith("#job-")) {
+    document.getElementById("jobs").classList.add("active");
+    setTimeout(() => {
+      const job = document.querySelector(hash);
+      if (job) job.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  } else {
+    const target = document.querySelector(hash);
+    if (target) target.classList.add("active");
+  }
 }
 
 function openSubscribe() {
-  document.getElementById("subscribeBox").style.display = "block";
+  const box = document.getElementById("subscribeBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
 }
 
 function submitSubscribe() {
-  alert("Thank you for subscribing!");
+  alert("Thank you for subscribing! You will receive updates soon.");
 }
 
 window.addEventListener("hashchange", showFromHash);
