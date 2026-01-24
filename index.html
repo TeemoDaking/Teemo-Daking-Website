@@ -1,372 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>EasyJobFinder SA | Find Jobs in South Africa</title>
-<meta name="description" content="EasyJobFinder SA helps you find verified job opportunities across South Africa. No registration required." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyJobFinder | Jobs & Opportunities</title>
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    margin: 0; padding: 0;
-    color: #222;
-  }
-  header {
-    background: #0d6efd;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 2.4rem;
-    letter-spacing: 1.2px;
-  }
-  header p {
-    margin-top: 6px;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    gap: 10px;
-    flex-wrap: wrap;
-    padding: 12px 0;
-  }
-  nav button {
-    background: #198754;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  nav button:hover,
-  nav button:focus {
-    background: #157347;
-    outline: none;
-  }
-  .section {
-    display: none;
-  }
-  .section.active {
-    display: block;
-  }
-  /* Home intro styling */
-  #home p.intro {
-    font-size: 1.2rem;
-    color: #444;
-    max-width: 720px;
-    margin-bottom: 40px;
-    line-height: 1.5;
-  }
-  /* Job list links */
-  .job-list .job-link {
-    display: block;
-    padding: 18px 22px;
-    margin: 30px 0; /* bigger vertical margin for clear spacing */
-    background: white;
-    border-radius: 8px;
-    color: #0d6efd;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-    border: 2px solid #0d6efd;
-    transition: background-color 0.2s ease, box-shadow 0.3s ease;
-    font-size: 1.1rem;
-  }
-  .job-list .job-link:hover {
-    background: #e3f2fd;
-    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.3);
-  }
-  /* Job detail styling */
-  .job-detail {
-    background: white;
-    padding: 25px 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-    line-height: 1.5;
-  }
-  .job-detail h2 {
-    margin-top: 0;
-    color: #198754;
-    font-size: 2rem;
-  }
-  .apply-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 30px;
-    background: #0d6efd;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
-    transition: background-color 0.3s ease;
-  }
-  .apply-btn:hover,
-  .apply-btn:focus {
-    background: #084cd5;
-    outline: none;
-  }
-  .back-link {
-    margin-top: 30px;
-    display: inline-block;
-    cursor: pointer;
-    color: #0d6efd;
-    font-weight: bold;
-    text-decoration: underline;
-    font-size: 1rem;
-  }
-  /* Donation section */
-  #donate ul {
-    list-style: none;
-    padding-left: 0;
-    max-width: 360px;
-  }
-  #donate ul li {
-    background: white;
-    padding: 12px 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    font-weight: 600;
-  }
-  #donate p {
-    max-width: 720px;
-    font-size: 1.1rem;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-    font-size: 14px;
-    user-select: none;
-  }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+header {
+  background: #000;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+/* Job cards */
+.job-card {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 35px; /* GAPS between jobs */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.job-card.featured {
+  border: 3px solid #00c853;
+}
+
+.job-card h3 {
+  margin-top: 0;
+}
+
+.job-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.job-card a:hover {
+  background: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-size: 14px;
+}
 </style>
-<script>
-  // Show section function
-  function showSection(id) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-
-    if (id === 'jobs') {
-      // Always show job list and hide job details when navigating to jobs tab
-      backToJobList();
-    }
-  }
-
-  // Show job detail inside jobs section
-  function showJobDetail(jobId) {
-    // Show jobs section first
-    showSection('jobs');
-
-    // Hide all job details
-    document.querySelectorAll('.job-detail').forEach(j => j.style.display = 'none');
-
-    // Show selected job detail
-    const job = document.getElementById(jobId);
-    if (job) {
-      job.style.display = 'block';
-      // Hide job list
-      document.getElementById('job-list').style.display = 'none';
-      // Scroll to top
-      window.scrollTo({top:0, behavior: 'smooth'});
-      // Update URL hash for sharing
-      history.replaceState(null, null, '#' + jobId);
-    }
-  }
-
-  // Back to job list
-  function backToJobList() {
-    // Hide all job details
-    document.querySelectorAll('.job-detail').forEach(j => j.style.display = 'none');
-    // Show job list
-    document.getElementById('job-list').style.display = 'block';
-    // Clear URL hash
-    history.replaceState(null, null, ' ');
-  }
-
-  // Handle URL hash for direct linking
-  function handleHash() {
-    const hash = window.location.hash.substring(1);
-    if (!hash) {
-      backToJobList();
-      return;
-    }
-    const jobDetail = document.getElementById(hash);
-    if (jobDetail && jobDetail.classList.contains('job-detail')) {
-      // Hide job list, show job detail
-      document.getElementById('job-list').style.display = 'none';
-      showJobDetail(hash);
-    } else {
-      backToJobList();
-    }
-  }
-
-  // Listen to hash changes (back/forward browser buttons)
-  window.addEventListener('hashchange', handleHash);
-
-  // Initialize page, show job if hash exists
-  window.onload = function() {
-    if(window.location.hash){
-      // If URL has a hash, try to show the correct job detail
-      const hash = window.location.hash.substring(1);
-      const jobDetail = document.getElementById(hash);
-      if(jobDetail && jobDetail.classList.contains('job-detail')){
-        // Show Jobs section and the job detail
-        showSection('jobs');
-        document.getElementById('job-list').style.display = 'none';
-        jobDetail.style.display = 'block';
-        return; // exit early
-      }
-    }
-    // If no hash or invalid, just show home and job list normally
-    showSection('home');
-    backToJobList();
-  }
-</script>
 </head>
+
 <body>
 
 <header>
-  <h1>EasyJobFinder SA</h1>
-  <p>Your trusted platform to find verified jobs and career opportunities across South Africa 🇿🇦</p>
+  <h1>EasyJobFinder</h1>
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#jobs" onclick="showJobs()">Jobs & Opportunities</a>
+    <a href="#" onclick="showSection('donate')">Donations</a>
+    <a href="#" onclick="showSection('contact')">Contact</a>
+  </nav>
 </header>
 
-<nav>
-  <button onclick="showSection('home')">Home</button>
-  <button onclick="showSection('jobs')">Jobs & Opportunities</button>
-  <button onclick="showSection('donate')">Donate</button>
-</nav>
+<main>
 
-<main class="container">
+<!-- HOME -->
+<section id="home" class="active">
+  <h2>Welcome to EasyJobFinder</h2>
+  <p>
+    EasyJobFinder helps South Africans find **real jobs, learnerships,
+    internships and opportunities** in one place.
+  </p>
+  <p>
+    Click <strong>Jobs & Opportunities</strong> to view available positions.
+  </p>
+</section>
 
-  <!-- Home Section -->
-  <section id="home" class="section active">
-    <h2>Welcome to EasyJobFinder</h2>
-    <p class="intro">
-      EasyJobFinder is your go-to platform for the latest <strong>Jobs</strong>, <strong>Learnerships</strong>, <strong>Internships</strong>, and <strong>Bursaries</strong> in South Africa.  
-      Discover your next career opportunity and grow your future with us — no sign-up needed.
-    </p>
-  </section>
+<!-- JOBS -->
+<section id="jobs">
 
-  <!-- Jobs Section -->
-  <section id="jobs" class="section">
-    <h2>Jobs & Opportunities</h2>
+  <!-- FEATURED JOB -->
+  <div class="job-card featured job-detail" id="job-phakisa474">
+    <h3>Featured Job: General Worker – Gauteng</h3>
+    <p><strong>Company:</strong> Phakisa Holdings</p>
+    <p><strong>Location:</strong> Johannesburg</p>
+    <p>This is a featured opportunity with Phakisa Holdings.</p>
+    <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank">Apply on Employer Site</a>
+  </div>
 
-    <!-- Job List -->
-    <div id="job-list" class="job-list">
-      <a href="#job-phakisa474" class="job-link" onclick="event.preventDefault(); showJobDetail('job-phakisa474')">General Worker – Phakisa Holdings (Ref: JHB000474)</a>
-      <a href="#job-phakisa466" class="job-link" onclick="event.preventDefault(); showJobDetail('job-phakisa466')">Warehouse Assistant – Phakisa Holdings (Ref: JHB000466)</a>
-      <a href="#job-phakisa467" class="job-link" onclick="event.preventDefault(); showJobDetail('job-phakisa467')">Cleaner – Industrial Site (Ref: DBN000467)</a>
-      <a href="#job-code14" class="job-link" onclick="event.preventDefault(); showJobDetail('job-code14')">Code 14 Learnership – Truck Driver Training</a>
-      <!-- New jobs added below -->
-      <a href="#job-dataentry" class="job-link" onclick="event.preventDefault(); showJobDetail('job-dataentry')">Data Entry Clerk – Cape Town</a>
-      <a href="#job-cashier" class="job-link" onclick="event.preventDefault(); showJobDetail('job-cashier')">Cashier – Retail Store, Durban</a>
-      <a href="#job-intern" class="job-link" onclick="event.preventDefault(); showJobDetail('job-intern')">Marketing Internship – Johannesburg</a>
-    </div>
+  <!-- JOB 2 -->
+  <div class="job-card job-detail" id="job-phakisa466">
+    <h3>Warehouse Assistant – Gauteng</h3>
+    <p><strong>Company:</strong> Phakisa Holdings</p>
+    <p><strong>Location:</strong> Johannesburg</p>
+    <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank">Apply on Employer Site</a>
+  </div>
 
-    <!-- Job Details -->
-    <div id="job-phakisa474" class="job-detail" style="display:none;">
-      <h2>General Worker – Phakisa Holdings</h2>
-      <p><strong>Reference:</strong> JHB000474</p>
-      <p><strong>Location:</strong> Johannesburg</p>
-      <p><strong>Requirements:</strong> Grade 10–12, physically fit</p>
-      <p><strong>Duties:</strong> Cleaning, packing, general duties</p>
-      <a class="apply-btn" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474&refreshId=6973a898095da" target="_blank" rel="noopener noreferrer">Apply on Official Website</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
+  <!-- JOB 3 -->
+  <div class="job-card job-detail" id="job-phakisa467">
+    <h3>Forklift Operator – Gauteng</h3>
+    <p><strong>Company:</strong> Phakisa Holdings</p>
+    <p><strong>Location:</strong> Johannesburg</p>
+    <a href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank">Apply on Employer Site</a>
+  </div>
 
-    <div id="job-phakisa466" class="job-detail" style="display:none;">
-      <h2>Warehouse Assistant – Phakisa Holdings</h2>
-      <p><strong>Reference:</strong> JHB000466</p>
-      <p><strong>Location:</strong> Pretoria</p>
-      <p><strong>Requirements:</strong> Warehouse experience preferred</p>
-      <p><strong>Duties:</strong> Loading, stock control</p>
-      <a class="apply-btn" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466&refreshId=6973a8980979a" target="_blank" rel="noopener noreferrer">Apply on Official Website</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
+</section>
 
-    <div id="job-phakisa467" class="job-detail" style="display:none;">
-      <h2>Cleaner – Industrial Site</h2>
-      <p><strong>Reference:</strong> DBN000467</p>
-      <p><strong>Location:</strong> Durban</p>
-      <p><strong>Requirements:</strong> Cleaning experience</p>
-      <p><strong>Duties:</strong> Office & site cleaning</p>
-      <a class="apply-btn" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467&refreshId=6973a89809803" target="_blank" rel="noopener noreferrer">Apply on Official Website</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
+<!-- DONATION -->
+<section id="donate">
+  <h2>Support EasyJobFinder</h2>
+  <p>
+    Help us keep job listings free and accessible to everyone.
+  </p>
+</section>
 
-    <div id="job-code14" class="job-detail" style="display:none;">
-      <h2>Code 14 Learnership – Truck Driver Training</h2>
-      <p><strong>Location:</strong> Gauteng</p>
-      <p><strong>Details:</strong> 12-month learnership including practical & theory training for Code 14 truck driving license. Suitable for beginners.</p>
-      <a class="apply-btn" href="mailto:learnerships@easyjobfinder.co.za" target="_blank" rel="noopener noreferrer">Contact us to apply</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
-
-    <!-- New job details -->
-    <div id="job-dataentry" class="job-detail" style="display:none;">
-      <h2>Data Entry Clerk – Cape Town</h2>
-      <p><strong>Location:</strong> Cape Town</p>
-      <p><strong>Requirements:</strong> Good typing skills, attention to detail</p>
-      <p><strong>Duties:</strong> Entering data into company systems, ensuring accuracy</p>
-      <a class="apply-btn" href="mailto:hr@capetownjobs.co.za" target="_blank" rel="noopener noreferrer">Apply via Email</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
-
-    <div id="job-cashier" class="job-detail" style="display:none;">
-      <h2>Cashier – Retail Store, Durban</h2>
-      <p><strong>Location:</strong> Durban</p>
-      <p><strong>Requirements:</strong> Customer service skills, cash handling experience</p>
-      <p><strong>Duties:</strong> Process transactions, manage cash register</p>
-      <a class="apply-btn" href="mailto:jobs@durbanretail.co.za" target="_blank" rel="noopener noreferrer">Apply via Email</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
-
-    <div id="job-intern" class="job-detail" style="display:none;">
-      <h2>Marketing Internship – Johannesburg</h2>
-      <p><strong>Location:</strong> Johannesburg</p>
-      <p><strong>Requirements:</strong> Matric + currently studying marketing or communications</p>
-      <p><strong>Duties:</strong> Support marketing campaigns, social media, research</p>
-      <a class="apply-btn" href="mailto:internships@jobfinder.co.za" target="_blank" rel="noopener noreferrer">Apply via Email</a>
-      <br><a class="back-link" href="#" onclick="event.preventDefault(); backToJobList()">← Back to Job List</a>
-    </div>
-
-  </section>
-
-  <!-- Donate Section -->
-  <section id="donate" class="section">
-    <h2>Support EasyJobFinder</h2>
-    <p>Your donations help keep this platform running so we can keep sharing valuable job opportunities.</p>
-    <p><strong>Bank Details for EFT Donations:</strong></p>
-    <ul>
-      <li>Name: Thabiso Makua</li>
-      <li>Account Number: 1860022292</li>
-      <li>Bank: Capitec</li>
-      <li>Branch Code: 470010</li>
-    </ul>
-    <p>Thank you for your support! ❤️</p>
-  </section>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: easyjobfinder@gmail.com</p>
+</section>
 
 </main>
 
 <footer>
-  © 2026 EasyJobFinder SA | Not affiliated with any employer
+  © 2026 EasyJobFinder. All rights reserved.
 </footer>
 
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+function showJobs() {
+  showSection('jobs');
+  window.location.hash = "jobs";
+}
+
+/* HANDLE SHARED JOB LINKS */
+window.onload = function() {
+  if (window.location.hash.startsWith("#job-")) {
+    showSection('jobs');
+    const job = document.querySelector(window.location.hash);
+    if (job) job.scrollIntoView({ behavior: "smooth" });
+  }
+};
+</script>
+
 </body>
-</html>
+  </html>
