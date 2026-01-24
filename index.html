@@ -76,39 +76,58 @@ section.active {
   display: block;
 }
 
-/* JOB CARDS */
+/* JOB CARDS (SHRUNK) */
 .job-card {
   background: #fff;
   color: #000;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  font-size: 14px;
 }
 
 .job-card.featured {
-  border: 3px solid #22c55e;
+  border: 2px solid #22c55e;
 }
 
 .job-card h3 {
-  margin-top: 0;
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.job-card p {
+  margin: 4px 0;
 }
 
 .job-card a.apply {
   display: inline-block;
-  margin-top: 12px;
-  padding: 10px 15px;
+  margin-top: 8px;
+  padding: 7px 12px;
   background: #000;
   color: #fff;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 .job-card a.apply:hover {
   background: #333;
 }
 
-/* WHATSAPP POPUP BUTTON */
+/* SUBSCRIBE BUTTON */
+.subscribe-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #22c55e;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* WHATSAPP POPUP */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -166,11 +185,6 @@ footer {
   </p>
 
   <p>
-    We focus on sharing legitimate information to help job seekers
-    avoid scams and apply with confidence.
-  </p>
-
-  <p>
     ✔ Jobs<br>
     ✔ Learnerships<br>
     ✔ Internships<br>
@@ -178,9 +192,13 @@ footer {
   </p>
 
   <p>
-    All opportunities shared link directly to official employer
-    or institution websites.
+    All opportunities link directly to official employer websites.
   </p>
+
+  <!-- SUBSCRIPTION BUTTON -->
+  <a href="#contact" class="subscribe-btn">
+    Subscribe for Updates
+  </a>
 </section>
 
 <!-- JOBS -->
@@ -191,7 +209,7 @@ footer {
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <p><strong>Location:</strong> Johannesburg</p>
     <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">
-      Apply on Employer Site
+      Apply
     </a>
   </div>
 
@@ -199,7 +217,7 @@ footer {
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
-      Apply on Employer Site
+      Apply
     </a>
   </div>
 
@@ -207,7 +225,7 @@ footer {
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
-      Apply on Employer Site
+      Apply
     </a>
   </div>
 
@@ -238,9 +256,7 @@ footer {
 </footer>
 
 <!-- WHATSAPP POPUP -->
-<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  💬
-</a>
+<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank">💬</a>
 
 <script>
 function toggleMenu() {
@@ -264,4 +280,4 @@ window.addEventListener("load", showFromHash);
 </script>
 
 </body>
-</html>
+         </html>
