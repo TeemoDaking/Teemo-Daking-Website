@@ -20,6 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 header h1 {
@@ -43,6 +44,7 @@ header h1 {
   width: 200px;
   display: none;
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  z-index: 2000; /* ensures dropdown is clickable */
 }
 
 .dropdown a {
@@ -242,4 +244,4 @@ footer {
     <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">Apply</a>
     <div class="share-links">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://easyjobfinder.com#job-forklift-operator" target="_blank">Facebook</a>
-      <a href="https://twitter.com/intent/tweet?url=https://easyjobfinder.com#job-forklift-operator&text=Check out this job opportunity!" target="_blank">Twitter</a
+      <a href="https://twitter.com/intent/tweet?url=https://easyjobfinder.com#job-forklift-operator&
