@@ -76,6 +76,37 @@ section.active {
   display: block;
 }
 
+/* ===== ADDED IMAGE STYLES ===== */
+.hero-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* ===== END ADDED STYLES ===== */
+
 /* SERVICE CARDS */
 .service-card {
   background: #fff;
@@ -150,6 +181,7 @@ footer {
 <div class="dropdown" id="menu">
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#services" onclick="closeMenu()">Our Services</a>
+  <a href="#gallery" onclick="closeMenu()">Gallery</a>
   <a href="#about" onclick="closeMenu()">About Us</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
@@ -173,38 +205,62 @@ footer {
   <p>
     ✔ Property Maintenance<br>
     ✔ Plumbing & Electrical<br>
+    ✔ Water Pump Installation<br>
     ✔ Painting & Renovations<br>
     ✔ General Repairs
   </p>
+
+  <!-- ADDED HERO IMAGE -->
+  <img src="images/maintenance-hero.jpg" class="hero-img" alt="Maintenance Services">
 </section>
 
 <!-- SERVICES -->
 <section id="services">
 
   <div class="service-card featured">
+    <img src="images/general-maintenance.jpg" alt="General Maintenance">
     <h3>General Property Maintenance</h3>
     <p>Complete maintenance solutions to keep your property in top condition.</p>
-    <a class="contact" href="https://wa.me/270710315772" target="_blank">
-      Request a Quote
-    </a>
+    <a class="contact" href="https://wa.me/270710315772" target="_blank">Request a Quote</a>
   </div>
 
   <div class="service-card">
+    <img src="images/plumbing.jpg" alt="Plumbing Services">
     <h3>Plumbing Services</h3>
     <p>Leak repairs, pipe installations, blockages, and general plumbing work.</p>
-    <a class="contact" href="https://wa.me/270710315772" target="_blank">
-      Contact Us
-    </a>
+    <a class="contact" href="https://wa.me/270710315772" target="_blank">Contact Us</a>
   </div>
 
   <div class="service-card">
+    <img src="images/electrical.jpg" alt="Electrical Maintenance">
     <h3>Electrical Maintenance</h3>
     <p>Fault finding, repairs, installations, and electrical maintenance.</p>
-    <a class="contact" href="https://wa.me/270710315772" target="_blank">
-      Contact Us
-    </a>
+    <a class="contact" href="https://wa.me/270710315772" target="_blank">Contact Us</a>
   </div>
 
+  <!-- ADDED WATER PUMP SERVICE -->
+  <div class="service-card">
+    <img src="images/water-pump.jpg" alt="Water Pump Installation">
+    <h3>Water Pump Installation & Repairs</h3>
+    <p>
+      Installation and maintenance of booster pumps, pressure pumps,
+      and JoJo tank pump systems.
+    </p>
+    <a class="contact" href="https://wa.me/270710315772" target="_blank">Request a Quote</a>
+  </div>
+
+</section>
+
+<!-- ADDED GALLERY -->
+<section id="gallery">
+  <h2>Our Work</h2>
+  <div class="gallery">
+    <img src="images/general-maintenance.jpg" alt="Maintenance Work">
+    <img src="images/plumbing.jpg" alt="Plumbing Work">
+    <img src="images/electrical.jpg" alt="Electrical Work">
+    <img src="images/water-pump.jpg" alt="Water Pump Installation">
+    <img src="images/painting.jpg" alt="Painting Work">
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -234,10 +290,7 @@ footer {
   © 2026 CoreTrust Maintenance Services
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-  💬
-</a>
+<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank">💬</a>
 
 <script>
 function toggleMenu() {
@@ -261,4 +314,4 @@ window.addEventListener("load", showFromHash);
 </script>
 
 </body>
-      </html>
+</html>
