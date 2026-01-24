@@ -31,7 +31,6 @@ header h1 {
 .menu-btn {
   font-size: 26px;
   cursor: pointer;
-  user-select: none;
 }
 
 .dropdown {
@@ -42,7 +41,6 @@ header h1 {
   border-radius: 8px;
   width: 200px;
   display: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 .dropdown a {
@@ -51,10 +49,6 @@ header h1 {
   color: #fff;
   text-decoration: none;
   border-bottom: 1px solid #222;
-}
-
-.dropdown a:last-child {
-  border-bottom: none;
 }
 
 .dropdown a:hover {
@@ -83,21 +77,11 @@ section.active {
   padding: 14px;
   border-radius: 8px;
   margin-bottom: 18px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
   font-size: 14px;
 }
 
 .job-card.featured {
   border: 2px solid #22c55e;
-}
-
-.job-card h3 {
-  margin: 0 0 6px 0;
-  font-size: 16px;
-}
-
-.job-card p {
-  margin: 4px 0;
 }
 
 .job-card a.apply {
@@ -108,27 +92,20 @@ section.active {
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 13px;
 }
 
-.job-card a.apply:hover {
-  background: #333;
-}
-
-/* SUBSCRIBE BUTTON */
+/* SUBSCRIBE */
 .subscribe-btn {
-  display: inline-block;
   margin-top: 15px;
   padding: 12px 20px;
   background: #22c55e;
   color: #000;
+  border-radius: 6px;
   font-weight: bold;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
-/* WHATSAPP POPUP */
+/* WHATSAPP */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -141,21 +118,7 @@ section.active {
   text-align: center;
   font-size: 28px;
   line-height: 55px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
   text-decoration: none;
-  z-index: 1000;
-}
-
-.whatsapp-float:hover {
-  background: #1ebe5d;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
-  font-size: 14px;
 }
 </style>
 </head>
@@ -170,141 +133,101 @@ footer {
 <div class="dropdown" id="menu">
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#jobs" onclick="closeMenu()">Jobs & Opportunities</a>
-  <a href="#donate" onclick="closeMenu()">Donations</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
 <main>
 
-<!-- HOME -->
 <section id="home">
   <h2>Welcome to EasyJobFinder</h2>
+  <p>Helping South Africans find real jobs.</p>
 
-  <p>
-    EasyJobFinder is a free platform created to help South Africans
-    access real and verified employment opportunities.
-  </p>
+  <button class="subscribe-btn" onclick="openSubscribe()">Subscribe for Updates</button>
 
-  <p>
-    ✔ Jobs<br>
-    ✔ Learnerships<br>
-    ✔ Internships<br>
-    ✔ Bursaries
-  </p>
-
-  <p>
-    All opportunities link directly to official employer websites.
-  </p>
-
-  <button class="subscribe-btn" onclick="openSubscribe()">
-    Subscribe for Updates
-  </button>
-
-  <div id="subscribeBox" style="display:none; margin-top:15px;">
-    <p>Enter your email to receive job updates:</p>
-    <input type="email" placeholder="Your email address"
-           style="padding:10px; width:100%; max-width:300px; border-radius:5px; border:none;">
+  <div id="subscribeBox" style="display:none;">
+    <input type="email" placeholder="Your email">
     <br><br>
-    <button class="subscribe-btn" onclick="submitSubscribe()">
-      Subscribe
-    </button>
+    <button class="subscribe-btn" onclick="submitSubscribe()">Subscribe</button>
   </div>
 </section>
 
-<!-- JOBS -->
 <section id="jobs">
 
   <div class="job-card featured" id="job-general-worker">
     <h3>General Worker – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <p><strong>Location:</strong> Johannesburg</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">
-      Apply
-    </a>
+    <a class="apply" href="#apply-general-worker">Apply</a>
   </div>
 
   <div class="job-card" id="job-warehouse-assistant">
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
-      Apply
-    </a>
+    <a class="apply" href="#apply-warehouse-assistant">Apply</a>
   </div>
 
   <div class="job-card" id="job-forklift-operator">
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
-    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
-      Apply
-    </a>
+    <a class="apply" href="#apply-forklift-operator">Apply</a>
   </div>
 
 </section>
 
-<!-- DONATE -->
-<section id="donate">
-  <h2>Support EasyJobFinder</h2>
-  <p>Help us keep job listings free for everyone.</p>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <strong>easyjobfinder@gmail.com</strong></p>
+  <p>Email: easyjobfinder@gmail.com</p>
   <p>
-    WhatsApp:
-    <a href="https://wa.me/270710315772" target="_blank" style="color:#22c55e; text-decoration:none;">
-      +27 71 031 5772
-    </a>
+    <a href="https://wa.me/270710315772" target="_blank">WhatsApp: +27 71 031 5772</a>
   </p>
 </section>
 
 </main>
 
-<footer>
-  © 2026 EasyJobFinder
-</footer>
-
-<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/270710315772" class="whatsapp-float">💬</a>
 
 <script>
-function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
+const redirects = {
+  "apply-general-worker":
+    "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474",
 
-function closeMenu() {
-  document.getElementById("menu").style.display = "none";
-}
+  "apply-warehouse-assistant":
+    "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466",
+
+  "apply-forklift-operator":
+    "https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467"
+};
 
 function showFromHash() {
-  const hash = window.location.hash || "#home";
+  const hash = location.hash.replace("#", "");
+
   document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
 
-  if (hash.startsWith("#job-")) {
+  if (redirects[hash]) {
     document.getElementById("jobs").classList.add("active");
     setTimeout(() => {
-      const job = document.querySelector(hash);
-      if (job) job.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+      window.location.href = redirects[hash];
+    }, 1200);
   } else {
-    const target = document.querySelector(hash);
-    if (target) target.classList.add("active");
+    const section = document.getElementById(hash || "home");
+    if (section) section.classList.add("active");
   }
 }
 
+function toggleMenu() {
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+function closeMenu() {
+  menu.style.display = "none";
+}
 function openSubscribe() {
-  const box = document.getElementById("subscribeBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
+  subscribeBox.style.display = subscribeBox.style.display === "block" ? "none" : "block";
 }
-
 function submitSubscribe() {
-  alert("Thank you for subscribing! You will receive updates soon.");
+  alert("Subscribed successfully!");
 }
 
-window.addEventListener("hashchange", showFromHash);
 window.addEventListener("load", showFromHash);
+window.addEventListener("hashchange", showFromHash);
 </script>
 
 </body>
-</html>
+  </html>
