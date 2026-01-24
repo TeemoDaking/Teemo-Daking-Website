@@ -108,6 +108,28 @@ section.active {
   background: #333;
 }
 
+/* WHATSAPP POPUP BUTTON */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 55px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe5d;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
@@ -164,7 +186,7 @@ footer {
 <!-- JOBS -->
 <section id="jobs">
 
-  <div class="job-card featured" id="job-1">
+  <div class="job-card featured">
     <h3>General Worker – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <p><strong>Location:</strong> Johannesburg</p>
@@ -173,7 +195,7 @@ footer {
     </a>
   </div>
 
-  <div class="job-card" id="job-2">
+  <div class="job-card">
     <h3>Warehouse Assistant – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
@@ -181,7 +203,7 @@ footer {
     </a>
   </div>
 
-  <div class="job-card" id="job-3">
+  <div class="job-card">
     <h3>Forklift Operator – Gauteng</h3>
     <p><strong>Company:</strong> Phakisa Holdings</p>
     <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
@@ -200,8 +222,9 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
+  <p>Email: <strong>easyjobfinder@gmail.com</strong></p>
   <p>
-    WhatsApp: 
+    WhatsApp:
     <a href="https://wa.me/270710315772" target="_blank" style="color:#22c55e; text-decoration:none;">
       +27 71 031 5772
     </a>
@@ -213,6 +236,11 @@ footer {
 <footer>
   © 2026 EasyJobFinder
 </footer>
+
+<!-- WHATSAPP POPUP -->
+<a href="https://wa.me/270710315772" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  💬
+</a>
 
 <script>
 function toggleMenu() {
