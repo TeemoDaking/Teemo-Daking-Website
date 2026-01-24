@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyJobFinder | Jobs & Opportunities</title>
 
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1f2933, #111827);
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  background: #000;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* 3 DOT MENU */
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #111;
+  border-radius: 8px;
+  width: 200px;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.dropdown a {
+  display: block;
+  padding: 14px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+}
+
+.dropdown a:last-child {
+  border-bottom: none;
+}
+
+.dropdown a:hover {
+  background: #1f2933;
+}
+
+/* MAIN */
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+/* JOB CARDS */
+.job-card {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.job-card.featured {
+  border: 3px solid #22c55e;
+}
+
+.job-card h3 {
+  margin-top: 0;
+}
+
+.job-card a.apply {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 15px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.job-card a.apply:hover {
+  background: #333;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>EasyJobFinder</h1>
+  <div class="menu-btn" onclick="toggleMenu()">⋮</div>
+</header>
+
+<div class="dropdown" id="menu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#jobs" onclick="closeMenu()">Jobs & Opportunities</a>
+  <a href="#donate" onclick="closeMenu()">Donations</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<main>
+
+<!-- HOME -->
+<section id="home">
+  <h2>Welcome to EasyJobFinder</h2>
+  <p>
+    EasyJobFinder helps South Africans find real jobs and opportunities.
+  </p>
+  <p>
+    Open the menu (⋮) and tap <strong>Jobs & Opportunities</strong>.
+  </p>
+</section>
+
+<!-- JOBS -->
+<section id="jobs">
+
+  <div class="job-card featured" id="job-1">
+    <h3>General Worker – Gauteng</h3>
+    <p><strong>Company:</strong> Phakisa Holdings</p>
+    <p><strong>Location:</strong> Johannesburg</p>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000474&id=phakisa_holdings&VacRef=JHB000474" target="_blank">
+      Apply on Employer Site
+    </a>
+  </div>
+
+  <div class="job-card" id="job-2">
+    <h3>Warehouse Assistant – Gauteng</h3>
+    <p><strong>Company:</strong> Phakisa Holdings</p>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000466&id=phakisa_holdings&VacRef=JHB000466" target="_blank">
+      Apply on Employer Site
+    </a>
+  </div>
+
+  <div class="job-card" id="job-3">
+    <h3>Forklift Operator – Gauteng</h3>
+    <p><strong>Company:</strong> Phakisa Holdings</p>
+    <a class="apply" href="https://webapp.placementpartner.com/wi/vacancy?share_string=phakisa_holdings_JHB000467&id=phakisa_holdings&VacRef=JHB000467" target="_blank">
+      Apply on Employer Site
+    </a>
+  </div>
+
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+  <h2>Support EasyJobFinder</h2>
+  <p>Help us keep job listings free for everyone.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: easyjobfinder@gmail.com</p>
+</section>
+
+</main>
+
+<footer>
+  © 2026 EasyJobFinder
+</footer>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function closeMenu() {
+  document.getElementById("menu").style.display = "none";
+}
+
+function showFromHash() {
+  const hash = window.location.hash || "#home";
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  const target = document.querySelector(hash);
+  if (target) target.classList.add("active");
+}
+
+window.addEventListener("hashchange", showFromHash);
+window.addEventListener("load", showFromHash);
+</script>
+
+</body>
+  </html>
